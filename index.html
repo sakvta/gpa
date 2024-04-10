@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GPT Calculator</title>
+    <!-- Google AdSense Code -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7064388449221141"
+        crossorigin="anonymous"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -46,6 +49,20 @@
             box-sizing: border-box;
         }
         
+        .remove-button {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-left: 10px;
+        }
+        
+        .remove-button:hover {
+            background-color: #c82333;
+        }
+        
         button {
             display: block;
             margin: 10px auto;
@@ -83,6 +100,7 @@
                 <input type="text" name="credit" id="credit1">
                 <label for="grade1">Дүн:</label>
                 <input type="text" name="result" id="grade1">
+                <button type="button" class="remove-button" onclick="removeInputFields(this)">Устгах</button>
             </div>
             <button type="button" onclick="addInputFields()">Нэмэх</button>
             <button type="button" onclick="calculateWeightedAverage()">Үр дүн бодох</button>
@@ -101,8 +119,14 @@
                 '<label>Кредит:</label>' +
                 '<input type="text" name="credit">' +
                 '<label>Дүн:</label>' +
-                '<input type="text" name="result">';
+                '<input type="text" name="result">' +
+                '<button type="button" class="remove-button" onclick="removeInputFields(this)">Устгах</button>';
             container.insertBefore(newInput, container.lastElementChild.previousElementSibling);
+        }
+
+        function removeInputFields(button) {
+            var inputGroup = button.parentNode;
+            inputGroup.parentNode.removeChild(inputGroup);
         }
 
         function calculateWeightedAverage() {
@@ -125,6 +149,8 @@
             resultContainer.innerHTML = 'Таны голч: ' + weightedAverage.toFixed(2);
         }
     </script>
+
+    ca-pub-7064388449221141
 </body>
 
 </html>
