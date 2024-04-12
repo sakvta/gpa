@@ -5,88 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GPT Calculator</title>
-    <!-- Google AdSense Code -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7064388449221141"
-     crossorigin="anonymous"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        
-        .form-group {
-            display: flex;
-            margin-bottom: 10px;
-        }
-        
-        .form-group label {
-            flex: 1;
-            text-align: right;
-            padding-right: 10px;
-        }
-        
-        .form-group input {
-            flex: 2;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            box-sizing: border-box;
-        }
-        
-        .remove-button {
-            background-color: #dc3545;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-left: 10px;
-        }
-        
-        .remove-button:hover {
-            background-color: #c82333;
-        }
-        
-        button {
-            display: block;
-            margin: 10px auto;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        button:hover {
-            background-color: #0056b3;
-        }
-        
-        #resultContainer {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #d4edda;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <!-- Link to your CSS file -->
 </head>
 
 <body>
@@ -95,11 +15,12 @@
         <form id="inputForm">
             <div class="form-group">
                 <label for="subject1">Хичээлийн нэр:</label>
-                <input type="text" name="subject_name" id="subject1">
-                <label for="credit1">Кредит:</label>
-                <input type="text" name="credit" id="credit1">
+                <input type="text" name="subject_name" class="subject">
+                <label>Кредит:</label>
+                <input type="number" name="credit" class="credit" value="3">
+                <!-- Default value set to 3 -->
                 <label for="grade1">Дүн:</label>
-                <input type="text" name="result" id="grade1">
+                <input type="number" name="result" class="grade">
                 <button type="button" class="remove-button" onclick="removeInputFields(this)">Устгах</button>
             </div>
             <button type="button" onclick="addInputFields()">Нэмэх</button>
@@ -115,11 +36,11 @@
             var newInput = document.createElement("div");
             newInput.classList.add("form-group");
             newInput.innerHTML = '<label>Хичээлийн нэр:</label>' +
-                '<input type="text" name="subject_name">' +
+                '<input type="text" name="subject_name" class="subject">' +
                 '<label>Кредит:</label>' +
-                '<input type="text" name="credit">' +
+                '<input type="number" name="credit" class="credit" value="3">' + // Default value set to 3
                 '<label>Дүн:</label>' +
-                '<input type="text" name="result">' +
+                '<input type="number" name="result" class="grade">' +
                 '<button type="button" class="remove-button" onclick="removeInputFields(this)">Устгах</button>';
             container.insertBefore(newInput, container.lastElementChild.previousElementSibling);
         }
@@ -130,8 +51,8 @@
         }
 
         function calculateWeightedAverage() {
-            var credits = document.getElementsByName('credit');
-            var grades = document.getElementsByName('result');
+            var credits = document.getElementsByClassName('credit');
+            var grades = document.getElementsByClassName('grade');
 
             var totalCredit = 0;
             var weightedSum = 0;
@@ -139,8 +60,37 @@
                 var creditValue = parseInt(credits[i].value);
                 var gradeValue = parseFloat(grades[i].value);
 
-                totalCredit += creditValue;
-                weightedSum += creditValue * gradeValue;
+                if (!isNaN(creditValue) && !isNaN(gradeValue)) {
+                    // Convert grades to GPA scale
+                    if (gradeValue >= 96 && gradeValue <= 100) {
+                        gradeValue = 4;
+                    } else if (gradeValue >= 90 && gradeValue <= 95) {
+                        gradeValue = 3.7;
+                    } else if (gradeValue >= 87 && gradeValue <= 89) {
+                        gradeValue = 3.4;
+                    } else if (gradeValue >= 83 && gradeValue <= 86) {
+                        gradeValue = 3.0;
+                    } else if (gradeValue >= 80 && gradeValue <= 82) {
+                        gradeValue = 2.7;
+                    } else if (gradeValue >= 77 && gradeValue <= 79) {
+                        gradeValue = 2.4;
+                    } else if (gradeValue >= 73 && gradeValue <= 76) {
+                        gradeValue = 2.0;
+                    } else if (gradeValue >= 70 && gradeValue <= 72) {
+                        gradeValue = 1.7;
+                    } else if (gradeValue >= 67 && gradeValue <= 69) {
+                        gradeValue = 1.3;
+                    } else if (gradeValue >= 63 && gradeValue <= 66) {
+                        gradeValue = 1.0;
+                    } else if (gradeValue >= 60 && gradeValue <= 62) {
+                        gradeValue = 0.7;
+                    } else {
+                        gradeValue = 0.0;
+                    }
+
+                    totalCredit += creditValue;
+                    weightedSum += creditValue * gradeValue;
+                }
             }
 
             var weightedAverage = (totalCredit === 0) ? 0 : weightedSum / totalCredit;
