@@ -1,0 +1,134 @@
+/* Common styles for all devices */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+
+/* Flexbox setup for form groups */
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+
+/* Style for labels within form groups */
+
+.form-group label {
+    flex-basis: 30%;
+    text-align: right;
+    padding-right: 10px;
+    color: #555;
+    font-weight: bold;
+}
+
+
+/* Style for input fields within form groups */
+
+.form-group input {
+    flex-grow: 1;
+    padding: 4px;
+    /* Reduced padding */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    width: 33%;
+    /* Smaller width for input fields */
+    font-size: 14px;
+    /* Default font size */
+}
+
+
+/* Style for the remove button */
+
+.remove-button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+    padding: 4px 8px;
+    /* Reduced padding */
+}
+
+.remove-button:hover {
+    background-color: #c82333;
+}
+
+
+/* Style for general buttons */
+
+button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Style for the result container */
+
+#resultContainer {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #d4edda;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+/* Media query for smaller screens */
+
+@media only screen and (max-width: 600px) {
+    .form-group label {
+        font-size: 12px;
+        /* Smaller font size for labels */
+    }
+    .form-group input {
+        font-size: 12px;
+        /* Smaller font size for input fields */
+    }
+    .remove-button {
+        font-size: 12px;
+        /* Smaller font size for remove button */
+    }
+    button {
+        font-size: 14px;
+        /* Adjusted font size for general buttons */
+    }
+    h1 {
+        font-size: 24px;
+        /* Adjusted font size for heading */
+    }
+}
