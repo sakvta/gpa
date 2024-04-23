@@ -8,7 +8,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    zoom: 0.8;
+    zoom: 0.8; /* Adjust the zoom level as needed */
 }
 
 .container {
@@ -159,6 +159,6 @@ button:hover {
         font-size: 24px;
     }
     body {
-        zoom: .9; /* Reset zoom level for smaller screens */
+        zoom: 1; /* Reset zoom level for smaller screens */
     }
 }
