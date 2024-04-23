@@ -4,16 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GPT Calculator</title>
+    <title>СЭЗИС GPA</title>
     <link rel="stylesheet" href="style.css">
     <!-- Link to your CSS file -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7064388449221141" crossorigin="anonymous"></script>
+    <style>
+        /* Additional CSS styles */
+        header {
+            background-color: #333; /* Dark background color for the header */
+            color: #fff; /* Text color for the header */
+            padding: 10px; /* Padding for the header content */
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Space items evenly in the header */
+            align-items: center; /* Center items vertically in the header */
+        }
 
+        header h1 {
+            margin: 0; /* Remove default margin for h1 */
+            font-size: 20px; /* Adjust font size for the header */
+        }
+
+        .button-container {
+            display: flex; /* Use flexbox for button alignment */
+        }
+
+        .button-container button {
+            margin-right: 10px; /* Add margin between buttons */
+        }
+    </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7064388449221141" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <header>
+        <h1>МУИС и СЭЗИС</h1>
+        <div class="button-container">
+            <button onclick="openMuiscPage()">МУИС</button>
+            <button onclick="openSezisPage()">СЭЗИС</button>
+        </div>
+    </header>
+
     <div class="container">
-        <h1>СЭЗИС GPA CAl</h1>
+        <h1>СЭЗИС</h1>
         <form id="inputForm">
             <div class="form-group">
                 <label for="subject1">Хичээлийн нэр:</label>
@@ -32,9 +63,15 @@
         <div id="resultContainer"></div>
     </div>
 
-    <a href="privacy_policy.html" target="_blank">Privacy Policy</a>
-
     <script>
+        function openMuiscPage() {
+            window.open("convert_grades.html", "_blank");
+        }
+
+        function openSezisPage() {
+            window.location.href = "index.html";
+        }
+
         function addInputFields() {
             var container = document.getElementById("inputForm");
             var newInput = document.createElement("div");
@@ -103,6 +140,9 @@
             resultContainer.innerHTML = 'Таны голч: ' + weightedAverage.toFixed(2);
         }
     </script>
+    <footer>
+        <a href="privacy_policy.html" target="_blank">Privacy Policy</a>
+    </footer>
 </body>
 
 </html>
