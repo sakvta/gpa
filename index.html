@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>СЭЗИС GPA</title>
+    <title>SEZIS</title>
+    <link rel="icon" href="icon_01.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <!-- Link to your CSS file -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7064388449221141"
+     crossorigin="anonymous"></script>
     <style>
         /* Additional CSS styles */
         header {
@@ -31,38 +34,175 @@
             margin-right: 10px; /* Add margin between buttons */
         }
     </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7064388449221141" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
-        <h1>МУИС и СЭЗИС</h1>
+        <h3>SEZIS</h3>
         <div class="button-container">
-            <button onclick="openMuiscPage()">МУИС</button>
-            <button onclick="openSezisPage()">СЭЗИС</button>
+            <button onclick="openMuiscPage()">MUIS</button>
+            <button onclick="openSezisPage()">SEZIS</button>
         </div>
     </header>
 
+    <div id="calculatorExplanation">
+        <h2>Mongolian University's GPA Calculator / University of Finance and Economics GPA Calculator / </h2>
+        <p>
+            Purpose:
+        </p>
+        <ol>
+            <li>
+                This website serves as a GPA calculator specifically designed for Mongolian universities. 
+                While there are numerous online calculators available, Mongolian universities have distinct GPA systems,
+                 making this site tailored to the GPA rates applicable to multiple universities in Mongolia.</li>
+        </ol>
+    </div>
+
     <div class="container">
-        <h1>СЭЗИС</h1>
+        <h1>SEMESTER 1</h1>
         <form id="inputForm">
             <div class="form-group">
-                <label for="subject1">Хичээлийн нэр:</label>
+                <label for="subject1">Subject name:</label>
                 <input type="text" name="subject_name" class="subject">
-                <label>Кредит:</label>
+                <label>Credit:</label>
                 <input type="number" name="credit" class="credit" value="3">
                 <!-- Default value set to 3 -->
-                <label for="grade1">Дүн:</label>
+                <label for="grade1">Grade:</label>
                 <input type="number" name="result" class="grade">
-                <button type="button" class="remove-button" onclick="removeInputFields(this)">Устгах</button>
+                <button type="button" class="remove-button" onclick="removeInputFields(this)">Remove</button>
             </div>
-            <button type="button" onclick="addInputFields()">Нэмэх</button>
-            <button type="button" onclick="calculateWeightedAverage()">Үр дүн бодох</button>
+            <button type="button" onclick="addInputFields()">Add</button>
+            <button type="button" onclick="calculateWeightedAverage()">Calculate GPA</button>
         </form>
 
         <div id="resultContainer"></div>
     </div>
 
+    <div id="calculatorExplanation">
+        <h2>How to Use the College GPA Calculator</h2>
+        <p>
+            To calculate your GPA, follow these steps:
+        </p>
+        <ol>
+            <li>Enter the name of your course in the "Хичээлийн нэр" field.</li>
+            <li>Enter the credit hours for the course in the "Кредит" field (default value is set to 3).</li>
+            <li>Enter your grade for the course in the "Дүн" field.</li>
+            <li>If you have multiple courses, click "Нэмэх" to add additional fields for each course.</li>
+            <li>Once you've entered all your courses, click "Үр дүн бодох" to calculate your weighted GPA.</li>
+        </ol>
+    </div>
+    
+
+    <div class="gpa-raiser-container">
+        <h1>GPA Raise Calculator</h1>
+        <form id="gpa-raiser-form">
+            <div class="form-group">
+                <label for="currentGpa">Current GPA:</label>
+                <input type="number" id="currentGpa">
+            </div>
+            <div class="form-group">
+                <label for="currentCredits">Current Credits:</label>
+                <input type="number" id="currentCredits">
+            </div>
+            <div class="form-group">
+                <label for="kredet">I am taking</label>
+                <input type="number" id="kredet">
+                <label for="kredet">credits this semester. If I want to raise my GPA</label>
+                <input type="number" id="golch">
+                <laber for="golch"> points.</laber>
+            </div>
+        </form>
+        <div id="result" class="result-container"></div>
+    </div>
+    
+    </div>
+    <div id="calculatorExplanation">
+        <h2>How to Use GPA Raise Calculation</h2>
+        <p>The GPA Raise Calculator on this website helps users determine their new GPA after raising their existing GPA by a certain number of points. Here's how it works step by step:</p>
+        <ol>
+            <li>Current GPA: Users input their current GPA in the "Current GPA" field.</li>
+            <li>Current Credits: Users input the number of current credits they have earned in the "Current Credits" field.</li>
+            <li>Credits this semester: Users input the number of credits they plan to take this semester in the "I am taking credits this semester" field.</li>
+            <li>Raise number: Users input the number of GPA points they want to raise in the "If I want to raise my GPA points" field.</li>
+            <li>Calculate Raised GPA Button: When users click the "Calculate Raised GPA" button, the calculator performs the following calculations:
+                <ul>
+                    <li>Calculates the product of the current GPA and current credits.</li>
+                    <li>Adds the raised GPA points to the current GPA.</li>
+                    <li>Calculates the total credits by adding the current credits and the credits for the semester.</li>
+                    <li>Calculates the new GPA by dividing the product of the raised GPA and total credits by the new total credits.</li>
+                </ul>
+            </li>
+            <li>Result Display: The calculator then displays the calculated raised GPA in the "Result" section below the form.</li>
+        </ol>
+    </div>
+    <div id="weightedGpaTable">
+        <h2>Weighted GPA Scale</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Grade Range</th>
+                    <th>Grade Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>96 - 100</td>
+                    <td>4.0</td>
+                </tr>
+                <tr>
+                    <td>90 - 95</td>
+                    <td>3.7</td>
+                </tr>
+                <tr>
+                    <td>87 - 89</td>
+                    <td>3.4</td>
+                </tr>
+                <tr>
+                    <td>83 - 86</td>
+                    <td>3.0</td>
+                </tr>
+                <tr>
+                    <td>80 - 82</td>
+                    <td>2.7</td>
+                </tr>
+                <tr>
+                    <td>77 - 79</td>
+                    <td>2.4</td>
+                </tr>
+                <tr>
+                    <td>73 - 76</td>
+                    <td>2.0</td>
+                </tr>
+                <tr>
+                    <td>70 - 72</td>
+                    <td>1.7</td>
+                </tr>
+                <tr>
+                    <td>67 - 69</td>
+                    <td>1.3</td>
+                </tr>
+                <tr>
+                    <td>63 - 66</td>
+                    <td>1.0</td>
+                </tr>
+                <tr>
+                    <td>60 - 62</td>
+                    <td>0.7</td>
+                </tr>
+                <tr>
+                    <td>Below 60</td>
+                    <td>0.0</td>
+                </tr>
+            </tbody>
+            <tr>
+                <th>This grade system is not created by website. Copyright: University of Finance and Economics </th>
+            </tr>
+        </table>
+    </div>
+    
+    
+    
+    
     <script>
         function openMuiscPage() {
             window.open("convert_grades.html", "_blank");
@@ -76,13 +216,13 @@
             var container = document.getElementById("inputForm");
             var newInput = document.createElement("div");
             newInput.classList.add("form-group");
-            newInput.innerHTML = '<label>Хичээлийн нэр:</label>' +
+            newInput.innerHTML = '<label>Subject name:</label>' +
                 '<input type="text" name="subject_name" class="subject">' +
-                '<label>Кредит:</label>' +
+                '<label>Credit:</label>' +
                 '<input type="number" name="credit" class="credit" value="3">' + // Default value set to 3
-                '<label>Дүн:</label>' +
+                '<label>Grade:</label>' +
                 '<input type="number" name="result" class="grade">' +
-                '<button type="button" class="remove-button" onclick="removeInputFields(this)">Устгах</button>';
+                '<button type="button" class="remove-button" onclick="removeInputFields(this)">Remove</button>';
             container.insertBefore(newInput, container.lastElementChild.previousElementSibling);
         }
 
@@ -137,9 +277,31 @@
             var weightedAverage = (totalCredit === 0) ? 0 : weightedSum / totalCredit;
 
             var resultContainer = document.getElementById('resultContainer');
-            resultContainer.innerHTML = 'Таны голч: ' + weightedAverage.toFixed(2);
+            resultContainer.innerHTML = 'Your GPA: ' + weightedAverage.toFixed(2);
         }
+
+        function calculateGPA() {
+    var currentGpa = parseFloat(document.getElementById('currentGpa').value);
+    var currentCredits = parseFloat(document.getElementById('currentCredits').value);
+    var golch = parseFloat(document.getElementById('golch').value);
+    var kredet = parseFloat(document.getElementById('kredet').value);
+
+    var onoo = currentGpa * currentCredits;
+    var huseh = currentGpa + golch;
+    var niitC = currentCredits + kredet;
+    var husehniitC = huseh * niitC;
+    var nzuud = husehniitC - onoo;
+    var urDun = nzuud / kredet;
+
+    document.getElementById('result').innerHTML = "I need a " + urDun.toFixed(2) + "GPA average on all my courses this semester.";
+}
+
+document.getElementById('currentGpa').addEventListener('input', calculateGPA);
+document.getElementById('currentCredits').addEventListener('input', calculateGPA);
+document.getElementById('golch').addEventListener('input', calculateGPA);
+document.getElementById('kredet').addEventListener('input', calculateGPA);
     </script>
+
     <footer>
         <a href="privacy_policy.html" target="_blank">Privacy Policy</a>
     </footer>
