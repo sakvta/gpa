@@ -208,7 +208,40 @@ button:hover {
 #calculatorExplanation li {
     margin-bottom: 5px;
 }
+#weightedGpaTable {
+    margin-top: 20px;
+    max-width: 100%; /* Set maximum width */
+    overflow-x: auto; /* Add horizontal scroll on overflow */
+}
 
+#weightedGpaTable table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#weightedGpaTable th,
+#weightedGpaTable td {
+    border: 1px solid #ccc;
+    padding: 6px; /* Reduce padding for compactness */
+    text-align: center;
+    font-size: 14px; /* Adjust font size for PC screens */
+}
+
+#weightedGpaTable th {
+    background-color: #f2f2f2; /* Light gray background for header */
+    font-weight: bold;
+}
+
+#weightedGpaTable tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Alternate row background color */
+}
+
+/* Style for the copyright notice */
+#copyright {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px; /* Adjust font size for PC screens */
+}
 
 /* Media query for smaller screens */
 
