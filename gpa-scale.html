@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gpa calculator</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <!------custum css link ------>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+    <!------boxicons ------>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!------remix icons ------>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <!------google font link ------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <header>
+        <!------google font link ------>
+        <a href="./" class="logo">
+            <img src="logo.png" alt="Logo" class="logo-img">
+            <span>
+                <span class="star">Star</span>
+            <span class="gpa">GPA</span>
+            </span>
+        </a>
+
+        <ul class="navbar">
+            <li><a href="./" class="active">Gpa calculator</a></li>
+            <li><a href="./gpa-raise">Raise GPA</a></li>
+            <li><a href="./gpa-scale">Gpa scale</a></li>
+            <li><a href="./how-to-cal">Guide</a></li>
+            <li><a href="./schedule">Schedule</a></li>
+            <li><a href="./Contact">Contact</a></li>
+
+        </ul>
+        <side>
+            <div class="close" id="close-btn">
+            </div>
+
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+
+                <div class="dark-mode">
+                    <span class="material-icons-sharp">
+                            dark_mode
+                        </span>
+                    <span class="material-icons-sharp active">
+                            light_mode
+                        </span>
+                </div>
+            </div>
+
+
+        </side>
+
+    </header>
+    <section class="events_scale">
+        <div class="row_scale">
+            <div class="col_scale">
+                <h1>GPA Scale</h1>
+                <p>Easily convert your letter grade or percentage grade to a 4-point system with our easy-to-use GPA converter and handy GPA scale.</p>
+
+                <!-- Parent container for flex layout -->
+                <div class="gpa-container">
+                    <table class="blue">
+                        <thead>
+                            <tr>
+                                <th>Letter Grade</th>
+                                <th>Percent Grade</th>
+                                <th>4.0 GPA Scale</th>
+                            </tr>
+                        </thead>
+                        <tbody id="gpaTableBody">
+                            <tr>
+                                <td>A+</td>
+                                <td>95-100</td>
+                                <td>4.0</td>
+                            </tr>
+                            <tr>
+                                <td>A</td>
+                                <td>90-94</td>
+                                <td>3.7</td>
+                            </tr>
+                            <tr>
+                                <td>B+</td>
+                                <td>87-89</td>
+                                <td>3.3</td>
+                            </tr>
+                            <tr>
+                                <td>B</td>
+                                <td>83-86</td>
+                                <td>3.0</td>
+                            </tr>
+                            <tr>
+                                <td>B-</td>
+                                <td>80-82</td>
+                                <td>2.7</td>
+                            </tr>
+                            <tr>
+                                <td>C+</td>
+                                <td>77-79</td>
+                                <td>2.3</td>
+                            </tr>
+                            <tr>
+                                <td>C</td>
+                                <td>73-76</td>
+                                <td>2.0</td>
+                            </tr>
+                            <tr>
+                                <td>C-</td>
+                                <td>70-72</td>
+                                <td>1.7</td>
+                            </tr>
+                            <tr>
+                                <td>D</td>
+                                <td>65-69</td>
+                                <td>1.3</td>
+                            </tr>
+                            <tr>
+                                <td>D-</td>
+                                <td>60-64</td>
+                                <td>1.0</td>
+                            </tr>
+                            <tr>
+                                <td>F</td>
+                                <td>0-59</td>
+                                <td>0.5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <select id="gpa-scale" onchange="changeGPAScale()">
+                        <option value="scale1">UFE</option>
+                        <option value="scale2">MUIS</option>
+                    </select>
+                </div>
+
+                <div class="example">
+                    <h2>Calculating GPA</h2>
+                    <p>The GPA is calculated by taking the grade points earned in each course, multiplying them by the number of credits the course is worth, adding all those products together, and then dividing by the total number of credits taken.</p>
+
+                    <h3>Example Calculation</h3>
+                    <p>For example, if a student has three courses with grades A (4.0), B (3.0), and C (2.0) in 3-credit courses:</p>
+                    <p><strong>GPA = (4.0 × 3) + (3.0 × 3) + (2.0 × 3) ÷ (3 + 3 + 3) = 3.0</strong></p>
+
+                    <h2>Different GPA Scales</h2>
+                    <p>While the 4.0 scale is the most common, some schools use weighted scales to give extra points for honors, Advanced Placement (AP), or International Baccalaureate (IB) courses. These scales may go up to 5.0 or even 6.0.</p>
+
+                    <h2>Importance of GPA</h2>
+                    <p>The GPA is important for several reasons:</p>
+                    <ul>
+                        <li><strong>College Admissions:</strong> GPA is a key factor in college admissions decisions.</li>
+                        <li><strong>Scholarships and Honors:</strong> Many scholarships and academic honors are based on GPA.</li>
+                        <li><strong>Career Opportunities:</strong> Employers may also consider GPA when hiring recent graduates.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="new4">
+    <section class="events3">
+        <footer class="footer">
+            <div class="footer__addr">
+                <h1 class="footer__logo">STAR</h1>
+
+                <h2>Contact</h2>
+
+                <address>
+                Mongolia Ulaanbaatar +976 8023-3378<br>
+                    
+                <a class="footer__btn" href="B22fa1028@ufenu.edu.mn">Email Us</a>
+              </address>
+            </div>
+
+            <ul class="footer__nav">
+                <li class="nav__item">
+                    <h2 class="nav__title">GPA Calculator</h2>
+
+                    <ul class="nav__ul">
+                        <li>
+                            <a href="#">Online</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Print</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Alternative Ads</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav__item nav__item--extra">
+                    <h2 class="nav__title">Technology</h2>
+
+                    <ul class="nav__ul nav__ul--extra">
+                        <li>
+                            <a href="#">Hardware Design</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Software Design</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Digital Signage</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Automation</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Artificial Intelligence</a>
+                        </li>
+
+                        <li>
+                            <a href="#">IoT</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav__item">
+                    <h2 class="nav__title">Legal</h2>
+
+                    <ul class="nav__ul">
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Terms of Use</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Sitemap</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="legal">
+                <p>&copy; 2024.</p>
+
+                <div class="legal__links">
+                    <span>Made with <span class="heart">♥</span> SAKVTA</span>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+
+
+
+
+
+    <script src="scripts.js"></script>
+    <script src="index.js"></script>
+
+
+</body>
+
+</html>
