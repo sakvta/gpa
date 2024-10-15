@@ -1,3 +1,12 @@
+let menu = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menu.onclick = () => {
+    menu.classList.toggle('bx-x');
+    navbar.classList.toggle('open');
+}
+
+
 const API_KEY = '4ec0b7ca941f24fee591f8cb378e02a9'; // Replace with your own API Key
 const city = 'Mongolia'; // Replace with your city
 

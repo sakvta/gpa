@@ -68,6 +68,9 @@
 
 
         </side>
+        <div>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
 
     </header>
     <section class="schedule_1">
@@ -113,6 +116,13 @@
 
 
     <script>
+        let menu = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar');
+        menu.onclick = () => {
+            menu.classList.toggle('bx-x');
+            navbar.classList.toggle('open');
+        }
+
         // Sample teacher schedule data
         const teacherData = [{
             name: "Б.АВИРМЭД",

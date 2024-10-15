@@ -163,6 +163,71 @@ header {
     }
 }
 
+.main {
+    display: flex;
+    align-items: center;
+}
+
+.main a {
+    margin-right: 25px;
+    margin-left: 10px;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all .50s ease;
+}
+
+#menu-icon {
+    font-size: 35px;
+    color: var(--text-color);
+    z-index: 10001;
+    display: none;
+}
+
+@media (max-width: 1280px) {
+    header {
+        padding: 13px 2%;
+        transition: .2s;
+    }
+    .navbar a {
+        padding: 5px 0;
+        margin: 0px 20px;
+    }
+}
+
+@media (max-width: 1090px) {
+    #menu-icon {
+        display: block;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 270px;
+        height: 47vh;
+        background: var(--main-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 10px;
+        transition: all .50s ease;
+    }
+    .navbar a {
+        display: block;
+        margin: 10px 25px;
+        transition: all .50s ease;
+    }
+    .navbar a:hover {
+        color: var(--text-color);
+    }
+    .navbar a.active {
+        color: var(--text-color);
+    }
+    .navbar.open {
+        right: 2%;
+    }
+}
+
 .Header1 {
     display: flex;
     flex-direction: column;
@@ -539,6 +604,18 @@ tr {
     top: 100px;
 }
 
+@media (max-width: 600px) {
+    /* Adjust the max-width as needed */
+    .schedule_1 {
+        padding: 20px;
+        /* Reduce padding for mobile */
+        margin: 30px auto;
+        /* Reduce margins for mobile */
+        top: 20px;
+        /* Adjust top positioning for mobile */
+    }
+}
+
 #scheduleCount {
     position: fixed;
     bottom: 20px;
@@ -597,4 +674,33 @@ select {
     background-image: none;
     cursor: pointer;
     font-family: 'outfit', sans-serif;
+}
+
+@media (max-width: 600px) {
+    #scheduleCount {
+        bottom: 10px;
+        /* Adjust bottom positioning */
+        right: 10px;
+        /* Adjust right positioning */
+        padding: 8px;
+        /* Reduce padding */
+    }
+    .input-container input {
+        padding: 8px;
+        /* Increase padding for touch targets */
+        font-size: 16px;
+        /* Increase font size for better readability */
+    }
+    .input-container button {
+        padding: 6px 12px;
+        /* Adjust padding for button */
+        font-size: 16px;
+        /* Increase font size for better readability */
+    }
+    select {
+        padding: 10px;
+        /* Adjust padding for select */
+        font-size: 16px;
+        /* Increase font size for better readability */
+    }
 }
