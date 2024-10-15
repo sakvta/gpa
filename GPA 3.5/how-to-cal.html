@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gpa calculator</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <!------custum css link ------>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+    <!------boxicons ------>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!------remix icons ------>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <!------google font link ------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <header>
+        <!------google font link ------>
+        <a href="index.html" class="logo">
+            <img src="logo.png" alt="Logo" class="logo-img">
+            <span>
+                <span class="star">Star</span>
+            <span class="gpa">GPA</span>
+            </span>
+        </a>
+
+        <ul class="navbar">
+            <li><a href="./" class="active">Gpa calculator</a></li>
+            <li><a href="./gpa-raise">Raise GPA</a></li>
+            <li><a href="./gpa-scale">Gpa scale</a></li>
+            <li><a href="./how-to-cal">Guide</a></li>
+            <li><a href="./schedule">Schedule</a></li>
+            <li><a href="./Contact">Contact</a></li>
+
+        </ul>
+        <side>
+            <div class="close" id="close-btn">
+            </div>
+
+            <div class="nav">
+                <button id="menu-btn">
+                        <span class="material-icons-sharp">
+                            menu
+                        </span>
+                    </button>
+
+                <div class="dark-mode">
+                    <span class="material-icons-sharp">
+                                dark_mode
+                            </span>
+                    <span class="material-icons-sharp active">
+                                light_mode
+                            </span>
+                </div>
+            </div>
+
+
+        </side>
+
+    </header>
+    <section class="events_guide">
+        <div class="row_guide">
+            <h2>How to Calculate GPA</h2>
+            <p>Your Grade Point Average (GPA) is an essential academic indicator used to evaluate your performance throughout your studies. This guide will walk you through the step-by-step process of calculating your GPA.</p>
+
+            <h2>What is a GPA?</h2>
+            <p>GPA stands for Grade Point Average, and it is a numerical representation of your academic performance. It is commonly used by schools and universities to assess a student's achievements across their courses. A GPA is typically on a scale from
+                0.0 to 4.0, but some institutions may use different weighted scales.</p>
+
+            <h2>Why is GPA Important?</h2>
+            <p>A GPA is critical for a variety of reasons, including:</p>
+            <ul>
+                <li><strong>College Admissions:</strong> Universities use your GPA to determine your eligibility for admission.</li>
+                <li><strong>Scholarships:</strong> Many scholarships are awarded based on academic achievement, and GPA is a key factor.</li>
+                <li><strong>Job Applications:</strong> Employers often look at your GPA when considering recent graduates for positions.</li>
+            </ul>
+
+            <h2>Understanding the GPA Scale</h2>
+            <p>Before you calculate your GPA, it’s important to understand the scale on which it’s measured. In most schools, GPA is calculated on a 4.0 scale as follows:</p>
+            <ul>
+                <li><strong>A (90-100%):</strong> 4.0</li>
+                <li><strong>B (80-89%):</strong> 3.0</li>
+                <li><strong>C (70-79%):</strong> 2.0</li>
+                <li><strong>D (60-69%):</strong> 1.0</li>
+                <li><strong>F (below 60%):</strong> 0.0</li>
+            </ul>
+
+            <h2>Steps to Calculate Your GPA</h2>
+            <h2>1. Assign Grade Points to Each Course</h2>
+            <p>Each letter grade you receive corresponds to a specific grade point. Use the chart below as a reference:</p>
+            <ul>
+                <li>A = 4.0</li>
+                <li>B = 3.0</li>
+                <li>C = 2.0</li>
+                <li>D = 1.0</li>
+                <li>F = 0.0</li>
+            </ul>
+
+            <h2>2. Multiply Grade Points by the Number of Credits for Each Course</h2>
+            <p>Most courses have different credit hours, so you need to account for that. For each course, multiply the grade point by the number of credit hours. For example:</p>
+            <p>If you earned a B (3.0) in a 3-credit course, the calculation would be: <strong>3.0 × 3 = 9.0 grade points.</strong></p>
+
+            <h2>3. Add the Total Grade Points and Divide by Total Credits</h2>
+            <p>Once you've multiplied the grade points by the credits for each course, add them together. Then, divide this total by the number of credits you took. For example:</p>
+            <ul>
+                <li>Course 1: 4.0 (A) × 4 credits = 16.0 grade points</li>
+                <li>Course 2: 3.0 (B) × 3 credits = 9.0 grade points</li>
+                <li>Course 3: 2.0 (C) × 3 credits = 6.0 grade points</li>
+            </ul>
+            <p><strong>Total Grade Points</strong> = 16.0 + 9.0 + 6.0 = 31.0</p>
+            <p><strong>Total Credits</strong> = 4 + 3 + 3 = 10</p>
+            <p>Now, divide: <strong>31.0 ÷ 10 = 3.1 GPA</strong></p>
+
+            <h2>Different Types of GPA</h2>
+            <h2>Unweighted GPA</h2>
+            <p>An unweighted GPA does not take the difficulty of your courses into account. It simply calculates your GPA on a standard 4.0 scale.</p>
+
+            <h2>Weighted GPA</h2>
+            <p>A weighted GPA gives extra points for more challenging courses like honors or AP classes. For example, an A in an AP course might be worth 5.0 instead of 4.0.</p>
+
+            <h2>Cumulative GPA</h2>
+            <p>Your cumulative GPA is the average of all grades you’ve earned over the entire period of study at your institution. It includes all of your courses.</p>
+
+            <h2>Semester GPA</h2>
+            <p>A semester GPA reflects your average performance for just one semester, considering only the grades from courses taken during that period.</p>
+
+            <h2>Tips to Improve Your GPA</h2>
+            <p>1. <strong>Focus on Difficult Subjects:</strong> Spend more time on courses that challenge you the most.</p>
+            <p>2. <strong>Seek Help When Needed:</strong> Don’t hesitate to ask for help from teachers or peers.</p>
+            <p>3. <strong>Stay Organized:</strong> Keep track of deadlines and exam dates to manage your time effectively.</p>
+            <p>4. <strong>Retake Courses:</strong> If possible, retake courses in which you earned a low grade to improve your GPA.</p>
+            <p>5. <strong>Take Advantage of Extra Credit:</strong> Some professors offer extra credit assignments that can boost your final grade.</p>
+
+            <h2>Final Thoughts</h2>
+            <p>Calculating your GPA is a simple process that gives you a clear picture of where you stand academically. By understanding the formula and keeping track of your performance, you can take the right steps to improve your GPA over time.</p>
+
+
+
+
+        </div>
+        <div class="row_scale_ad">
+
+        </div>
+    </section>
+    <hr class="new4">
+    <section class="events3">
+        <footer class="footer">
+            <div class="footer__addr">
+                <h1 class="footer__logo">STAR</h1>
+
+                <h2>Contact</h2>
+
+                <address>
+                    Mongolia Ulaanbaatar +976 8023-3378<br>
+                        
+                    <a class="footer__btn" href="B22fa1028@ufenu.edu.mn">Email Us</a>
+                  </address>
+            </div>
+
+            <ul class="footer__nav">
+                <li class="nav__item">
+                    <h2 class="nav__title">GPA Calculator</h2>
+
+                    <ul class="nav__ul">
+                        <li>
+                            <a href="#">Online</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Print</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Alternative Ads</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav__item nav__item--extra">
+                    <h2 class="nav__title">Technology</h2>
+
+                    <ul class="nav__ul nav__ul--extra">
+                        <li>
+                            <a href="#">Hardware Design</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Software Design</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Digital Signage</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Automation</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Artificial Intelligence</a>
+                        </li>
+
+                        <li>
+                            <a href="#">IoT</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav__item">
+                    <h2 class="nav__title">Legal</h2>
+
+                    <ul class="nav__ul">
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Terms of Use</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Sitemap</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="legal">
+                <p>&copy; 2024.</p>
+
+                <div class="legal__links">
+                    <span>Made with <span class="heart">♥</span> SAKVTA</span>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+
+
+
+
+
+    <script src="scripts.js"></script>
+    <script src="index.js"></script>
+
+
+</body>
+
+</html>
