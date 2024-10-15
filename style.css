@@ -239,7 +239,7 @@ header {
 @media (max-width: 600px) {
     /* Adjust the max-width as needed */
     .Header1 {
-        margin-top: 50px;
+        margin-top: 100px;
         /* Reduce top margin for smaller screens */
         padding-left: 2rem;
         /* Reduce padding for smaller screens */
