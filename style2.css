@@ -163,7 +163,7 @@ header {
     }
 }
 
-.main {
+.main3 {
     display: flex;
     align-items: center;
 }
@@ -5178,7 +5178,6 @@ input[type="button"].btn-block {
 }
 
 .navbar {
-    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

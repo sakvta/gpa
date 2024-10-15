@@ -1332,6 +1332,13 @@ tr {
     min-height: 100vh;
 }
 
+@media (max-width: 600px) {
+    .events_guide {
+        grid-template-columns: 1fr;
+        /* Change to a single column */
+    }
+}
+
 .row_guide {
     margin-top: 100px;
     padding-left: 10rem;
