@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    <title>Gpa calculator-Mongolian Universities Gpa Calculator</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <!------custum css link ------>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7064388449221141" crossorigin="anonymous"></script>
+
+    <!------boxicons ------>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!------remix icons ------>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <!------google font link ------>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <header>
+        <!------google font link ------>
+        <a href="./" class="logo">
+            <img src="logo.png" alt="Logo" class="logo-img">
+            <span>
+                <span class="star">Star</span>
+            <span class="gpa">GPA</span>
+            </span>
+        </a>
+
+
+        <ul class="navbar">
+            <li><a href="./" class="active">Gpa calculator</a></li>
+            <li><a href="./gpa-raise">Raise GPA</a></li>
+            <li><a href="./gpa-scale">Gpa scale</a></li>
+            <li><a href="./how-to-cal">Guide</a></li>
+            <li><a href="./schedule">Schedule</a></li>
+            <li><a href="./Contact">Contact</a></li>
+
+        </ul>
+
+        <side>
+            <div class="close" id="close-btn">
+            </div>
+
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+
+                <div class="dark-mode">
+                    <span class="material-icons-sharp">
+                            dark_mode
+                        </span>
+                    <span class="material-icons-sharp active">
+                            light_mode
+                        </span>
+                </div>
+            </div>
+
+
+        </side>
+        <div>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+
+    </header>
+
+    <body>
+        <section class="events_guide">
+            <div class="row_guide">
+                <h2>Introduction</h2>
+                <p>Welcome to the lesson scheduling page guide. This page will explain how to input lessons, select group numbers, and filter schedules based on the number of days. Follow the instructions below to generate your desired lesson schedule.</p>
+
+                <h2>Lesson Input Section</h2>
+                <p>In the lesson input section, you can enter the lesson codes you want to schedule. The lesson codes should be comma-separated. For example, if you want to schedule both the "FIN332" and "MGM332" lessons, you would input:</p>
+                <p><strong>Example input:</strong> FIN332, MGM332</p>
+                <p>Once you've entered the lessons, click the "Generate Schedule" button to see all possible schedules for the lessons you input. The system will look through the data and find lessons matching the codes, displaying them in a timetable format
+                    based on available days and times.</p>
+                <p><strong>Note:</strong> Lesson codes can be typed in uppercase or lowercase; the system will handle both formats.</p>
+
+                <h2>Number of Days Filter</h2>
+                <p>The "Select Number of Days" dropdown allows you to filter the schedules based on how many days you want the lessons to be spread across. After generating the schedules, select a number of days (1 to 5) to see only the schedules that fit
+                    within that number of days.</p>
+                <p>For example, if you choose "2 Days," the system will only show schedules where all the lessons fit within 2 days of the week. If you select "Any," all possible schedules will be shown, regardless of how many days they span.</p>
+
+                <h2>Group Number Filter</h2>
+                <p>The "Enter Group Numbers" input allows you to filter schedules based on group numbers. You can enter multiple group numbers, separated by commas, to see only the schedules that match those specific groups.</p>
+                <p><strong>Example input:</strong> 120, 135</p>
+                <p>If you enter group numbers like "120" and "135," the system will only show schedules that contain these group numbers for the corresponding lessons. If no group numbers are entered, the system will show all schedules, regardless of group
+                    number.
+                </p>
+
+                <h2>Teacher Name Suggestions</h2>
+                <p>In the "Select Teacher" input, you can start typing a teacher's name, and the system will display suggestions based on the input. For example, if you start typing "САХИУ", the system will suggest teacher names that match, like "А. САХИУ".</p>
+                <p>Click on a suggested name to automatically fill the input field. The schedule system will then use that teacher's lessons when generating possible schedules.</p>
+
+                <h2>Displaying Schedules</h2>
+                <p>Once the schedules are generated, they will be displayed in a table format. Each row will represent a time slot (e.g., "10:30-13:10"), and each column will represent a day of the week (Monday to Friday). If a lesson is scheduled for a
+                    particular time and day, you will see the lesson's details in the corresponding cell, showing the teacher's name, lesson code, and group number.</p>
+                <p>If no lesson is scheduled for a specific time, that cell will remain blank.</p>
+
+                <h2>Schedule Count</h2>
+                <p>At the bottom right of the page, a box will show the total number of valid schedules found based on your input. This count will automatically update each time you generate or filter the schedules, giving you a clear idea of how many schedule
+                    options are available.</p>
+
+                <h2>Summary</h2>
+                <p>By using the lesson input, day filter, and group number filter together, you can generate and narrow down the lesson schedules to match your specific needs. Whether you're scheduling lessons for one day or multiple days, or filtering based
+                    on group numbers, this page provides a flexible tool for managing your lesson schedule efficiently.</p>
+            </div>
+        </section>
+
+        <section class="events3">
+            <footer class="footer">
+                <div class="footer__addr">
+                    <h2 class="footer__logo">STAR</h2>
+
+                    <h2>Contact</h2>
+
+                    <address>
+                        Mongolia Ulaanbaatar +976 8023-3378<br>
+                            
+                        <a class="footer__btn" href="mailto:b22fa1028@ufe.edu.mn">Email Us</a>
+                      </address>
+                </div>
+
+                <ul class="footer__nav">
+                    <li class="nav__item">
+                        <h2 class="nav__title">GPA Calculator</h2>
+
+                        <ul class="nav__ul">
+                            <li>
+                                <a href="./gpa-raise">Raise GPA</a>
+                            </li>
+
+                            <li>
+                                <a href="./gpa-scale">Gpa scale</a>
+                            </li>
+
+                            <li>
+                                <a href="./schedule">Schedule</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav__item nav__item--extra">
+                        <h2 class="nav__title">Guide</h2>
+
+                        <ul class="nav__ul nav__ul--extra">
+                            <li>
+                                <a href="./how-to-cal">How To Calculate GPA</a>
+                            </li>
+
+                            <li>
+                                <a href="#">&nbsp</a>
+                            </li>
+
+                            <li>
+                                <a href="#">&nbsp</a>
+                            </li>
+
+                            <li>
+                                <a href="#">&nbsp</a>
+                            </li>
+
+                            <li>
+                                <a href="#">&nbsp</a>
+                            </li>
+
+                            <li>
+                                <a href="#">&nbsp</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav__item">
+                        <h2 class="nav__title">Legal</h2>
+
+                        <ul class="nav__ul">
+                            <li>
+                                <a href="privacy_policy.html">Privacy Policy</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="legal">
+                    <p>&copy; 2024.</p>
+
+                    <div class="legal__links">
+                        <span>Made with <span class="heart">♥</span> SAKVTA</span>
+                    </div>
+                </div>
+            </footer>
+
+        </section>
+        <script src="scripts.js"></script>
+        <script src="index.js"></script>
+
+    </body>
+
+</html>

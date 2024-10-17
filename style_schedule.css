@@ -233,7 +233,19 @@ header {
     flex-direction: column;
     justify-content: space-evenly;
     margin-top: 150px;
-    padding-left: 10rem;
+    margin-left: 50px;
+}
+
+@media (max-width: 600px) {
+    /* Adjust the max-width as needed */
+    .Header1 {
+        margin-top: 100px;
+        /* Reduce top margin for smaller screens */
+        padding-left: 2rem;
+        /* Reduce padding for smaller screens */
+        padding-right: 2rem;
+        /* Optional: add right padding */
+    }
 }
 
 .main1 {
@@ -600,20 +612,8 @@ tr {
     border-radius: 20px;
     margin-bottom: 20px;
     margin-top: 30px;
-    margin: 100px auto;
+    margin: 40px auto;
     top: 100px;
-}
-
-@media (max-width: 600px) {
-    /* Adjust the max-width as needed */
-    .schedule_1 {
-        padding: 20px;
-        /* Reduce padding for mobile */
-        margin: 30px auto;
-        /* Reduce margins for mobile */
-        top: 20px;
-        /* Adjust top positioning for mobile */
-    }
 }
 
 #scheduleCount {
@@ -676,31 +676,74 @@ select {
     font-family: 'outfit', sans-serif;
 }
 
-@media (max-width: 600px) {
-    #scheduleCount {
-        bottom: 10px;
-        /* Adjust bottom positioning */
-        right: 10px;
-        /* Adjust right positioning */
-        padding: 8px;
-        /* Reduce padding */
+@media (max-width: 768px) {
+    /* Adjust container margins and padding */
+    .schedule_1 {
+        padding: 20px;
+        margin: 20px auto;
+        top: auto;
+    }
+    /* Adjust input and buttons for smaller screens */
+    .input-container {
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
     }
     .input-container input {
-        padding: 8px;
-        /* Increase padding for touch targets */
-        font-size: 16px;
-        /* Increase font size for better readability */
+        width: calc(100% - 20px);
+        margin-left: 0;
+        margin-bottom: 10px;
+        border-radius: 30px;
     }
     .input-container button {
-        padding: 6px 12px;
-        /* Adjust padding for button */
-        font-size: 16px;
-        /* Increase font size for better readability */
-    }
-    select {
+        width: 100%;
         padding: 10px;
-        /* Adjust padding for select */
         font-size: 16px;
-        /* Increase font size for better readability */
+        border-radius: 50px;
     }
+    /* Reduce suggestion list height */
+    #teacherSuggestions {
+        max-height: 80px;
+    }
+    .suggestion {
+        font-size: 14px;
+        padding: 6px;
+    }
+    /* Fix schedule count position */
+    #scheduleCount {
+        bottom: 10px;
+        right: 10px;
+        padding: 8px;
+    }
+    /* Select dropdown */
+    select {
+        width: 100%;
+        padding: 0.5em;
+        font-size: 14px;
+    }
+}
+
+.Header1 button {
+    background-color: var(--color-success);
+    border-radius: 100px;
+    box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset, rgba(44, 187, 99, .15) 0 1px 2px, rgba(44, 187, 99, .15) 0 2px 4px, rgba(44, 187, 99, .15) 0 4px 8px, rgba(44, 187, 99, .15) 0 8px 16px, rgba(44, 187, 99, .15) 0 16px 32px;
+    color: var(--color-white);
+    cursor: pointer;
+    display: inline-block;
+    font-family: outfit;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-top: 10px;
+}
+
+.Header1 button:hover {
+    box-shadow: rgba(44, 187, 99, .35) 0 -25px 18px -14px inset, rgba(44, 187, 99, .25) 0 1px 2px, rgba(44, 187, 99, .25) 0 2px 4px, rgba(44, 187, 99, .25) 0 4px 8px, rgba(44, 187, 99, .25) 0 8px 16px, rgba(44, 187, 99, .25) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
 }
