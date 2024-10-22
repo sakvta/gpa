@@ -1542,3 +1542,14 @@ li {
 
 
 /* contact section */
+
+.form-labels {
+    display: flex;
+    gap: 123px;
+    margin-bottom: 10px;
+    margin-left: 12px;
+}
+
+.grade-label {
+    margin-left: 17px;
+}

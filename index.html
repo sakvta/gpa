@@ -97,6 +97,11 @@
 
 
             <form id="inputForm">
+                <div class="form-labels">
+                    <label class="subject-label">Subject Name</label>
+                    <label class="credit-label">Credit Value</label>
+                    <label class="grade-label">Grade</label>
+                </div>
                 <!-- Row 1 -->
                 <div class="form-group">
 
@@ -109,7 +114,7 @@
                 <!-- Row 2 -->
                 <div class="form-group">
                     <input type="text" name="subject_name" class="subject" placeholder="Subject name ...">
-                    <input type="number" name="credit" class="credit" value="3">
+                    <input type="number" name="credit" class="credit" value="3" placeholder="credit..">
                     <input type="number" name="result" class="grade" placeholder="Grade...">
                     <button type="button" class="remove-button" onclick="removeInputFields(this)"></button>
                 </div>
