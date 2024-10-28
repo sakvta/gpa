@@ -1,5 +1,5 @@
 let menu = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
+let navbar = document.querySelector('.navbar_1');
 
 menu.onclick = () => {
     menu.classList.toggle('bx-x');
@@ -139,7 +139,7 @@ function calculateGPA() {
     var kredet = parseFloat(document.getElementById('kredet').value);
 
     var onoo = currentGpa * currentCredits;
-    var huseh = currentGpa + golch;
+    var huseh = currentGpa + golch - currentGpa;
     var niitC = currentCredits + kredet;
     var husehniitC = huseh * niitC;
     var nzuud = husehniitC - onoo;

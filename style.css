@@ -146,7 +146,7 @@ header {
     color: var(--main-color);
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1286px) {
     header {
         padding: 2px 2%;
         transition: .2s;
@@ -1545,11 +1545,36 @@ li {
 
 .form-labels {
     display: flex;
-    gap: 123px;
+    justify-content: space-between;
     margin-bottom: 10px;
     margin-left: 12px;
+    font-size: 16px;
+    margin-right: 200px;
 }
 
-.grade-label {
-    margin-left: 17px;
+@media (max-width: 600px) {
+    .form-labels {
+        font-size: 14px;
+        margin-right: 150px;
+    }
+}
+
+@media (max-width: 400px) {
+    .form-labels {
+        margin-right: 95px;
+    }
+}
+
+.example_pp {
+    width: 100%;
+    padding: 4em 3em 1em;
+    margin: 20px;
+}
+
+.example_pp h1 {
+    margin-bottom: 5px;
+}
+
+.example_pp p {
+    margin-bottom: 30px;
 }

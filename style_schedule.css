@@ -603,43 +603,82 @@ tr {
     background-color: #f0f0f0;
 }
 
-.input-container {
-    margin-bottom: 20px;
+.schedule_1 {
+    padding: 20px;
 }
 
-.schedule_1 {
-    padding: 50px;
+.schedulemain {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.input-container label {
+    width: 200px;
+    /* You can adjust this width */
+    text-align: left;
+    padding-right: 10px;
+}
+
+.input-container input,
+.input-container select,
+.input-container button {
+    flex: 1;
+    /* This makes the input take the remaining space */
+    padding: 8px;
+    font-size: 16px;
     border-radius: 20px;
-    margin-bottom: 20px;
-    margin-top: 30px;
-    margin: 40px auto;
-    top: 100px;
+}
+
+#teacherSuggestions {
+    margin-top: 62px;
+    max-width: 500px;
+    /* Set a max-width to control the size */
+    width: 100%;
+    /* Ensure it doesn't overflow beyond the input field */
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 3px;
+    box-sizing: border-box;
+    /* Ensure padding is included in width calculation */
+    margin-left: 205px;
+}
+
+#schedule {
+    margin-top: 10px;
 }
 
 #scheduleCount {
     position: fixed;
+    /* Keeps the element fixed in place */
     bottom: 20px;
+    /* Distance from the bottom */
     right: 20px;
-    background-color: var(--bg-color);
+    /* Distance from the right */
+    background-color: #f2f2f2;
+    /* Background color */
     padding: 10px;
+    /* Padding around the text */
+    border: 1px solid #ddd;
+    /* Border around the box */
     opacity: 1;
+    /* Fully visible */
     transition: opacity 1s ease-in-out;
+    /* Transition for fading out */
+    z-index: 1000;
+    /* Ensure it appears above other elements */
 }
 
-.input-container input {
-    flex: 2;
-    padding: 4px;
-    border: 1px solid #ccc;
-    border-radius: 50px;
-    font-size: 14px;
-    margin-left: 10px;
-}
-
-.input-container button {
+button {
     appearance: none;
     background-color: #2ea44f;
     border: 1px solid rgba(27, 31, 35, .15);
-    border-radius: 6px;
+    border-radius: 50px;
     box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
     box-sizing: border-box;
     color: #fff;
@@ -649,7 +688,7 @@ tr {
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
-    padding: 3px 10px;
+    padding: 6px 16px;
     position: relative;
     text-align: center;
     text-decoration: none;
@@ -670,10 +709,11 @@ select {
     flex: 1;
     padding: 0 1em;
     color: var(--color-white);
-    background-color: var(--color-background);
+    background-color: var(--color-dark-variant);
     background-image: none;
     cursor: pointer;
     font-family: 'outfit', sans-serif;
+    border-radius: 20px;
 }
 
 @media (max-width: 768px) {
@@ -703,7 +743,10 @@ select {
     }
     /* Reduce suggestion list height */
     #teacherSuggestions {
-        max-height: 80px;
+        margin-top: 0px;
+        margin-left: 0;
+        /* Remove left margin on mobile */
+        width: 70%;
     }
     .suggestion {
         font-size: 14px;
