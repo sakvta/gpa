@@ -124,12 +124,12 @@ header {
     font-weight: 600;
 }
 
-.navbar {
+.navbar_1 {
     display: flex;
     margin-left: 20px;
 }
 
-.navbar a {
+.navbar_1 a {
     color: var(--color-white);
     font-size: 1.1rem;
     font-weight: 500;
@@ -138,11 +138,11 @@ header {
     transition: all .50s ease;
 }
 
-.navbar a:hover {
+.navbar_1 a:hover {
     color: var(--main-color);
 }
 
-.navbar a.active {
+.navbar_1 a.active {
     color: var(--main-color);
 }
 
@@ -151,7 +151,7 @@ header {
         padding: 2px 2%;
         transition: .2s;
     }
-    .navbar a {
+    .navbar_1 a {
         padding: 5px 0;
         margin: 0px 20px;
     }
@@ -189,7 +189,7 @@ header {
         padding: 13px 2%;
         transition: .2s;
     }
-    .navbar a {
+    .navbar_1 a {
         padding: 5px 0;
         margin: 0px 20px;
     }
@@ -199,7 +199,7 @@ header {
     #menu-icon {
         display: block;
     }
-    .navbar {
+    .navbar_1 {
         position: absolute;
         top: 100%;
         right: -100%;
@@ -212,18 +212,18 @@ header {
         border-radius: 10px;
         transition: all .50s ease;
     }
-    .navbar a {
+    .navbar_1 a {
         display: block;
         margin: 10px 25px;
         transition: all .50s ease;
     }
-    .navbar a:hover {
+    .navbar_1 a:hover {
         color: var(--text-color);
     }
-    .navbar a.active {
+    .navbar_1 a.active {
         color: var(--text-color);
     }
-    .navbar.open {
+    .navbar_1.open {
         right: 2%;
     }
 }
