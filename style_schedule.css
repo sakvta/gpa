@@ -636,7 +636,7 @@ tr {
 }
 
 #teacherSuggestions {
-    margin-top: 62px;
+    margin-top: 140px;
     max-width: 500px;
     /* Set a max-width to control the size */
     width: 100%;
@@ -660,11 +660,11 @@ tr {
     /* Distance from the bottom */
     right: 20px;
     /* Distance from the right */
-    background-color: #f2f2f2;
+    background-color: var(--bg-color);
     /* Background color */
     padding: 10px;
     /* Padding around the text */
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-gray);
     /* Border around the box */
     opacity: 1;
     /* Fully visible */

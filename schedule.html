@@ -84,11 +84,7 @@
         <div class="schedulemain">
             <h1>Create Schedule</h1>
 
-            <div class="input-container">
-                <label for="teacherInput">Select Teacher:</label>
-                <input type="text" id="teacherInput" placeholder="Type teacher's name" oninput="showSuggestions(this.value)">
-                <div id="teacherSuggestions"></div>
-            </div>
+
 
             <div class="input-container">
                 <label for="lessonCodes">Enter Lesson Codes (comma separated):</label>
@@ -112,6 +108,12 @@
                 <label for="groupNumber">Enter Group Numbers (comma separated):</label>
                 <input type="text" id="groupNumber" placeholder="Enter group numbers">
                 <button onclick="filterSchedules()">Filter by Group Numbers</button>
+            </div>
+
+            <div class="input-container">`
+                <label for="teacherInput">Select Teacher:</label>
+                <input type="text" id="teacherInput" placeholder="Type teacher's name" oninput="showSuggestions(this.value)">
+                <div id="teacherSuggestions"></div>
             </div>
 
             <div id="schedule"></div>
@@ -4177,9 +4179,20 @@
             }
         }
 
+        function filterByTeacher(teacherName) {
+            const filteredSchedules = allSchedules.filter(schedule => {
+                return Object.values(schedule).some(dayLessons =>
+                    Object.values(dayLessons).some(lesson => lesson.includes(teacherName))
+                );
+            });
+            displaySchedules(filteredSchedules);
+        }
+
+        // Update the selectTeacher function to trigger the teacher filter
         function selectTeacher(name) {
             document.getElementById('teacherInput').value = name;
             document.getElementById('teacherSuggestions').innerHTML = ''; // Clear suggestions
+            filterByTeacher(name); // Filter schedules by selected teacher name
         }
     </script>
     <script src="scripts.js"></script>
