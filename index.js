@@ -82,12 +82,31 @@ function changeGPAScale() {
 
     let selectedScale = scale1;
 
-    // Select scale based on user choice
     if (scaleSelection === "scale2") {
         selectedScale = scale2;
-    }
-    if (scaleSelection === "scale3") {
+    } else if (scaleSelection === "scale3") {
         selectedScale = scale3;
+    } else {
+        selectedScale = scale1; // Default scale
+    }
+
+    // GPA calculation logic
+    function calculateGPA(gradeValue) {
+        if (isNaN(gradeValue)) return "Invalid Grade"; // Check if gradeValue is a number
+        let gpa = "Invalid Grade"; // Default value for invalid grades
+
+        // Loop through the selected scale and find the corresponding GPA value
+        for (let i = 0; i < selectedScale.length; i++) {
+            const scale = selectedScale[i];
+            const [min, max] = scale.percent.split('-').map(Number); // Extract the range
+
+            if (gradeValue >= min && gradeValue <= max) {
+                gpa = scale.gpa; // Assign GPA from the scale
+                break;
+            }
+        }
+
+        return gpa;
     }
 
 
