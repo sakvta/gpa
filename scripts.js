@@ -77,24 +77,29 @@ function calculateWeightedAverage() {
             if (selectedUniversity === "2") {
                 if (gradeValue >= 95 && gradeValue <= 100) {
                     gradeValue = 4.0;
+                    4
                 } else if (gradeValue >= 90 && gradeValue <= 94) {
-                    gradeValue = 3.6;
-                } else if (gradeValue >= 85 && gradeValue <= 89) {
-                    gradeValue = 3.1;
-                } else if (gradeValue >= 80 && gradeValue <= 84) {
+                    gradeValue = 3.7;
+                } else if (gradeValue >= 87 && gradeValue <= 89) {
+                    gradeValue = 3.4;
+                } else if (gradeValue >= 83 && gradeValue <= 86) {
+                    gradeValue = 3.0;
+                } else if (gradeValue >= 80 && gradeValue <= 82) {
                     gradeValue = 2.7;
-                } else if (gradeValue >= 75 && gradeValue <= 79) {
+                } else if (gradeValue >= 77 && gradeValue <= 79) {
                     gradeValue = 2.3;
-                } else if (gradeValue >= 70 && gradeValue <= 74) {
-                    gradeValue = 1.9;
+                } else if (gradeValue >= 73 && gradeValue <= 76) {
+                    gradeValue = 2.0;
+                } else if (gradeValue >= 70 && gradeValue <= 72) {
+                    gradeValue = 1.7;
                 } else if (gradeValue >= 65 && gradeValue <= 69) {
-                    gradeValue = 1.4;
+                    gradeValue = 1.3;
                 } else if (gradeValue >= 60 && gradeValue <= 64) {
                     gradeValue = 1.0;
                 } else {
                     gradeValue = 0.0;
                 }
-            } else {
+            } else if (selectedUniversity === "1") {
                 // Default GPA scale (UFE or others)
                 if (gradeValue >= 95 && gradeValue <= 100) {
                     gradeValue = 4.0;
@@ -117,6 +122,32 @@ function calculateWeightedAverage() {
                     gradeValue = 1.3;
                 } else if (gradeValue >= 60 && gradeValue <= 64) {
                     gradeValue = 1.0;
+                } else {
+                    gradeValue = 0.0;
+                }
+            } else if (selectedUniversity === "3") {
+                if (gradeValue >= 96 && gradeValue <= 100) {
+                    gradeValue = 4.0;
+                } else if (gradeValue >= 90 && gradeValue <= 95) {
+                    gradeValue = 3.7;
+                } else if (gradeValue >= 87 && gradeValue <= 89) {
+                    gradeValue = 3.4;
+                } else if (gradeValue >= 83 && gradeValue <= 86) {
+                    gradeValue = 3.0;
+                } else if (gradeValue >= 80 && gradeValue <= 82) {
+                    gradeValue = 2.7;
+                } else if (gradeValue >= 77 && gradeValue <= 79) {
+                    gradeValue = 2.4;
+                } else if (gradeValue >= 74 && gradeValue <= 76) {
+                    gradeValue = 2.0;
+                } else if (gradeValue >= 70 && gradeValue <= 73) {
+                    gradeValue = 1.7;
+                } else if (gradeValue >= 67 && gradeValue <= 69) {
+                    gradeValue = 1.3;
+                } else if (gradeValue >= 64 && gradeValue <= 66) {
+                    gradeValue = 1.0;
+                } else if (gradeValue >= 60 && gradeValue <= 63) {
+                    gradeValue = 0.7;
                 } else {
                     gradeValue = 0.0;
                 }

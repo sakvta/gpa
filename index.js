@@ -53,15 +53,31 @@ function changeGPAScale() {
 
     // Custom GPA Scale (or you can add more scales)
     const scale2 = [
+        { letter: "A", percent: "95-100", gpa: "4.0" },
+        { letter: "A-", percent: "90-94", gpa: "3.7" },
+        { letter: "B+", percent: "87-89", gpa: "3.3" },
+        { letter: "B", percent: "83-86", gpa: "3.0" },
+        { letter: "B-", percent: "80-82", gpa: "2.7" },
+        { letter: "C+", percent: "77-79", gpa: "2.3" },
+        { letter: "C", percent: "73-76", gpa: "2.0" },
+        { letter: "C-", percent: "70-72", gpa: "1.7" },
+        { letter: "D", percent: "65-69", gpa: "1.3" },
+        { letter: "D-", percent: "60-64", gpa: "1.0" },
+        { letter: "F", percent: "0-59", gpa: " " }
+    ];
+    const scale3 = [
         { letter: "A", percent: "96-100", gpa: "4.0" },
-        { letter: "A-", percent: "91-95", gpa: "3.6" },
-        { letter: "B", percent: "88-90", gpa: "3.1" },
-        { letter: "B-", percent: "84-87", gpa: "2.7" },
-        { letter: "C", percent: "81-83", gpa: "2.3" },
-        { letter: "C-", percent: "78-80", gpa: "1.9" },
-        { letter: "D", percent: "74-77", gpa: "1.4" },
-        { letter: "D-", percent: "71-73", gpa: "1.0" },
-        { letter: "F", percent: "66-70", gpa: "0" }
+        { letter: "A-", percent: "90-95", gpa: "3.7" },
+        { letter: "B+", percent: "87-89", gpa: "3.3" },
+        { letter: "B", percent: "83-86", gpa: "3.0" },
+        { letter: "B-", percent: "80-82", gpa: "2.7" },
+        { letter: "C+", percent: "77-79", gpa: "2.4" },
+        { letter: "C", percent: "74-76", gpa: "2.0" },
+        { letter: "C-", percent: "70-73", gpa: "1.7" },
+        { letter: "D+", percent: "67-69", gpa: "1.3" },
+        { letter: "D", percent: "64-66", gpa: "1.0" },
+        { letter: "D-", percent: "60-63", gpa: "0.7" },
+        { letter: "F", percent: "0-59", gpa: " " }
     ];
 
     let selectedScale = scale1;
@@ -70,6 +86,10 @@ function changeGPAScale() {
     if (scaleSelection === "scale2") {
         selectedScale = scale2;
     }
+    if (scaleSelection === "scale3") {
+        selectedScale = scale3;
+    }
+
 
     // Clear existing table rows
     tableBody.innerHTML = "";
