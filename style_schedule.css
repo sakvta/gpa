@@ -146,7 +146,7 @@ header {
     color: var(--main-color);
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1286px) {
     header {
         padding: 2px 2%;
         transition: .2s;
@@ -157,9 +157,14 @@ header {
     }
 }
 
-@media (max-width: 1090px) {
-    #menu-icon {
-        display: block;
+@media (max-width: 1324px) {
+    header {
+        padding: 2px 2%;
+        transition: .2s;
+    }
+    .navbar_1 a {
+        padding: 5px 0;
+        margin: 0px 20px;
     }
 }
 
@@ -623,6 +628,7 @@ tr {
     /* You can adjust this width */
     text-align: left;
     padding-right: 10px;
+    color: var(--color-white);
 }
 
 .input-container input,

@@ -89,7 +89,7 @@
     <section class="events_scale">
         <div class="row_scale">
             <div class="col_scale">
-                <h1>GPA Scale</h1>
+                <h1>Mongolian High school GPA Scale</h1>
                 <p>Easily convert your letter grade or percentage grade to a 4-point system with our easy-to-use GPA converter and handy GPA scale.</p>
 
                 <!-- Parent container for flex layout -->
@@ -160,11 +160,14 @@
                             </tr>
                         </tbody>
                     </table>
-
-                    <select id="gpa-scale" onchange="changeGPAScale()">
+                    <div class="school_scale">
+                        <label class="school_scale">School:</label>
+                        <select id="gpa-scale" class="gpa-select" onchange="changeGPAScale()">
                         <option value="scale1">UFE</option>
                         <option value="scale2">MUIS</option>
-                    </select>
+                        </select>
+                    </div>
+
                 </div>
 
                 <div class="example">
@@ -181,9 +184,9 @@
                     <h2>Importance of GPA</h2>
                     <p>The GPA is important for several reasons:</p>
                     <ul>
-                        <li><strong>College Admissions:</strong> GPA is a key factor in college admissions decisions.</li>
-                        <li><strong>Scholarships and Honors:</strong> Many scholarships and academic honors are based on GPA.</li>
-                        <li><strong>Career Opportunities:</strong> Employers may also consider GPA when hiring recent graduates.</li>
+                        <li class="text_net"> <strong>College Admissions:</strong> GPA is a key factor in college admissions decisions.</li>
+                        <li class="text_net"><strong>Scholarships and Honors:</strong> Many scholarships and academic honors are based on GPA.</li>
+                        <li class="text_net"><strong>Career Opportunities:</strong> Employers may also consider GPA when hiring recent graduates.</li>
                     </ul>
                 </div>
             </div>

@@ -7,6 +7,7 @@ menu.onclick = () => {
 }
 
 
+
 const API_KEY = '4ec0b7ca941f24fee591f8cb378e02a9'; // Replace with your own API Key
 const city = 'Mongolia'; // Replace with your city
 
@@ -157,12 +158,13 @@ document.getElementById('kredet').addEventListener('input', calculateGPA);
 let timer;
 
 document.addEventListener('input', e => {
-    const el = e.target;
+        const el = e.target;
 
-    if (el.matches('[data-color]')) {
-        clearTimeout(timer);
-        timer = setTimeout(() => {
-            document.documentElement.style.setProperty(`--color-${el.dataset.color}`, el.value);
-        }, 100)
-    }
-})
+        if (el.matches('[data-color]')) {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                document.documentElement.style.setProperty(`--color-${el.dataset.color}`, el.value);
+            }, 100)
+        }
+    })
+    //contact us    \\
