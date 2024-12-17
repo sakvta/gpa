@@ -617,10 +617,12 @@ tr {
     margin: 0 auto;
 }
 
+
+/* Input container */
+
 .input-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
+    position: relative;
+    margin: 20px;
 }
 
 .input-container label {

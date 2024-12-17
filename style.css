@@ -290,14 +290,23 @@ header {
 }
 
 @media (max-width: 600px) {
-    /* Adjust the max-width as needed */
+    /* Current styles for up to 600px width */
     .container_plus {
         padding: 20px;
-        /* Reduce padding for smaller screens */
         margin: 15px auto;
-        /* Adjust margins */
         border-radius: 15px;
-        /* Optional: smaller border radius */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjustments for phone screens (up to 480px) */
+    .container_plus {
+        padding: 15px;
+        /* Reduce padding further */
+        margin: 10px auto;
+        /* Smaller margins */
+        border-radius: 10px;
+        /* Smaller border radius for smaller screens */
     }
 }
 
@@ -332,14 +341,26 @@ h6 {
 }
 
 @media (max-width: 600px) {
-    /* Adjust the max-width as needed */
+    /* Styles for devices with max-width 600px */
     .time-weather {
         padding: 10px;
-        /* Reduce padding for smaller screens */
+        /* Reduce padding */
         height: auto;
         /* Allow height to adjust based on content */
         margin-top: 15px;
-        /* Reduce margin for smaller screens */
+        /* Reduce top margin */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Additional adjustments for phone screens (max-width 480px) */
+    .time-weather {
+        padding: 8px;
+        /* Further reduce padding */
+        margin-top: 10px;
+        /* Smaller top margin for compact layout */
+        font-size: 14px;
+        /* Optional: adjust font size for better readability */
     }
 }
 
@@ -467,6 +488,12 @@ h6 {
 }
 
 #resultContainer {
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--color-white);
+}
+
+#allresultGPA {
     font-weight: 600;
     font-size: 1.4rem;
     color: var(--color-white);
@@ -627,16 +654,30 @@ input::placeholder {
 }
 
 @media (max-width: 600px) {
-    /* Adjust the max-width as needed */
+    /* Styles for devices with max-width 600px */
     .form-group input {
         padding: 6px;
-        /* Reduce padding for smaller screens */
+        /* Reduce padding */
         font-size: 12px;
-        /* Decrease font size for better fit */
+        /* Decrease font size */
         margin-left: 5px;
         /* Reduce left margin */
         width: 100%;
-        /* Make the input take full width */
+        /* Full width for better usability */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Additional adjustments for smaller phone screens */
+    .form-group input {
+        padding: 4px;
+        /* Further reduce padding */
+        font-size: 12px;
+        /* Smaller font for compact screens */
+        margin-left: 0;
+        /* Remove left margin for alignment */
+        width: 100%;
+        /* Ensure it remains full width */
     }
 }
 
@@ -656,16 +697,30 @@ input::placeholder {
 }
 
 @media (max-width: 600px) {
-    /* Adjust the max-width as needed */
+    /* Styles for devices with max-width 600px */
     .row {
         padding-left: 20px;
-        /* Reduce padding for smaller screens */
+        /* Reduce left padding */
         padding-right: 20px;
-        /* Optional: add right padding */
+        /* Add or adjust right padding */
         flex-direction: column;
-        /* Stack items vertically if needed */
+        /* Stack items vertically */
         align-items: flex-start;
         /* Align items to the start */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Additional adjustments for phone screens */
+    .row {
+        padding-left: 10px;
+        /* Further reduce left padding */
+        padding-right: 10px;
+        /* Further reduce right padding */
+        gap: 10px;
+        /* Add spacing between items for better readability */
+        align-items: stretch;
+        /* Make items stretch to fit the container */
     }
 }
 
@@ -788,14 +843,20 @@ hr.new4 {
 }
 
 @media (max-width: 600px) {
-    /* Adjust the max-width as needed */
+    /* Styles for hr.new4 on smaller screens */
     hr.new4 {
         margin-top: 100px;
-        /* Reduce top margin for smaller screens */
+        /* Adjust top margin */
         width: 90%;
-        /* Increase width to take more space on mobile */
+        /* Expand width to occupy more space */
         border-width: 2px;
-        /* Optional: adjust border thickness */
+        /* Set a thicker border for better visibility */
+        border-color: #ccc;
+        /* Optional: define a softer border color */
+        margin-left: auto;
+        /* Center align horizontally */
+        margin-right: auto;
+        /* Center align horizontally */
     }
 }
 
@@ -824,6 +885,20 @@ hr.new5 {
 }
 
 @media (max-width: 600px) {
+    /* Adjust the max-width as needed */
+    .row2 {
+        padding-left: 20px;
+        /* Reduce padding for smaller screens */
+        padding-right: 20px;
+        /* Optional: add right padding */
+        flex-direction: column;
+        /* Stack items vertically if needed */
+        align-items: flex-start;
+        /* Align items to the start */
+    }
+}
+
+@media (max-width: 480px) {
     /* Adjust the max-width as needed */
     .row2 {
         padding-left: 20px;
@@ -1670,3 +1745,48 @@ li {
 
 
 /*contact us */
+
+.allgpainput {
+    color: white;
+    border: 2px solid #07ff6e;
+    border-radius: 10px;
+    padding: 10px 25px;
+    background: transparent;
+    max-width: 190px;
+}
+
+.allgpainput:active {
+    box-shadow: 2px 2px 15px #ffa807 inset;
+}
+
+.form-group-gpa {
+    display: flex;
+    align-items: center;
+    /* Vertically center the inputs */
+    justify-content: center;
+    /* Horizontally center the inputs */
+    margin-bottom: 10px;
+    /* Keep spacing below the group */
+    gap: 1rem;
+    /* Reduce gap between inputs to make it more compact */
+}
+
+.form-group-gpa input {
+    width: 160px;
+    /* Shrink input width */
+    padding: 8px;
+    /* Add padding for readability */
+    font-size: 14px;
+    /* Reduce font size for compact appearance */
+    box-sizing: border-box;
+    /* Include padding and border in width */
+}
+
+.form-group-gpa input::placeholder {
+    color: #888;
+    /* Light gray color */
+    font-style: normal;
+    /* Optional: Keep font style normal */
+    opacity: 0.8;
+    /* Slightly transparent */
+}

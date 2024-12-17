@@ -153,12 +153,21 @@
                     <button type="button" class="remove-button" onclick="removeInputFields(this)"></button>
                 </div>
 
+                <div class="form-group" id="hiddenInputGroup" style="display: none;">
+                    <input type="text" class="subject" placeholder="Subject name ...">
+                    <input type="number" class="credit" value="3">
+                    <input type="number" class="grade" placeholder="Grade...">
+                </div>
+
                 <!-- Add and Calculate Buttons -->
                 <div class="buttons">
-                    <button type="button" class="button-3" onclick="addInputFields()">Add Course</button><span>
-                    <button type="button" class="button-3"   onclick="calculateWeightedAverage()">Calculate GPA</button>
-                 </div>
-                
+                    <button type="button" class="button-3" onclick="addInputFields()">Add Course</button>
+                    <button type="button" class="button-3" onclick="addCreditGPAFields()">Add All Gpa</button>
+
+                </div>
+
+
+
             </form>
         </div>
 
@@ -177,13 +186,25 @@
 
             <div class="notification">
                 <div class="content">
-                    
+
                     <div class="info">
-                        <h3>Your GPA</h3>
+                        <h3>This semester</h3>
                     </div>
                     <div id="resultContainer">
                         <c><strong>0.00</strong></c>
                     </div>
+                </div>
+            </div>
+            <div class="notification">
+                <div class="content">
+
+                    <div class="info">
+                        <h3>Your GPA</h3>
+                    </div>
+                    <div id="allresultContainer">
+                        <span id="allresultGPA">0.00</span>
+                    </div>
+
                 </div>
             </div>
 
@@ -207,8 +228,8 @@
                 <div class="text-content">
                     <h5>GPA SCALE</h5>
                     <h4>Conversion about Scales</h4>
-                    <p>This website serves as a GPA calculator specifically designed for Mongolian universities. While there are numerous online calculators available, Mongolian universities have distinct GPA systems, making this site tailored to the GPA rates
-                    applicable to multiple universities in Mongolia.</p>
+                    <p>This website serves as a GPA calculator specifically designed for Mongolian universities. While there are numerous online calculators available, Mongolian universities have distinct GPA systems, making this site tailored to the GPA
+                        rates applicable to multiple universities in Mongolia.</p>
                     <a href="./gpa-scale"><button>Learn more</button></a>
                 </div>
                 <img src="image_1.png" alt="GPA Scale">
@@ -237,9 +258,9 @@
             </a>
             <a href="./gpa-scale">
                 <div class="low3">
-                <h7>WEIGHTED GRADE CALCULATOR</h7>
-                <p>Discover how your grades this semester will affect your GPA.</p>
-             </div>
+                    <h7>WEIGHTED GRADE CALCULATOR</h7>
+                    <p>Discover how your grades this semester will affect your GPA.</p>
+                </div>
             </a>
         </div>
     </section>
@@ -248,85 +269,85 @@
     <section class="events3">
         <footer class="footer">
             <div class="footer__addr">
-              <h1 class="footer__logo">STAR</h1>
-                  
-              <h2>Contact</h2>
-              
-              <address>
+                <h1 class="footer__logo">STAR</h1>
+
+                <h2>Contact</h2>
+
+                <address>
                 Mongolia Ulaanbaatar +976 8023-3378<br>
                     
                 <a class="footer__btn" href="mailto:b22fa1028@ufe.edu.mn">Email Us</a>
               </address>
             </div>
-            
+
             <ul class="footer__nav">
-              <li class="nav__item">
-                <h2 class="nav__title">GPA Calculator</h2>
-          
-                <ul class="nav__ul">
-                  <li>
-                    <a href="./gpa-raise">Raise GPA</a>
-                  </li>
-          
-                  <li>
-                    <a href="./gpa-scale">Gpa scale</a>
-                  </li>
-                      
-                  <li>
-                    <a href="./schedule">Schedule</a>
-                  </li>
-                </ul>
-              </li>
-              
-              <li class="nav__item nav__item--extra">
-                <h2 class="nav__title">Guide</h2>
-                
-                <ul class="nav__ul nav__ul--extra">
-                  <li>
-                    <a href="./how-to-cal">How To Calculate GPA</a>
-                  </li>
-                  
-                  <li>
-                    <a href="./schedule_explain">Schedule Guide</a>
-                  </li>
-                  
-                  <li>
-                    <a href="#">&nbsp</a>
-                  </li>
-                  
-                  <li>
-                    <a href="#">&nbsp</a>
-                  </li>
-                  
-                  <li>
-                    <a href="#">&nbsp</a>
-                  </li>
-                  
-                  <li>
-                    <a href="#">&nbsp</a>
-                  </li>
-                </ul>
-              </li>
-              
-              <li class="nav__item">
-                <h2 class="nav__title">Legal</h2>
-                
-                <ul class="nav__ul">
-                  <li>
-                    <a href="privacy_policy.html">Privacy Policy</a>
-                  </li>
-                  
-                </ul>
-              </li>
+                <li class="nav__item">
+                    <h2 class="nav__title">GPA Calculator</h2>
+
+                    <ul class="nav__ul">
+                        <li>
+                            <a href="./gpa-raise">Raise GPA</a>
+                        </li>
+
+                        <li>
+                            <a href="./gpa-scale">Gpa scale</a>
+                        </li>
+
+                        <li>
+                            <a href="./schedule">Schedule</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav__item nav__item--extra">
+                    <h2 class="nav__title">Guide</h2>
+
+                    <ul class="nav__ul nav__ul--extra">
+                        <li>
+                            <a href="./how-to-cal">How To Calculate GPA</a>
+                        </li>
+
+                        <li>
+                            <a href="./schedule_explain">Schedule Guide</a>
+                        </li>
+
+                        <li>
+                            <a href="#">&nbsp</a>
+                        </li>
+
+                        <li>
+                            <a href="#">&nbsp</a>
+                        </li>
+
+                        <li>
+                            <a href="#">&nbsp</a>
+                        </li>
+
+                        <li>
+                            <a href="#">&nbsp</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav__item">
+                    <h2 class="nav__title">Legal</h2>
+
+                    <ul class="nav__ul">
+                        <li>
+                            <a href="privacy_policy.html">Privacy Policy</a>
+                        </li>
+
+                    </ul>
+                </li>
             </ul>
-            
+
             <div class="legal">
-              <p>&copy; 2024.</p>
-              
-              <div class="legal__links">
-                <span>Made with <span class="heart">♥</span> SAKVTA</span>
+                <p>&copy; 2024.</p>
+
+                <div class="legal__links">
+                    <span>Made with <span class="heart">♥</span> SAKVTA</span>
                 </div>
-        </div>
+            </div>
         </footer>
 
     </section>
@@ -334,9 +355,10 @@
 
 
 
-
+    <script src="scripts_cal.js"></script>
     <script src="scripts.js"></script>
     <script src="index.js"></script>
+
 
 
 </body>
