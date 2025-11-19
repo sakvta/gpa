@@ -1,305 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="icon.ico">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="icon.ico" />
     <title>Gpa calculator-Mongolian Universities Gpa Calculator</title>
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-    <!------custum css link ------>
-    <link rel="stylesheet" type="text/css" href="style_schedule.css">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
 
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="style_schedule - Copy.css" />
 
-    <!------boxicons ------>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
-    <!------remix icons ------>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
-    <!------google font link ------>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- remix icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
 
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1CE6T9FDMK"></script>
-<script>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-1CE6T9FDMK"
+  ></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
-
     function gtag() {
-        dataLayer.push(arguments);
+      dataLayer.push(arguments);
     }
-    gtag('js', new Date());
+    gtag("js", new Date());
+    gtag("config", "G-1CE6T9FDMK");
+  </script>
 
-    gtag('config', 'G-1CE6T9FDMK');
-</script>
-
-<body>
+  <body>
     <header>
-        <!------google font link ------>
-        <a href="./" class="logo">
-            <img src="logo.png" alt="Logo" class="logo-img">
-            <span>
-                <span class="star">Star</span>
-            <span class="gpa">GPA</span>
-            </span>
-        </a>
+      <a href="./" class="logo">
+        <img src="logo.png" alt="Logo" class="logo-img" />
+        <span>
+          <span class="star">Star</span>
+          <span class="gpa">GPA</span>
+        </span>
+      </a>
 
+      <ul class="navbar_1">
+        <li><a href="./" class="active">Gpa calculator</a></li>
+        <li><a href="./gpa-raise">Raise GPA</a></li>
+        <li><a href="./gpa-scale">Gpa scale</a></li>
+        <li><a href="./how-to-cal">Guide</a></li>
+        <li><a href="./schedule">Schedule</a></li>
+        <li><a href="./Contact">Contact</a></li>
+      </ul>
 
-        <ul class="navbar_1">
-            <li><a href="./" class="active">Gpa calculator</a></li>
-            <li><a href="./gpa-raise">Raise GPA</a></li>
-            <li><a href="./gpa-scale">Gpa scale</a></li>
-            <li><a href="./how-to-cal">Guide</a></li>
-            <li><a href="./schedule">Schedule</a></li>
-            <li><a href="./Contact">Contact</a></li>
+      <side>
+        <div class="close" id="close-btn"></div>
 
-        </ul>
-        <side>
-            <div class="close" id="close-btn">
-            </div>
+        <div class="nav">
+          <button id="menu-btn">
+            <span class="material-icons-sharp">menu</span>
+          </button>
 
-            <div class="nav">
-                <button id="menu-btn">
-                    <span class="material-icons-sharp">
-                        menu
-                    </span>
-                </button>
-
-                <div class="dark-mode">
-                    <span class="material-icons-sharp">
-                            dark_mode
-                        </span>
-                    <span class="material-icons-sharp active">
-                            light_mode
-                        </span>
-                </div>
-            </div>
-
-
-        </side>
-        <div>
-            <div class="bx bx-menu" id="menu-icon"></div>
+          <div class="dark-mode">
+            <span class="material-icons-sharp">dark_mode</span>
+            <span class="material-icons-sharp active">light_mode</span>
+          </div>
         </div>
+      </side>
 
+      <div>
+        <div class="bx bx-menu" id="menu-icon"></div>
+      </div>
     </header>
+
     <section class="Header1">
-        <h1>Lesson Schedule</h1>
-        <p>The scheduling system currently being developed is exclusively for UFE. However, there are plans to expand and create scheduling systems tailored to other schools in the future.</p>
-        <a href="./schedule_explain"><button>How to Create Schedule</button></a>
-        </div>
+      <h1>Lesson Schedule</h1>
+      <p>
+        The scheduling system currently being developed is exclusively for UFE.
+        However, there are plans to expand and create scheduling systems
+        tailored to other schools in the future.
+      </p>
+      <a href="./schedule_explain"><button>How to Create Schedule</button></a>
     </section>
+
     <section class="schedule_1">
-        <div class="schedulemain">
-            <h1>Create Schedule</h1>
+      <div class="schedule-layout">
+        <!-- Зүүн тал: FILTER / SEARCH PANEL -->
+        <aside class="filters-panel">
+          <h2>Create Schedule</h2>
+          <p class="filters-hint"></p>
 
+          <!-- Хичээлийн код -->
+          <div class="filter-group">
+            <label>Lesson codes</label>
 
-
-            <div class="input-container">
-                <label for="lessonCodes">Enter Lesson Codes (comma separated):</label>
-                <input type="text" id="lessonCodes" placeholder="FIN332, MGM332">
-                <button onclick="generateSchedules()">Generate Schedule</button>
+            <div class="chip-input" id="lessonChipInput">
+              <div class="chip-list" id="lessonChips"></div>
+              <input
+                type="text"
+                id="lessonCodesTemp"
+                placeholder="Type code and press Enter"
+              />
             </div>
 
-            <div class="input-container">
-                <label for="dayFilter">Select Number of Days:</label>
-                <select id="dayFilter" onchange="filterSchedules()">
-                    <option value="any">Any</option>
-                    <option value="1">1 Day</option>
-                    <option value="2">2 Days</option>
-                    <option value="3">3 Days</option>
-                    <option value="4">4 Days</option>
-                    <option value="5">5 Days</option>
-                </select>
+            <!-- Үнэн value энд хадгалагдана, generateSchedules() үүнийг уншина -->
+            <input type="hidden" id="lessonCodes" value="" />
+
+            <span class="filter-help"> </span>
+          </div>
+
+          <!-- Өдрийн тоо -->
+          <div class="filter-group">
+            <label>Number of days</label>
+
+            <div class="day-toggle-group" id="dayToggleGroup">
+              <button type="button" class="day-toggle active" data-days="any">
+                Any
+              </button>
+              <button type="button" class="day-toggle" data-days="1">
+                1 day
+              </button>
+              <button type="button" class="day-toggle" data-days="2">
+                2 days
+              </button>
+              <button type="button" class="day-toggle" data-days="3">
+                3 days
+              </button>
+              <button type="button" class="day-toggle" data-days="4">
+                4 days
+              </button>
+              <button type="button" class="day-toggle" data-days="5">
+                5 days
+              </button>
             </div>
 
-            <div class="input-container">
-                <label for="groupNumber">Enter Group Numbers (comma separated):</label>
-                <input type="text" id="groupNumber" placeholder="Enter group numbers">
-                <button onclick="filterSchedules()">Filter by Group Numbers</button>
+            <input type="hidden" id="dayFilter" value="any" />
+          </div>
+
+          <!-- Group numbers -->
+          <div class="filter-group">
+            <label>Group numbers</label>
+
+            <div class="chip-input" id="groupChipInput">
+              <div class="chip-list" id="groupChips"></div>
+              <input
+                type="text"
+                id="groupInputTemp"
+                placeholder="Type group and press Enter"
+              />
             </div>
 
-            <div class="input-container">`
-                <label for="teacherInput">Select Teacher:</label>
-                <input type="text" id="teacherInput" placeholder="Type teacher's name" oninput="showSuggestions(this.value)">
-                <div id="teacherSuggestions"></div>
-            </div>
+            <input type="hidden" id="groupNumber" value="" />
 
-            <div id="schedule"></div>
-            <div id="scheduleCount"></div>
+            <span class="filter-help"> </span>
+          </div>
 
+          <!-- Багш хэсэг түр байхгүй -->
+        </aside>
+
+        <!-- Баруун тал: TABLE / SCHEDULE RESULT -->
+        <div class="schedule-results">
+          <div class="schedule-header">
+            <h2>Schedule variants</h2>
+            <p class="schedule-subtitle"></p>
+          </div>
+
+          <div id="schedule"></div>
         </div>
+      </div>
+
+      <!-- Нийт хувилбар тоологч -->
+      <div id="scheduleCount"></div>
     </section>
 
-
-
-    <script>
-        // Sample teacher schedule data
-        const teacherData = [{ name: "X.X-1", lessons: [ { code: "ACC121", day: "undefined", time: "07:40-10:30", group: "1-100"} ] }, { name: "Б.АВИРМЭД", lessons: [ { code: "AUD331", day: "Monday", time: "10:40-13:30", group: "101"}, { code: "ACCS432", day: "Monday", time: "14:20-17:10", group: "102"}, { code: "AUD433", day: "undefined", time: "10:40-13:30 - Online", group: "103"} ] }, { name: "Г.ГАНТУЛГА", lessons: [ { code: "ACC335", day: "Monday", time: "07:40-10:30", group: "130"}, { code: "ACC434", day: "Monday", time: "10:40-13:30", group: "132"}, { code: "AUD331", day: "Thursday", time: "07:40-10:30", group: "131"}, { code: "ACC336", day: "Thursday", time: "10:40-13:30", group: "133"} ] }, { name: "Б.Ганчимэг", lessons: [ { code: "ACC221", day: "Tuesday", time: "07:40-10:30", group: "1-110"}, { code: "ACC436", day: "Thursday", time: "07:40-10:30", group: "104"}, { code: "ACC226", day: "undefined", time: "07:40-10:30", group: "1-105"}, { code: "ACC226", day: "undefined", time: "10:40-13:30", group: "1-104"} ] }, { name: "Ж.ДАВААЖАРГАЛ", lessons: [ { code: "CMG222", day: "Tuesday", time: "10:40-13:30", group: "109"}, { code: "CMG221", day: "Friday", time: "10:40-13:30", group: "107"}, { code: "CMG222", day: "undefined", time: "14:20-17:10", group: "108"}, { code: "CMG331", day: "undefined", time: "10:40-13:30 - Online", group: "111"} ] }, { name: "П.ДОРЖПҮРЭВ", lessons: [ { code: "TAX331", day: "Tuesday", time: "10:40-13:30", group: "115"}, { code: "TAX432", day: "Wednesday", time: "14:20-17:10", group: "116"}, { code: "TAX331", day: "Thursday", time: "07:40-10:30", group: "114"} ] }, { name: "Б.ДЭЛГЭРСАЙХАН", lessons: [ { code: "CMA327", day: "Monday", time: "10:40-13:30", group: "105"}, { code: "CMA327", day: "Monday", time: "14:20-17:10", group: "106"} ] }, { name: "Ж.ӨЛЗИЙБАЯР", lessons: [ { code: "ACC222", day: "Thursday", time: "10:40-13:30", group: "112"}, { code: "ACC226", day: "Thursday", time: "14:20-17:10", group: "1-103"} ] }, { name: "Ч.ӨНӨРЖАРГАЛ", lessons: [ { code: "TAX331", day: "Tuesday", time: "10:40-13:30", group: "136"}, { code: "TAX331", day: "Wednesday", time: "14:20-17:10", group: "2-105"}, { code: "TAX433", day: "Thursday", time: "10:40-13:30", group: "134"}, { code: "TAX431", day: "Thursday", time: "14:20-17:10", group: "137"} ] }, { name: "A.ОДГЭРЭЛ", lessons: [ { code: "AUD432", day: "undefined", time: "07:40-10:30 - Online", group: "135"}, { code: "AUD331", day: "undefined", time: "10:40-13:30 - Online", group: "100"} ] }, { name: "Т.ПҮРЭВДУЛАМ", lessons: [ { code: "CMG432", day: "Monday", time: "10:40-13:30", group: "123"}, { code: "CMG222", day: "Tuesday", time: "10:40-13:30", group: "2-103"}, { code: "CMG221", day: "Wednesday", time: "14:20-17:10", group: "122"}, { code: "ACC226", day: "Thursday", time: "10:40-13:30", group: "1-102"}, { code: "CMA327", day: "undefined", time: "07:40-10:30 - Online", group: "121"}, { code: "ACC121", day: "undefined", time: "10:40-13:30", group: "1-101"} ] }, { name: "Ц.ПҮРЭВТУЯА", lessons: [ { code: "CMA327", day: "Thursday", time: "07:40-10:30", group: "126"}, { code: "CMG331", day: "Thursday", time: "10:40-13:30", group: "127"}, { code: "CMA326", day: "Friday", time: "07:40-10:30", group: "125"}, { code: "CMA226", day: "Friday", time: "10:40-13:30", group: "124"} ] }, { name: "Б.ХАЛИУНАА", lessons: [ { code: "ACC226", day: "Thursday", time: "10:40-13:30", group: "1-108"}, { code: "ACC226", day: "Thursday", time: "14:20-17:10", group: "1-109"}, { code: "ACC226", day: "undefined", time: "07:40-10:30", group: "2-102"}, { code: "ACC226", day: "undefined", time: "10:40-13:30", group: "2-101"} ] }, { name: "Ц.ХАТАНХАНГАЙ", lessons: [ { code: "ACC337", day: "Thursday", time: "10:40-13:30", group: "128"}, { code: "AIS331", day: "Thursday", time: "14:20-17:10", group: "129"} ] }, { name: "Н.ШИНЭ-ӨЛЗИЙ", lessons: [ { code: "ACC226", day: "Friday", time: "07:40-10:30", group: "1-106"}, { code: "ACC222", day: "Friday", time: "10:40-13:30", group: "2-100"}, { code: "ACC226", day: "undefined", time: "10:40-13:30", group: "1-107"} ] }, { name: "П.ЭЛБЭГЗАЯА", lessons: [ { code: "CMG221", day: "Tuesday", time: "07:40-10:30", group: "120"}, { code: "CMA327", day: "Tuesday", time: "10:40-13:30", group: "118"}, { code: "CMA327", day: "Thursday", time: "07:40-10:30", group: "119"}, { code: "CMA226", day: "Thursday", time: "10:40-13:30", group: "117"} ] }, { name: "С.Баярбаатар", lessons: [ { code: "FIN445", day: "Tuesday", time: "10:40-13:30", group: "264"}, { code: "FIN445", day: "Wednesday", time: "14:20-17:10", group: "265"} ] }, { name: "Л.БОЛОРЦЭЦЭГ", lessons: [ { code: "FIN444", day: "Monday", time: "14:20-17:10", group: "262"}, { code: "FIN442", day: "Thursday", time: "07:40-10:30", group: "256"}, { code: "FIN334", day: "Thursday", time: "10:40-13:30", group: "240"}, { code: "FIN444", day: "Friday", time: "07:40-10:30", group: "261"}, { code: "FIN122", day: "Friday", time: "10:40-13:30", group: "1-210"}, { code: "FIN122", day: "undefined", time: "07:40-10:30", group: "203"}, { code: "FIN330", day: "undefined", time: "10:40-13:30", group: "2-205"} ] }, { name: "Д.БОЛЬТОГТОХ", lessons: [ { code: "FIN330", day: "Thursday", time: "07:40-10:30", group: "2-204"}, { code: "FIN433", day: "Thursday", time: "10:40-13:30", group: "246"}, { code: "FIN330", day: "Friday", time: "10:40-13:30", group: "225"} ] }, { name: "Я.ДАШПИЛ", lessons: [ { code: "FIN435", day: "Monday", time: "07:40-10:30", group: "250"}, { code: "FIN447", day: "Thursday", time: "10:40-13:30", group: "266"}, { code: "FIN321", day: "undefined", time: "07:40-10:30", group: "2-202"} ] }, { name: "Ж.ДЭЛГЭРСАЙХАН", lessons: [ { code: "FIN334", day: "Thursday", time: "14:20-17:10", group: "239"} ] }, { name: "Э.ЖАРГАЛМАА", lessons: [ { code: "FIN431", day: "Monday", time: "14:20-17:10", group: "244"}, { code: "FIN321", day: "Tuesday", time: "07:40-10:30", group: "221"}, { code: "FIN221", day: "Tuesday", time: "10:40-13:30", group: "210"}, { code: "FIN122", day: "Thursday", time: "14:20-17:10", group: "1-203"}, { code: "BMG432", day: "Friday", time: "10:40-13:30", group: "278"}, { code: "INS423", day: "undefined", time: "14:20-17:10", group: "273"}, { code: "FIN221", day: "undefined", time: "07:40-10:30", group: "209"}, { code: "FIN226", day: "undefined", time: "10:40-13:30", group: "217"} ] }, { name: "Н.МӨНХЖАРГАЛ", lessons: [ { code: "FIN122", day: "Thursday", time: "07:40-10:30", group: "1-202"}, { code: "FIN122", day: "undefined", time: "14:20-17:10", group: "1-206"} ] }, { name: "Б.Номин", lessons: [ { code: "FIN334", day: "Monday", time: "07:40-10:30", group: "238"}, { code: "FIN333", day: "Monday", time: "10:40-13:30", group: "232"}, { code: "FIN321", day: "Thursday", time: "10:40-13:30", group: "2-200"}, { code: "FIN226", day: "Thursday", time: "14:20-17:10", group: "1-212"}, { code: "FIN444", day: "Friday", time: "10:40-13:30", group: "258"}, { code: "FIN221", day: "undefined", time: "14:20-17:10", group: "204"}, { code: "FIN221", day: "undefined", time: "07:40-10:30", group: "205"}, { code: "FIN122", day: "undefined", time: "10:40-13:30", group: "201"} ] }, { name: "Ц.НОМИН-ЭРДЭНЭ", lessons: [ { code: "FIN334", day: "Monday", time: "14:20-17:10", group: "242"}, { code: "INV421", day: "Tuesday", time: "07:40-10:30", group: "274"}, { code: "INV421", day: "Tuesday", time: "10:40-13:30", group: "275"}, { code: "FMCS432", day: "Thursday", time: "07:40-10:30", group: "268"}, { code: "FMCS432", day: "Thursday", time: "14:20-17:10", group: "269"}, { code: "FIN334", day: "Friday", time: "10:40-13:30", group: "241"}, { code: "FMCS432", day: "undefined", time: "14:20-17:10", group: "270"} ] }, { name: "С.ӨНӨРЖАРГАЛ", lessons: [ { code: "FIN333", day: "Thursday", time: "10:40-13:30", group: "237"}, { code: "FIN333", day: "Thursday", time: "14:20-17:10", group: "236"}, { code: "FIN441", day: "Friday", time: "10:40-13:30", group: "255"}, { code: "FIN441", day: "undefined", time: "14:20-17:10", group: "254"}, { code: "FIN321", day: "undefined", time: "07:40-10:30", group: "224"}, { code: "FIN221", day: "undefined", time: "10:40-13:30", group: "212"} ] }, { name: "Т.ОЮУНГЭРЭЛ", lessons: [ { code: "FIN330", day: "Monday", time: "10:40-13:30", group: "2-203"}, { code: "FIN321", day: "Monday", time: "14:20-17:10", group: "222"}, { code: "FIN433", day: "Tuesday", time: "10:40-13:30", group: "247"}, { code: "FIN433", day: "Wednesday", time: "14:20-17:10", group: "248"}, { code: "FIN221", day: "Thursday", time: "14:20-17:10", group: "211"} ] }, { name: "Е.СОЁЛМАА", lessons: [ { code: "FIN444", day: "Monday", time: "07:40-10:30", group: "259"}, { code: "FIN435", day: "Monday", time: "10:40-13:30", group: "249"}, { code: "FIN333", day: "Tuesday", time: "10:40-13:30", group: "233"}, { code: "FIN444", day: "Wednesday", time: "14:20-17:10", group: "260"}, { code: "FIN333", day: "Friday", time: "07:40-10:30", group: "234"} ] }, { name: "Э.ТАМИР", lessons: [ { code: "FIN333", day: "Monday", time: "10:40-13:30", group: "235"}, { code: "FIN439", day: "Monday", time: "14:20-17:10", group: "252"}, { code: "BMG332", day: "Tuesday", time: "07:40-10:30", group: "277"}, { code: "FTF433", day: "Tuesday", time: "10:40-13:30", group: "271"} ] }, { name: "Э.Төгсжаргал", lessons: [ { code: "FIN321", day: "Monday", time: "10:40-13:30", group: "220"}, { code: "FIN226", day: "Monday", time: "14:20-17:10", group: "216"}, { code: "FIN431", day: "Thursday", time: "10:40-13:30", group: "243"}, { code: "INS421", day: "Thursday", time: "14:20-17:10", group: "272"}, { code: "FIN221", day: "Friday", time: "10:40-13:30", group: "208"}, { code: "INS122", day: "undefined", time: "14:20-17:10", group: "1-207"} ] }, { name: "Б.ТУЛГА", lessons: [ { code: "FIN433", day: "Monday", time: "07:40-10:30", group: "245"}, { code: "FIN321", day: "Monday", time: "10:40-13:30", group: "219"}, { code: "FIN226", day: "Thursday", time: "14:20-17:10", group: "1-213"}, { code: "FIN221", day: "Friday", time: "07:40-10:30", group: "207"}, { code: "FIN226", day: "undefined", time: "14:20-17:10", group: "215"}, { code: "FIN321", day: "undefined", time: "07:40-10:30", group: "2-201"}, { code: "FIN122", day: "undefined", time: "10:40-13:30", group: "202"} ] }, { name: "Т.ТУУЛ", lessons: [ { code: "FIN321", day: "Monday", time: "07:40-10:30", group: "223"}, { code: "INV421", day: "Monday", time: "10:40-13:30", group: "276"}, { code: "FIN435", day: "Tuesday", time: "07:40-10:30", group: "251"}, { code: "FIN442", day: "Tuesday", time: "10:40-13:30", group: "257"}, { code: "FIN221", day: "Thursday", time: "07:40-10:30", group: "1-211"}, { code: "FIN447", day: "Thursday", time: "10:40-13:30", group: "267"} ] }, { name: "Т.ТУЯА", lessons: [ { code: "FIN332", day: "Tuesday", time: "10:40-13:30", group: "227"}, { code: "FIN332", day: "Wednesday", time: "14:20-17:10", group: "226"}, { code: "FIN122", day: "Thursday", time: "10:40-13:30", group: "1-209"}, { code: "FIN122", day: "Thursday", time: "14:20-17:10", group: "1-208"}, { code: "FIN332", day: "Friday", time: "10:40-13:30", group: "228"} ] }, { name: "А.Энхсүрэн", lessons: [ { code: "FIN122", day: "Monday", time: "07:40-10:30", group: "200"}, { code: "FIN441", day: "Monday", time: "10:40-13:30", group: "253"}, { code: "FIN445", day: "Wednesday", time: "14:20-17:10", group: "263"}, { code: "FIN122", day: "Thursday", time: "07:40-10:30", group: "1-204"}, { code: "FIN122", day: "Thursday", time: "14:20-17:10", group: "1-200"} ] }, { name: "Ж.Эрдэнэчулуун", lessons: [ { code: "FIN221", day: "Thursday", time: "10:40-13:30", group: "213"}, { code: "FIN122", day: "Thursday", time: "14:20-17:10", group: "1-201"}, { code: "FIN221", day: "Friday", time: "10:40-13:30", group: "214"}, { code: "FIN226", day: "undefined", time: "14:20-17:10", group: "218"} ] }, { name: "X.X-10", lessons: [ { code: "BUS446", day: "Monday", time: "07:40-10:30", group: "302"}, { code: "MGM332", day: "Monday", time: "14:20-17:10", group: "300"}, { code: "BUS321", day: "Thursday", time: "10:40-13:30", group: "2-302"}, { code: "BUS321", day: "undefined", time: "07:40-10:30", group: "2-303"} ] }, { name: "X.X-11", lessons: [ { code: "BUS126", day: "Thursday", time: "07:40-10:30", group: "1-311"}, { code: "BUS126", day: "Thursday", time: "10:40-13:30", group: "1-310"}, { code: "BUS321", day: "Thursday", time: "14:20-17:10", group: "2-300"} ] }, { name: "X.X-12", lessons: [ { code: "MGM221", day: "Thursday", time: "10:40-13:30", group: "1-308"}, { code: "MGM221", day: "Thursday", time: "14:20-17:10", group: "1-307"} ] }, { name: "П.БАЯРЖАРГАЛ", lessons: [ { code: "MGM432", day: "Tuesday", time: "07:40-10:30", group: "313"}, { code: "MGM333", day: "Tuesday", time: "10:40-13:30", group: "314"}, { code: "MGM333", day: "Thursday", time: "10:40-13:30", group: "315"}, { code: "MGM121", day: "Friday", time: "10:40-13:30", group: "1-300"}, { code: "MGM121", day: "undefined", time: "14:20-17:10", group: "1-301"} ] }, { name: "Б.БАЯРСАЙХАН", lessons: [ { code: "MGM433", day: "Tuesday", time: "10:40-13:30", group: "305"}, { code: "MGM332", day: "Thursday", time: "07:40-10:30", group: "303"}, { code: "MGM332", day: "Thursday", time: "10:40-13:30", group: "304"}, { code: "BMGM432", day: "Friday", time: "10:40-13:30", group: "2-304"} ] }, { name: "Ц.БУЛГАН", lessons: [ { code: "MGM435", day: "Monday", time: "10:40-13:30", group: "320"}, { code: "BMGM435", day: "Monday", time: "14:20-17:10", group: "2-305"} ] }, { name: "Л.ГАНТУЯА", lessons: [ { code: "BUS321", day: "Monday", time: "10:40-13:30", group: "312"}, { code: "MGM221", day: "Thursday", time: "10:40-13:30", group: "1-315"}, { code: "MGM221", day: "Thursday", time: "14:20-17:10", group: "1-314"} ] }, { name: "Б.ИДЭРЦОГТ", lessons: [ { code: "MGM331", day: "Thursday", time: "10:40-13:30", group: "306"}, { code: "BUS435", day: "Thursday", time: "14:20-17:10", group: "307"}, { code: "MGM121", day: "Friday", time: "10:40-13:30", group: "1-304"}, { code: "MGM121", day: "undefined", time: "14:20-17:10", group: "1-303"} ] }, { name: "Э.Мөнгөншагай", lessons: [ { code: "BBUS446", day: "undefined", time: "07:40-10:30", group: "2-306"} ] }, { name: "Г.НАРАНТУНГАЛАГ", lessons: [ { code: "MGM439", day: "Monday", time: "14:20-17:10", group: "309"} ] }, { name: "Б.Оюун", lessons: [ { code: "MGM442", day: "Friday", time: "07:40-10:30", group: "308"} ] }, { name: "Т.ОЮУНГЭРЭЛ", lessons: [ { code: "MGM334", day: "Tuesday", time: "10:40-13:30", group: "319"} ] }, { name: "Г.САЙНБИЛЭГ", lessons: [ { code: "BMCS432", day: "undefined", time: "07:40-10:30", group: "310"}, { code: "BMCS432", day: "undefined", time: "10:40-13:30", group: "311"} ] }, { name: "Э.ТАМИР", lessons: [ { code: "BUS431", day: "Tuesday", time: "07:40-10:30", group: "323"}, { code: "MGM331", day: "Tuesday", time: "10:40-13:30", group: "322"}, { code: "BUS126", day: "Thursday", time: "07:40-10:30", group: "1-309"}, { code: "BUS126", day: "Thursday", time: "10:40-13:30", group: "1-312"}, { code: "MGM121", day: "Friday", time: "10:40-13:30", group: "1-302"}, { code: "MGM331", day: "undefined", time: "14:20-17:10", group: "324"}, { code: "MGM331", day: "undefined", time: "07:40-10:30", group: "325"} ] }, { name: "Э.ЦОВОО", lessons: [ { code: "BMGM331", day: "Monday", time: "10:40-13:30", group: "2-307"}, { code: "BUS433", day: "Thursday", time: "07:40-10:30", group: "326"}, { code: "MGM431", day: "Thursday", time: "10:40-13:30", group: "327"} ] }, { name: "Л.Шинэбаяр", lessons: [ { code: "BUS431", day: "Wednesday", time: "14:20-17:10", group: "301"} ] }, { name: "Ш.ЭРДЭНЭБУЯН", lessons: [ { code: "MGM332", day: "Friday", time: "10:40-13:30", group: "321"} ] }, { name: "С.ЭРХЭМБАЯР", lessons: [ { code: "BUS433", day: "Wednesday", time: "14:20-17:10", group: "316"}, { code: "MGM431", day: "Thursday", time: "10:40-13:30", group: "318"}, { code: "MGM431", day: "Thursday", time: "14:20-17:10", group: "317"}, { code: "MGM121", day: "undefined", time: "14:20-17:10", group: "1-306"} ] }, { name: "X.X-13", lessons: [ { code: "SWM231", day: "Tuesday", time: "10:40-13:30", group: "421"}, { code: "BIS121", day: "Thursday", time: "07:40-10:30", group: "1-418"}, { code: "BIS122", day: "Thursday", time: "10:40-13:30", group: "1-419"}, { code: "BIS124", day: "Friday", time: "10:40-13:30", group: "1-421"}, { code: "BIS123", day: "undefined", time: "07:40-10:30", group: "1-420"}, { code: "EXC321", day: "undefined", time: "10:40-13:30", group: "1-417"} ] }, { name: "X.X-15", lessons: [ { code: "APF221", day: "Thursday", time: "14:20-17:10", group: "1-406"} ] }, { name: "Д.АНХТУЯА", lessons: [ { code: "ISM221", day: "Thursday", time: "10:40-13:30", group: "1-410"}, { code: "ISM221", day: "Thursday", time: "14:20-17:10", group: "1-411"}, { code: "ISM221", day: "Friday", time: "10:40-13:30", group: "1-412"}, { code: "ISM221", day: "undefined", time: "14:20-17:10", group: "418"} ] }, { name: "Б.БАТ-ОРГИЛ", lessons: [ { code: "DBP221", day: "Thursday", time: "10:40-13:30", group: "2-401"}, { code: "DBP221", day: "Thursday", time: "14:20-17:10", group: "2-400"}, { code: "APF221", day: "Friday", time: "10:40-13:30", group: "1-405"}, { code: "APF221", day: "undefined", time: "14:20-17:10", group: "1-404"} ] }, { name: "Ш.ГАНБОЛД", lessons: [ { code: "APF221", day: "Friday", time: "07:40-10:30", group: "1-407"}, { code: "APF221", day: "undefined", time: "07:40-10:30", group: "1-401"}, { code: "APF221", day: "undefined", time: "10:40-13:30", group: "1-400"} ] }, { name: "Ц.ГҮНДЭГМАА", lessons: [ { code: "FTC321", day: "Monday", time: "10:40-13:30", group: "404"}, { code: "DBM433", day: "Monday", time: "14:20-17:10", group: "409"}, { code: "ISA333", day: "Thursday", time: "10:40-13:30", group: "400"}, { code: "FTC321", day: "Thursday", time: "14:20-17:10", group: "403"}, { code: "DBD221", day: "Friday", time: "10:40-13:30", group: "402"}, { code: "DBD221", day: "undefined", time: "14:20-17:10", group: "401"} ] }, { name: "Б.Гэрэлтцолмон", lessons: [ { code: "DBM432", day: "Monday", time: "07:40-10:30", group: "422"}, { code: "DWM431", day: "Monday", time: "10:40-13:30", group: "423"} ] }, { name: "Б.ГЭРЭЭДЭЙ", lessons: [ { code: "WEB231", day: "Tuesday", time: "07:40-10:30", group: "414"} ] }, { name: "М.Очирболд", lessons: [ { code: "ISP324", day: "Wednesday", time: "14:20-17:10", group: "412"} ] }, { name: "Н.САРАНЧИМЭГ", lessons: [ { code: "ISA332", day: "Friday", time: "07:40-10:30", group: "416"}, { code: "ISA332", day: "Friday", time: "10:40-13:30", group: "417"} ] }, { name: "А.Уянга-Эрдэнэ", lessons: [ { code: "ISM435", day: "Tuesday", time: "07:40-10:30", group: "415"} ] }, { name: "Г.Халиунаа", lessons: [ { code: "ISM432", day: "Tuesday", time: "10:40-13:30", group: "413"} ] }, { name: "Н.ХӨГЖИЛТ", lessons: [ { code: "ISA231", day: "Tuesday", time: "10:40-13:30", group: "410"}, { code: "APF221", day: "Friday", time: "07:40-10:30", group: "1-402"}, { code: "APF221", day: "Friday", time: "10:40-13:30", group: "1-403"} ] }, { name: "Д.ХУЛАН", lessons: [ { code: "ISA334", day: "Monday", time: "10:40-13:30", group: "419"}, { code: "ISFP431", day: "Thursday", time: "14:20-17:10", group: "420"}, { code: "ISA331", day: "Friday", time: "07:40-10:30", group: "2-402"}, { code: "ISA331", day: "Friday", time: "10:40-13:30", group: "2-403"} ] }, { name: "Л.ЭРДЭНЭСАЙХАН", lessons: [ { code: "SWE222", day: "Monday", time: "10:40-13:30", group: "405"}, { code: "CGR321", day: "Monday", time: "14:20-17:10", group: "406"}, { code: "SWE222", day: "undefined", time: "14:20-17:10", group: "1-415"}, { code: "SWE222", day: "undefined", time: "07:40-10:30", group: "1-416"} ] }, { name: "Б.ЭРДЭНЭЦОГТ", lessons: [ { code: "ENT221", day: "undefined", time: "11:40-13:30", group: "1-2009"}, { code: "ENT221", day: "undefined", time: "07:40-09:30", group: "1-2012"}, { code: "ENT221", day: "undefined", time: "09:40-11:30", group: "1-2011"} ] }, { name: "Г.ЭРДЭНЭЦЭЦЭГ", lessons: [ { code: "DBP221", day: "Thursday", time: "14:20-17:10", group: "408"}, { code: "ISM221", day: "Friday", time: "07:40-10:30", group: "1-413"}, { code: "ISM221", day: "Friday", time: "10:40-13:30", group: "1-414"}, { code: "DBP221", day: "undefined", time: "14:20-17:10", group: "407"} ] }, { name: "X.X-16", lessons: [ { code: "ECN112", day: "Friday", time: "07:40-10:30", group: "1-519"}, { code: "ECN112", day: "undefined", time: "07:40-10:30", group: "1-511"} ] }, { name: "X.X-17", lessons: [ { code: "ECN112", day: "Thursday", time: "07:40-10:30", group: "1-521"}, { code: "ECN223", day: "undefined", time: "07:40-10:30", group: "1-528"}, { code: "ECN223", day: "undefined", time: "10:40-13:30", group: "1-529"} ] }, { name: "М.Анармаа", lessons: [ { code: "ECN112", day: "Thursday", time: "10:40-13:30", group: "1-524"}, { code: "ECN116", day: "Thursday", time: "14:20-17:10", group: "1-503"}, { code: "ECN116", day: "Friday", time: "07:40-10:30", group: "1-505"}, { code: "ECN116", day: "Friday", time: "10:40-13:30", group: "1-507"}, { code: "ECN112", day: "undefined", time: "07:40-10:30", group: "1-513"}, { code: "ECN112", day: "undefined", time: "10:40-13:30", group: "1-512"} ] }, { name: "Ц.БАТСҮХ", lessons: [ { code: "ECN436", day: "Tuesday", time: "10:40-13:30", group: "527"}, { code: "ECN225", day: "Thursday", time: "10:40-13:30", group: "2-502"}, { code: "ECN439", day: "Thursday", time: "14:20-17:10", group: "528"} ] }, { name: "Б.БОЛОРСУВД", lessons: [ { code: "ECN115", day: "Thursday", time: "07:40-10:30", group: "1-526"}, { code: "ECN341", day: "Thursday", time: "10:40-13:30", group: "518"}, { code: "ECN112", day: "Friday", time: "07:40-10:30", group: "1-517"}, { code: "ECN112", day: "Friday", time: "10:40-13:30", group: "1-520"} ] }, { name: "Б.ЛХАГВАЖАРГАЛ", lessons: [ { code: "ECN447", day: "Monday", time: "10:40-13:30", group: "514"}, { code: "ECN224", day: "Thursday", time: "07:40-10:30", group: "2-501"}, { code: "ECN112", day: "undefined", time: "07:40-10:30", group: "1-509"}, { code: "ECN112", day: "undefined", time: "10:40-13:30", group: "1-514"} ] }, { name: "П.НОМУУНЗАЯА", lessons: [ { code: "ECN443", day: "Monday", time: "07:40-10:30", group: "534"}, { code: "ECN112", day: "Thursday", time: "07:40-10:30", group: "1-522"}, { code: "ECN116", day: "Thursday", time: "10:40-13:30", group: "1-500"}, { code: "ECN116", day: "Friday", time: "07:40-10:30", group: "1-504"}, { code: "ECN116", day: "Friday", time: "10:40-13:30", group: "1-506"}, { code: "ECN112", day: "undefined", time: "07:40-10:30", group: "1-515"}, { code: "ECN112", day: "undefined", time: "10:40-13:30", group: "1-516"} ] }, { name: "Д.ӨНӨРЖАРГАЛ", lessons: [ { code: "ECN435", day: "Monday", time: "14:20-17:10", group: "509"}, { code: "ECN115", day: "Thursday", time: "10:40-13:30", group: "1-527"}, { code: "ECN112", day: "Friday", time: "07:40-10:30", group: "1-525"}, { code: "ECN112", day: "Friday", time: "10:40-13:30", group: "1-518"}, { code: "ECN112", day: "undefined", time: "10:40-13:30", group: "1-510"} ] }, { name: "Э.Сугарбаяр", lessons: [ { code: "ECN325", day: "Tuesday", time: "07:40-10:30", group: "500"} ] }, { name: "Д.ТҮВШИНЖАРГАЛ", lessons: [ { code: "ECN342", day: "Tuesday", time: "10:40-13:30", group: "504"}, { code: "ECN449", day: "Wednesday", time: "14:20-17:10", group: "503"}, { code: "ECN116", day: "Thursday", time: "07:40-10:30", group: "1-501"}, { code: "ECN116", day: "Thursday", time: "10:40-13:30", group: "1-502"} ] }, { name: ".MENGGEN", lessons: [ { code: "CHS212B", day: "Monday", time: "07:40-10:30", group: "2-706"}, { code: "CHS212B", day: "Thursday", time: "10:40-13:30", group: "2-707"}, { code: "CHS212B", day: "Friday", time: "07:40-10:30", group: "2-706"}, { code: "CHS212B", day: "undefined", time: "10:40-13:30", group: "2-707"} ] }, { name: "X.X-19", lessons: [ { code: "AEN113A", day: "Monday", time: "07:40-10:30", group: "738"}, { code: "AEN112A", day: "Monday", time: "10:40-13:30", group: "736"}, { code: "AEN113A", day: "Thursday", time: "07:40-10:30", group: "738"}, { code: "AEN112A", day: "Thursday", time: "10:40-13:30", group: "736"}, { code: "ACE112A", day: "undefined", time: "07:40-10:30", group: "726"}, { code: "ACE112A", day: "undefined", time: "10:40-13:30", group: "725"} ] }, { name: "X.X-20", lessons: [ { code: "ACE113A", day: "Tuesday", time: "07:40-10:30", group: "729"}, { code: "ENG328", day: "Thursday", time: "14:20-17:10", group: "741"}, { code: "ESP332", day: "Friday", time: "07:40-10:30", group: "748"}, { code: "ACE113B", day: "undefined", time: "14:20-17:10", group: "730"} ] }, { name: "X.X-21", lessons: [ { code: "ESP331", day: "Friday", time: "07:40-10:30", group: "745"}, { code: "ESP331", day: "undefined", time: "14:20-17:10", group: "746"}, { code: "ESP332", day: "undefined", time: "07:40-10:30", group: "747"} ] }, { name: "L.YI-CEN", lessons: [ { code: "CHS212A", day: "Tuesday", time: "07:40-10:30", group: "2-702"}, { code: "CHS212B", day: "Tuesday", time: "10:40-13:30", group: "2-705"}, { code: "CHS212A", day: "Thursday", time: "07:40-10:30", group: "2-704"}, { code: "CHS212B", day: "Thursday", time: "10:40-13:30", group: "2-705"}, { code: "CHS212A", day: "undefined", time: "07:40-10:30", group: "2-704"} ] }, { name: "Л.БОЛОРТАМИР", lessons: [ { code: "ACE111A", day: "Monday", time: "07:40-10:30", group: "705"}, { code: "ACE111B", day: "Monday", time: "14:20-17:10", group: "714"}, { code: "ACE111A", day: "Thursday", time: "07:40-10:30", group: "704"}, { code: "ACE111B", day: "Thursday", time: "10:40-13:30", group: "713"} ] }, { name: "А.ГЭРЭЛЧИМЭГ", lessons: [ { code: "ACE111A", day: "Monday", time: "10:40-13:30", group: "700"}, { code: "ACE111B", day: "Monday", time: "14:20-17:10", group: "718"}, { code: "ACE111B", day: "Tuesday", time: "10:40-13:30", group: "723"}, { code: "ACE111B", day: "Wednesday", time: "14:20-17:10", group: "724"}, { code: "EPO113", day: "Thursday", time: "07:40-10:30", group: "1-708"}, { code: "ACE111B", day: "Thursday", time: "10:40-13:30", group: "708"}, { code: "ACE111A", day: "Friday", time: "10:40-13:30", group: "707"}, { code: "ACE111B", day: "undefined", time: "14:20-17:10", group: "719"} ] }, { name: "Д.НАРАНТУЯА", lessons: [ { code: "ACE111B", day: "undefined", time: "10:40-13:30", group: "709"} ] }, { name: "Д.ОТГОНСҮХ", lessons: [ { code: "ACE111A", day: "Monday", time: "07:40-10:30", group: "706"}, { code: "ACE111A", day: "Monday", time: "10:40-13:30", group: "701"}, { code: "ACE111B", day: "Tuesday", time: "07:40-10:30", group: "717"}, { code: "ACE111B", day: "Wednesday", time: "14:20-17:10", group: "710"}, { code: "AEN111B", day: "Thursday", time: "10:40-13:30", group: "733"}, { code: "AEN111B", day: "Thursday", time: "14:20-17:10", group: "735"}, { code: "ACE111B", day: "Friday", time: "10:40-13:30", group: "722"}, { code: "AEN111B", day: "undefined", time: "14:20-17:10", group: "735"}, { code: "ACE111B", day: "undefined", time: "07:40-10:30", group: "720"}, { code: "AEN111B", day: "undefined", time: "10:40-13:30", group: "733"} ] }, { name: "Л.ОЮУНБОЛОР", lessons: [ { code: "CHS112B", day: "Monday", time: "10:40-13:30", group: "1-705"}, { code: "LCH243", day: "Monday", time: "14:20-17:10", group: "750"}, { code: "CHS112B", day: "Tuesday", time: "07:40-10:30", group: "1-704"}, { code: "CHS112B", day: "Tuesday", time: "10:40-13:30", group: "1-703"}, { code: "CHS112B", day: "Thursday", time: "07:40-10:30", group: "1-704"}, { code: "CHS112B", day: "Thursday", time: "10:40-13:30", group: "1-703"}, { code: "CHS112B", day: "undefined", time: "10:40-13:30", group: "1-705"} ] }, { name: "Ц.ТӨМӨРБАРС", lessons: [ { code: "ACE111B", day: "Monday", time: "07:40-10:30", group: "712"}, { code: "ACE111A", day: "Tuesday", time: "07:40-10:30", group: "702"}, { code: "AEN111B", day: "Wednesday", time: "14:20-17:10", group: "734"}, { code: "IIS210", day: "Thursday", time: "10:40-13:30", group: "1-706"}, { code: "AEN111B", day: "undefined", time: "14:20-17:10", group: "734"}, { code: "ACE111B", day: "undefined", time: "10:40-13:30", group: "715"} ] }, { name: "М.ТУНГАЛАГТУЯА", lessons: [ { code: "AEN112B", day: "Monday", time: "10:40-13:30", group: "737"}, { code: "ACE111A", day: "Tuesday", time: "07:40-10:30", group: "703"}, { code: "ACE112B", day: "Tuesday", time: "10:40-13:30", group: "727"}, { code: "ACE112B", day: "Thursday", time: "07:40-10:30", group: "728"}, { code: "AEN112B", day: "Thursday", time: "10:40-13:30", group: "737"} ] }, { name: "Э.ҮҮРИЙНТУЯА", lessons: [ { code: "SIP313", day: "Tuesday", time: "10:40-13:30", group: "752"}, { code: "ACE111B", day: "Wednesday", time: "14:20-17:10", group: "711"}, { code: "ACE111B", day: "Friday", time: "10:40-13:30", group: "721"}, { code: "ACE111B", day: "undefined", time: "14:20-17:10", group: "716"}, { code: "ENG321", day: "undefined", time: "10:40-13:30 - Online", group: "740"} ] }, { name: "Ц.ЧУЛУУНЦЭЦЭГ", lessons: [ { code: "CHS112A", day: "Monday", time: "07:40-10:30", group: "1-702"}, { code: "CHS212A", day: "Monday", time: "10:40-13:30", group: "2-703"}, { code: "CHS112A", day: "Tuesday", time: "07:40-10:30", group: "1-700"}, { code: "CHS112A", day: "Tuesday", time: "10:40-13:30", group: "1-701"}, { code: "CHS112A", day: "Thursday", time: "07:40-10:30", group: "1-700"}, { code: "CHS112A", day: "Thursday", time: "10:40-13:30", group: "1-701"}, { code: "LCH243", day: "Friday", time: "07:40-10:30", group: "749"}, { code: "CHS212A", day: "Friday", time: "10:40-13:30", group: "2-703"}, { code: "CHS112A", day: "undefined", time: "07:40-10:30", group: "1-702"}, { code: "LCH243", day: "undefined", time: "10:40-13:30", group: "751"} ] }, { name: "Г.ДАВААЖАРГАЛ", lessons: [ { code: "MLS111", day: "Friday", time: "09:40-11:30", group: "2-617"}, { code: "MLS111", day: "undefined", time: "14:20-16:10", group: "1-613"} ] }, { name: "X.X-22", lessons: [ { code: "APL321", day: "Monday", time: "14:20-16:10", group: "902"}, { code: "APL321", day: "Wednesday", time: "11:40-13:30", group: "903"}, { code: "CRL222", day: "undefined", time: "09:40-11:30", group: "1-918"} ] }, { name: "X.X-23", lessons: [ { code: "APL321", day: "undefined", time: "09:40-11:30", group: "901"}, { code: "APL321", day: "undefined", time: "11:40-13:30", group: "900"} ] }, { name: "С.БАТХҮЛЭГ", lessons: [ { code: "LAW122", day: "Monday", time: "07:40-08:30 - Online", group: "LAW122-Лекц"}, { code: "LAW122", day: "Tuesday", time: "07:40-09:30", group: "1-900"}, { code: "LAW122", day: "Tuesday", time: "09:40-11:30", group: "1-901"}, { code: "LAW122", day: "Wednesday", time: "11:40-13:30", group: "1-904"}, { code: "LAW122", day: "Friday", time: "07:40-09:30", group: "1-902"}, { code: "LAW122", day: "Friday", time: "09:40-11:30", group: "1-903"} ] }, { name: "Д.БЭЛГҮҮН", lessons: [ { code: "IBT431", day: "Tuesday", time: "07:40-09:30", group: "910"}, { code: "IBT431", day: "Tuesday", time: "09:40-11:30", group: "911"}, { code: "LAW321", day: "Friday", time: "09:40-11:30", group: "2-908"}, { code: "LAW321", day: "undefined", time: "07:40-09:30", group: "2-915"}, { code: "LAW321", day: "undefined", time: "09:40-11:30", group: "2-914"} ] }, { name: "Ц.ДАВААСҮРЭН", lessons: [ { code: "IBL431", day: "Monday", time: "09:40-10:30 - Online", group: "IBL431-Лекц"}, { code: "IBL431", day: "Wednesday", time: "11:40-13:30", group: "2-903"}, { code: "IBL431", day: "Wednesday", time: "14:20-16:10", group: "931"}, { code: "ICL331", day: "Thursday", time: "09:40-11:30", group: "933"}, { code: "ICL331", day: "Thursday", time: "11:40-13:30", group: "928"}, { code: "CLA431", day: "Thursday", time: "14:20-16:10", group: "929"}, { code: "CVL222", day: "undefined", time: "07:40-09:30", group: "930"}, { code: "CVL222", day: "undefined", time: "09:40-11:30", group: "932"}, { code: "CVL222", day: "undefined", time: "11:40-13:30", group: "934"} ] }, { name: "Б.ДЭЛГЭРМАА", lessons: [ { code: "MHL121", day: "Monday", time: "08:40-09:30 - Online", group: "MHL121-Лекц"}, { code: "MHL121", day: "Tuesday", time: "07:40-09:30", group: "1-906"}, { code: "MHL121", day: "Tuesday", time: "09:40-11:30", group: "1-909"}, { code: "MHL121", day: "Wednesday", time: "11:40-13:30", group: "1-905"}, { code: "LAW321", day: "Thursday", time: "07:40-09:30", group: "1-916"}, { code: "LAW321", day: "Thursday", time: "09:40-11:30", group: "2-911"}, { code: "LAW321", day: "Thursday", time: "11:40-13:30", group: "2-912"}, { code: "LAW321", day: "Friday", time: "09:40-11:30", group: "2-910"}, { code: "MHL121", day: "undefined", time: "11:40-13:30", group: "1-908"}, { code: "MHL121", day: "undefined", time: "14:20-16:10", group: "1-907"} ] }, { name: "Б.МӨНГӨННАХИА", lessons: [ { code: "ECL322", day: "Thursday", time: "07:40-09:30", group: "904"} ] }, { name: "Б.Мөнх-Эрдэнэ", lessons: [ { code: "CPL431", day: "Thursday", time: "07:40-09:30", group: "905"}, { code: "FOL431", day: "Thursday", time: "09:40-11:30", group: "906"} ] }, { name: "Т.НАРАНЦОГТ", lessons: [ { code: "CPL322", day: "Monday", time: "08:40-09:30 - Online", group: "CPL322-Лекц"}, { code: "CPL322", day: "Tuesday", time: "07:40-09:30", group: "2-901"}, { code: "CPL322", day: "Thursday", time: "07:40-09:30", group: "926"}, { code: "LSO211", day: "Friday", time: "07:40-09:30", group: "925"}, { code: "LSO211", day: "undefined", time: "07:40-09:30", group: "927"} ] }, { name: "Ч.ӨНӨРБАЯР", lessons: [ { code: "PHL112", day: "Monday", time: "09:40-10:30 - Online", group: "PHL122-Лекц"}, { code: "PHL112", day: "Tuesday", time: "07:40-09:30", group: "1-914"}, { code: "PHL112", day: "Tuesday", time: "09:40-11:30", group: "1-910"}, { code: "PHL112", day: "Wednesday", time: "11:40-13:30", group: "1-911"}, { code: "PHL112", day: "Friday", time: "09:40-11:30", group: "1-913"}, { code: "PHL112", day: "undefined", time: "11:40-13:30", group: "1-912"} ] }, { name: "Л.ОТГОНБАЯР", lessons: [ { code: "ATL432", day: "Wednesday", time: "11:40-13:30", group: "916"}, { code: "ATL432", day: "Wednesday", time: "14:20-16:10", group: "917"}, { code: "FML331", day: "Thursday", time: "11:40-13:30", group: "935"}, { code: "CLT333", day: "Thursday", time: "14:20-16:10", group: "915"} ] }, { name: "Д.ОЮУН", lessons: [ { code: "LAW321", day: "Monday", time: "07:40-08:30 - Online", group: "LAW321-Лекц"}, { code: "FAL341", day: "Tuesday", time: "09:40-11:30", group: "912"}, { code: "LAW321", day: "Thursday", time: "07:40-09:30", group: "1-915"}, { code: "LAW321", day: "undefined", time: "07:40-09:30", group: "2-904"}, { code: "LAW321", day: "undefined", time: "09:40-11:30", group: "2-906"}, { code: "LAW321", day: "undefined", time: "11:40-13:30", group: "2-905"} ] }, { name: "А.Сэргэлэнтуяа", lessons: [ { code: "PFL431", day: "Friday", time: "07:40-09:30", group: "914"} ] }, { name: "М.Түвшинжаргал", lessons: [ { code: "BUL332", day: "Monday", time: "12:40-13:30 - Online", group: "BUL332-Лекц"}, { code: "BUL332", day: "Tuesday", time: "07:40-09:30", group: "923"}, { code: "BUL334", day: "Thursday", time: "07:40-09:30", group: "922"}, { code: "BUL332", day: "Friday", time: "07:40-09:30", group: "2-900"}, { code: "BUL334", day: "undefined", time: "07:40-09:30", group: "924"} ] }, { name: "Г.Халиун", lessons: [ { code: "CVL222", day: "Monday", time: "11:40-12:30 - Online", group: "CVL222-Лекц"}, { code: "CVL221", day: "Wednesday", time: "16:20-17:10 - Online", group: "CVL221-Лекц"}, { code: "CVL222", day: "undefined", time: "11:40-13:30", group: "2-902"}, { code: "CVL221", day: "undefined", time: "07:40-09:30", group: "1-919"} ] }, { name: "Л.ХАШ", lessons: [ { code: "CDL341", day: "undefined", time: "14:20-16:10", group: "918"}, { code: "CRP223", day: "undefined", time: "07:40-09:30", group: "919"}, { code: "CRP223", day: "undefined", time: "09:40-11:30", group: "920"}, { code: "CRP223", day: "undefined", time: "11:40-13:30", group: "921"} ] }, { name: "Ж.ХУЛАН", lessons: [ { code: "LSL221", day: "Monday", time: "10:40-11:30 - Online", group: "LSL221-Лекц"}, { code: "LAW321", day: "Tuesday", time: "07:40-09:30", group: "2-907"}, { code: "LSL221", day: "Tuesday", time: "09:40-11:30", group: "2-916"}, { code: "LAW321", day: "undefined", time: "07:40-09:30", group: "1-917"}, { code: "LAW321", day: "undefined", time: "09:40-11:30", group: "2-909"}, { code: "LSL221", day: "undefined", time: "11:40-13:30", group: "913"} ] }, { name: "Б.ХЭРЛЭНЧИМЭГ", lessons: [ { code: "IPL432", day: "Tuesday", time: "07:40-09:30", group: "907"}, { code: "IPL432", day: "Tuesday", time: "09:40-11:30", group: "909"}, { code: "LRT432", day: "Thursday", time: "11:40-13:30", group: "908"} ] }, { name: "А.ДӨЛГӨӨН", lessons: [ { code: "INT441", day: "Wednesday", time: "14:20-16:10", group: "1106"}, { code: "DCO413", day: "Wednesday", time: "16:20-18:10", group: "1110"}, { code: "INT411", day: "Friday", time: "07:40-09:30", group: "1104"}, { code: "FTF432", day: "Friday", time: "09:40-11:30", group: "1105"}, { code: "INT336", day: "undefined", time: "09:40-11:30", group: "1107"} ] }, { name: "Д.ОТГОНБОЛД", lessons: [ { code: "HSS115", day: "Thursday", time: "07:40-09:30", group: "2-612"}, { code: "HSS115", day: "Thursday", time: "09:40-11:30", group: "2-613"}, { code: "HSS115", day: "undefined", time: "07:40-09:30", group: "2-611"}, { code: "HSS115", day: "undefined", time: "09:40-11:30", group: "2-614"} ] }, { name: "Б.ТҮВШИНЖАРГАЛ", lessons: [ { code: "INT321", day: "Thursday", time: "11:40-13:30", group: "1108"}, { code: "INT341", day: "Thursday", time: "14:20-16:10", group: "1109"}, { code: "SMB331", day: "undefined", time: "11:40-13:30", group: "1103"} ] }, { name: "М.ХАЛИУН", lessons: [ { code: "INT324", day: "Tuesday", time: "07:40-08:30 - Online", group: "INT324-Лекц"}, { code: "INT324", day: "Thursday", time: "07:40-09:30", group: "1100"}, { code: "INT335", day: "Thursday", time: "09:40-11:30", group: "1101"}, { code: "INT334", day: "undefined", time: "07:40-09:30", group: "1102"}, { code: "INT324", day: "undefined", time: "09:40-11:30", group: "2-1000"} ] }, { name: "Б.АРИУНЗАЯА", lessons: [ { code: "TTM222", day: "Thursday", time: "09:40-11:30", group: "1-1003"}, { code: "TTM222", day: "Thursday", time: "11:40-13:30", group: "1-1002"}, { code: "HOSP350", day: "undefined", time: "09:40-11:30", group: "1003"} ] }, { name: "Ч.БОЛОРМАА", lessons: [ { code: "ECL121", day: "Thursday", time: "09:40-11:30", group: "1-1001"}, { code: "ECL121", day: "Thursday", time: "11:40-13:30", group: "1-1000"} ] }, { name: "Ц.ДАШЦЭРЭН", lessons: [ { code: "TTM211", day: "undefined", time: "07:40-09:30", group: "1001"} ] }, { name: "Д.МӨНГӨНТУУЛ", lessons: [ { code: "ent121", day: "Friday", time: "09:40-11:30", group: "1002"} ] }, { name: "Б.МӨНХТОГТОХ", lessons: [ { code: "TTM316", day: "undefined", time: "11:40-13:30", group: "1010"}, { code: "TOR309", day: "undefined", time: "07:40-09:30 - Online", group: "1011"} ] }, { name: "Б.ЦОГТБАЯР", lessons: [ { code: "TTM315", day: "Friday", time: "07:40-09:30", group: "1000"}, { code: "TOL420", day: "undefined", time: "11:40-13:30", group: "1004"} ] }, { name: "Г.АВИРМЭД", lessons: [ { code: "MAT115", day: "Tuesday", time: "09:40-11:30", group: "627"}, { code: "MAT112", day: "Friday", time: "07:40-09:30", group: "1-623"}, { code: "MAT112", day: "Friday", time: "09:40-11:30", group: "1-622"}, { code: "MAT115", day: "undefined", time: "07:40-09:30 - Online", group: "626"} ] }, { name: "Д.АМЬБӨХ", lessons: [ { code: "PHE149", day: "Monday", time: "09:40-11:30", group: "600"}, { code: "PHE149", day: "Monday", time: "11:40-13:30", group: "601"}, { code: "PHE149", day: "Monday", time: "14:20-16:10", group: "602"}, { code: "PHE149", day: "Tuesday", time: "16:20-18:10", group: "603"}, { code: "PHE149", day: "Thursday", time: "07:40-09:30", group: "604"}, { code: "PHE149", day: "Thursday", time: "09:40-11:30", group: "605"}, { code: "PHE142", day: "Thursday", time: "11:40-13:30", group: "607"}, { code: "PHE142", day: "Friday", time: "16:20-18:10", group: "608"} ] }, { name: "Н.АРГИЛСАН", lessons: [ { code: "MAT115", day: "Wednesday", time: "11:40-13:30", group: "632"}, { code: "MAT115", day: "Wednesday", time: "14:20-16:10", group: "633"}, { code: "MAT115", day: "Friday", time: "07:40-09:30", group: "1-624"}, { code: "MAT115", day: "Friday", time: "09:40-11:30", group: "1-626"} ] }, { name: "Л.АРИУНАА", lessons: [ { code: "MAT115", day: "Tuesday", time: "09:40-11:30", group: "1-625"}, { code: "MAT115", day: "Wednesday", time: "14:20-16:10", group: "628"}, { code: "MAT115", day: "Wednesday", time: "16:20-18:10", group: "629"}, { code: "MAT115", day: "Thursday", time: "14:20-16:10", group: "630"}, { code: "MAT115", day: "Friday", time: "16:20-18:10", group: "661"}, { code: "MAT115", day: "undefined", time: "09:40-11:30", group: "662"}, { code: "MAT115", day: "undefined", time: "11:40-13:30", group: "1-627"} ] }, { name: "Ц.ГЭРЭЛ", lessons: [ { code: "HSS111", day: "Monday", time: "08:40-09:30 - Online", group: "HSS111-Лекц"}, { code: "HSS111", day: "Monday", time: "14:20-16:10", group: "1-615"}, { code: "HSS111", day: "Thursday", time: "11:40-13:30", group: "1-636"}, { code: "HSS111", day: "Friday", time: "07:40-09:30", group: "1-614"}, { code: "HSS111", day: "undefined", time: "07:40-09:30", group: "1-616"}, { code: "HSS111", day: "undefined", time: "09:40-11:30", group: "1-617"}, { code: "HSS111", day: "undefined", time: "11:40-13:30", group: "1-635"} ] }, { name: "Ч.ДАВААСҮРЭН", lessons: [ { code: "ECN222", day: "Monday", time: "14:20-16:10", group: "634"}, { code: "ECN222", day: "Tuesday", time: "16:20-18:10", group: "635"}, { code: "ECN221", day: "Tuesday", time: "07:40-09:30", group: "1-633"}, { code: "ECN221", day: "Tuesday", time: "09:40-11:30", group: "642"}, { code: "ECN221", day: "Wednesday", time: "11:40-13:30", group: "643"}, { code: "ECN222", day: "Thursday", time: "11:40-13:30", group: "2-604"}, { code: "ECN222", day: "Thursday", time: "14:20-16:10", group: "636"}, { code: "MAT115", day: "Friday", time: "16:20-18:10", group: "631"}, { code: "ECN222", day: "undefined", time: "11:40-13:30", group: "2-609"}, { code: "ECN221", day: "undefined", time: "14:20-16:10", group: "644"}, { code: "ECN222", day: "undefined", time: "07:40-09:30", group: "2-606"}, { code: "ECN221", day: "undefined", time: "09:40-11:30", group: "641"}, { code: "ECN221", day: "undefined", time: "11:40-13:30", group: "1-634"} ] }, { name: "Г.ДАГВАСҮРЭН", lessons: [ { code: "ECN221", day: "Tuesday", time: "07:40-09:30", group: "660"}, { code: "ECN221", day: "Tuesday", time: "09:40-11:30", group: "639"}, { code: "ECN221", day: "Wednesday", time: "11:40-13:30", group: "640"}, { code: "ECN221", day: "Friday", time: "09:40-11:30", group: "1-628"}, { code: "ECN222", day: "undefined", time: "11:40-13:30", group: "2-603"}, { code: "ECN222", day: "undefined", time: "14:20-16:10", group: "2-602"}, { code: "ECN222", day: "undefined", time: "09:40-11:30", group: "2-601"}, { code: "ECN222", day: "undefined", time: "11:40-13:30", group: "2-610"} ] }, { name: "О.Мөнгөнсор", lessons: [ { code: "HSS241", day: "Thursday", time: "07:40-09:30", group: "1-605"}, { code: "HSS241", day: "Thursday", time: "09:40-11:30", group: "1-606"}, { code: "HSS241", day: "undefined", time: "09:40-11:30", group: "1-608"}, { code: "HSS241", day: "undefined", time: "11:40-13:30", group: "1-607"} ] }, { name: "Ч.НАРАНЧИМЭГ", lessons: [ { code: "ECN221", day: "Wednesday", time: "11:40-13:30", group: "645"}, { code: "ECN221", day: "Wednesday", time: "14:20-16:10", group: "646"}, { code: "ECN221", day: "Wednesday", time: "16:20-18:10", group: "648"}, { code: "ECN222", day: "Thursday", time: "07:40-09:30", group: "2-607"}, { code: "ECN221", day: "Thursday", time: "09:40-11:30", group: "1-631"}, { code: "ECN221", day: "Thursday", time: "11:40-13:30", group: "1-630"}, { code: "ECN222", day: "Thursday", time: "14:20-16:10", group: "638"}, { code: "ECN222", day: "Friday", time: "07:40-09:30", group: "2-605"}, { code: "ECN221", day: "Friday", time: "09:40-11:30", group: "647"}, { code: "ECN221", day: "undefined", time: "11:40-13:30", group: "649"}, { code: "ECN221", day: "undefined", time: "14:20-16:10", group: "650"}, { code: "ECN222", day: "undefined", time: "07:40-09:30", group: "2-608"}, { code: "ECN221", day: "undefined", time: "09:40-11:30", group: "1-632"}, { code: "ECN222", day: "undefined", time: "11:40-13:30", group: "637"} ] }, { name: "С.НОРЖИНЛХАМ", lessons: [ { code: "MLS111", day: "Monday", time: "07:40-08:30 - Online", group: "MLS111-Лекц"}, { code: "MLS111", day: "Thursday", time: "14:20-16:10", group: "1-612"}, { code: "MLS111", day: "Friday", time: "16:20-18:10", group: "620"}, { code: "MLS111", day: "undefined", time: "07:40-09:30", group: "1-609"}, { code: "MLS111", day: "undefined", time: "09:40-11:30", group: "621"} ] }, { name: "Д.ОЮУНЦЭЦЭГ", lessons: [ { code: "MLS111", day: "Tuesday", time: "07:40-09:30", group: "619"}, { code: "MLS111", day: "Tuesday", time: "09:40-11:30", group: "622"}, { code: "MLS111", day: "Thursday", time: "09:40-11:30", group: "1-610"}, { code: "MLS111", day: "Thursday", time: "11:40-13:30", group: "1-611"} ] }, { name: "Б.ПҮРЭВДОРЖ", lessons: [ { code: "PHE142", day: "Tuesday", time: "07:40-09:30", group: "606"}, { code: "PHE142", day: "Tuesday", time: "09:40-11:30", group: "609"}, { code: "PHE142", day: "Wednesday", time: "11:40-13:30", group: "610"}, { code: "PHE142", day: "Wednesday", time: "14:20-16:10", group: "611"}, { code: "PHE142", day: "Wednesday", time: "16:20-18:10", group: "612"}, { code: "PHE141", day: "Friday", time: "09:40-11:30", group: "614"}, { code: "PHE141", day: "undefined", time: "11:40-13:30", group: "615"}, { code: "PHE141", day: "undefined", time: "14:20-16:10", group: "616"}, { code: "PHE141", day: "undefined", time: "16:20-18:10", group: "617"}, { code: "PHE142", day: "undefined", time: "14:20-16:10", group: "613"}, { code: "PHE141", day: "undefined", time: "16:20-18:10", group: "618"} ] }, { name: "Б.Пүрэвнамжил", lessons: [ { code: "BET322", day: "Monday", time: "12:40-13:30 - Online", group: "BET322-Лекц"}, { code: "BET322", day: "Wednesday", time: "11:40-13:30", group: "651"}, { code: "BET322", day: "Wednesday", time: "14:20-16:10", group: "652"}, { code: "BET322", day: "Wednesday", time: "16:20-18:10", group: "653"}, { code: "BET322", day: "Thursday", time: "07:40-09:30", group: "656"}, { code: "BET322", day: "Thursday", time: "09:40-11:30", group: "657"}, { code: "BET322", day: "undefined", time: "07:40-09:30", group: "654"}, { code: "BET322", day: "undefined", time: "09:40-11:30", group: "655"}, { code: "BET322", day: "undefined", time: "11:40-13:30", group: "2-600"} ] }, { name: "Г.УЯНГА", lessons: [ { code: "HSS241", day: "undefined", time: "07:40-09:30 - Online", group: "623"}, { code: "HSS241", day: "undefined", time: "09:40-11:30 - Online", group: "624"}, { code: "HSS241", day: "undefined", time: "11:40-13:30 - Online", group: "625"}, { code: "HSS241", day: "undefined", time: "14:20-16:10 - Online", group: "658"} ] }, { name: "Д.ЦОГЗОЛСҮРЭН", lessons: [ { code: "HSS241", day: "Monday", time: "10:40-11:30 - Online", group: "HSS241-Лекц"}, { code: "HSS241", day: "Wednesday", time: "11:40-13:30", group: "1-604"}, { code: "HSS241", day: "Wednesday", time: "14:20-16:10", group: "659"}, { code: "HSS241", day: "Thursday", time: "07:40-09:30", group: "1-602"}, { code: "HSS241", day: "Thursday", time: "09:40-11:30", group: "1-601"}, { code: "HSS241", day: "Thursday", time: "11:40-13:30", group: "1-600"}, { code: "HSS241", day: "undefined", time: "07:40-09:30", group: "1-603"}, { code: "HSS241", day: "undefined", time: "09:40-11:30", group: "2-615"}, { code: "HSS241", day: "undefined", time: "11:40-13:30", group: "2-616"} ] }, { name: "Б.ЦЭЦГЭЭ", lessons: [ { code: "PHE145", day: "undefined", time: "07:40-09:30", group: "663"}, { code: "PHE145", day: "undefined", time: "09:40-11:30", group: "665"}, { code: "PHE145", day: "undefined", time: "11:40-13:30", group: "664"} ] }, { name: "М.АНХБАЯР", lessons: [ { code: "ENT221", day: "undefined", time: "11:40-13:30", group: "1-2001"} ] }, { name: "Б.БАТ-АМГАЛАН", lessons: [ { code: "ENT221", day: "Monday", time: "09:40-10:30 - Online", group: "ENT221-Лекц"}, { code: "ENT221", day: "undefined", time: "07:40-09:30", group: "1-2005"} ] }, { name: "Б.Лхагвасүрэн", lessons: [ { code: "ENT221", day: "Tuesday", time: "09:40-11:30", group: "1-2010"}, { code: "ENT221", day: "Thursday", time: "11:40-13:30", group: "1-2003"}, { code: "ENT221", day: "undefined", time: "09:40-11:30", group: "1-2004"} ] }, { name: "Т.УУГАНБОЛД", lessons: [ { code: "ENT221", day: "Friday", time: "09:40-11:30", group: "1-2000"} ] }, { name: "Б.Энхтунгалаг", lessons: [ { code: "ENT221", day: "Tuesday", time: "07:40-09:30", group: "1-2007"}, { code: "ENT221", day: "Thursday", time: "09:40-11:30", group: "1-2002"}, { code: "ENT221", day: "undefined", time: "09:40-11:30", group: "1-2006"} ] }, { name: "Г.ЭНХЦЭЦЭГ", lessons: [ { code: "ENT221", day: "Thursday", time: "14:20-16:10", group: "2-2000"} ] }, { name: "Г.Гантогтох", lessons: [ { code: "HSS114", day: "Monday", time: "08:40-09:30 - Online", group: "HSS114-Лекц"}, { code: "HSS114", day: "Thursday", time: "07:40-09:30", group: "1-620"}, { code: "HSS114", day: "Thursday", time: "09:40-11:30", group: "1-621"}, { code: "HSS114", day: "Friday", time: "07:40-09:30", group: "1-618"}, { code: "HSS114", day: "Friday", time: "09:40-11:30", group: "1-619"} ] }, { name: "З.АМИНА", lessons: [ { code: "MKT221", day: "Tuesday", time: "07:40-10:30", group: "803"}, { code: "MKT221", day: "Tuesday", time: "10:40-13:30", group: "804"}, { code: "MKT332", day: "Thursday", time: "10:40-13:30", group: "808"}, { code: "MKT221", day: "Thursday", time: "14:20-17:10", group: "805"}, { code: "MKT221", day: "undefined", time: "07:40-10:30", group: "1-801"}, { code: "MKT221", day: "undefined", time: "10:40-13:30", group: "1-800"} ] }, { name: "Б.Батмөнх", lessons: [ { code: "MKT431", day: "Tuesday", time: "10:40-13:30", group: "810"} ] }, { name: "Б.ГАНШАГАЙ", lessons: [ { code: "MKT441", day: "Monday", time: "10:40-13:30", group: "815"}, { code: "MKT331", day: "Monday", time: "14:20-17:10", group: "806"}, { code: "MKT441", day: "Tuesday", time: "10:40-13:30", group: "814"}, { code: "MKT331", day: "undefined", time: "10:40-13:30", group: "2-800"} ] }, { name: "Б.Золзаяа", lessons: [ { code: "MKT331", day: "Wednesday", time: "14:20-17:10", group: "807"}, { code: "MKT221", day: "Thursday", time: "07:40-10:30", group: "802"}, { code: "MKT221", day: "Thursday", time: "10:40-13:30", group: "801"}, { code: "MKT221", day: "Friday", time: "07:40-10:30", group: "800"}, { code: "MKT221", day: "Friday", time: "10:40-13:30", group: "1-803"} ] }, { name: "С.МӨНХБАЯР", lessons: [ { code: "MMCS432", day: "Tuesday", time: "07:40-10:30", group: "818"}, { code: "MMCS432", day: "Tuesday", time: "10:40-13:30", group: "819"}, { code: "MKT433", day: "Thursday", time: "07:40-10:30", group: "812"} ] }, { name: "Б.НАНДИН-ЭРДЭНЭ", lessons: [ { code: "MKT446", day: "Thursday", time: "10:40-13:30", group: "816"}, { code: "MKT448", day: "Thursday", time: "14:20-17:10", group: "817"} ] }, { name: "С.САЙН-ОД", lessons: [ { code: "MKT432", day: "Monday", time: "14:20-17:10", group: "811"}, { code: "MKT341", day: "Wednesday", time: "14:20-17:10", group: "809"} ] }, { name: "Б.Энхбаяр", lessons: [ { code: "MKT435", day: "Wednesday", time: "14:20-17:10", group: "813"} ] }];
-        
-        let allSchedules = [];
-
-        function generateSchedules() {
-            const lessonCodesInput = document.getElementById('lessonCodes').value;
-            const lessonCodes = lessonCodesInput.split(',').map(code => code.trim().toUpperCase()).filter(code => code);
-            const dayFilter = document.getElementById('dayFilter').value;
-            const scheduleDiv = document.getElementById('schedule');
-
-            allSchedules = []; // Clear previous schedules
-
-            function createSchedule(lessonIndex, currentSchedule, assignedTeachers) {
-                if (lessonIndex >= lessonCodes.length) {
-                    allSchedules.push(currentSchedule);
-                    return;
-                }
-
-                const currentCode = lessonCodes[lessonIndex];
-
-                teacherData.forEach(teacher => {
-                    teacher.lessons.forEach(lesson => {
-                        if (lesson.code.toUpperCase() === currentCode && !assignedTeachers.has(teacher.name)) {
-                            const newSchedule = JSON.parse(JSON.stringify(currentSchedule));
-
-                            if (!newSchedule[lesson.day][lesson.time]) {
-                                newSchedule[lesson.day][lesson.time] = `${teacher.name} ${lesson.group} (${lesson.code})`;
-                                assignedTeachers.add(teacher.name);
-
-                                createSchedule(lessonIndex + 1, newSchedule, assignedTeachers);
-                                assignedTeachers.delete(teacher.name);
-                            }
-                        }
-                    });
-                });
-            }
-
-            const initialSchedule = {
-                Monday: {},
-                Tuesday: {},
-                Wednesday: {},
-                Thursday: {},
-                Friday: {}
-            };
-
-            createSchedule(0, initialSchedule, new Set());
-            displaySchedules(allSchedules);
-        }
-
-        function displaySchedules(schedules) {
-            const scheduleDiv = document.getElementById('schedule');
-            scheduleDiv.innerHTML = ''; // Clear previous display
-
-            let allSchedulesHTML = '';
-            schedules.forEach((schedule, index) => {
-                allSchedulesHTML += `<h2>Schedule ${index + 1}</h2>`;
-                allSchedulesHTML += `<table>
-                <tr>
-                    <th>Time</th>
-                    <th>Monday</th>
-                    <th>Tuesday</th>
-                    <th>Wednesday</th>
-                    <th>Thursday</th>
-                    <th>Friday</th>
-                </tr>`;
-
-                const timeSlots = [
-                    "07:40-10:20",
-                    "10:30-13:10",
-                    "14:00-16:40",
-                    "17:00-19:40"
-                ];
-
-                timeSlots.forEach(time => {
-                    allSchedulesHTML += `<tr><td>${time}</td>`;
-                    Object.keys(schedule).forEach(day => {
-                        const lessonInfo = schedule[day][time] || "&nbsp";
-                        allSchedulesHTML += `<td>${lessonInfo}</td>`;
-                    });
-                    allSchedulesHTML += `</tr>`;
-                });
-
-                allSchedulesHTML += `</table>`;
-            });
-
-            scheduleDiv.innerHTML = allSchedulesHTML || '<p>No valid schedules found.</p>';
-
-            // Show number of schedules
-            const scheduleCountDiv = document.getElementById('scheduleCount');
-            const scheduleCount = schedules.length;
-            scheduleCountDiv.innerText = `Number of Schedules: ${scheduleCount}`;
-            scheduleCountDiv.classList.remove('fade-out'); // Reset the fade-out class
-            setTimeout(() => {
-                scheduleCountDiv.classList.add('fade-out'); // Add fade-out class after 5 seconds
-            }, 5000);
-        }
-
-        function filterSchedules() {
-            const dayFilter = document.getElementById('dayFilter').value;
-            const groupNumberInput = document.getElementById('groupNumber').value;
-            const groupNumbers = groupNumberInput.split(',').map(num => num.trim()).filter(num => num);
-
-            const filteredSchedules = allSchedules.filter(schedule => {
-                const uniqueDays = new Set(Object.keys(schedule).filter(day => Object.keys(schedule[day]).length > 0));
-                if (dayFilter === "any" || uniqueDays.size === parseInt(dayFilter)) {
-                    if (groupNumbers.length === 0) {
-                        return true; // Show all schedules if no group number is specified
-                    } else {
-                        return groupNumbers.every(groupNumber =>
-                            Object.values(schedule).some(dayLessons =>
-                                Object.values(dayLessons).some(lesson => {
-                                    const lessonGroup = lesson.split(' ')[1];
-                                    return lessonGroup === groupNumber; // Check for exact match
-                                })
-                            )
-                        );
-                    }
-                }
-                return false;
-            });
-
-            displaySchedules(filteredSchedules);
-        }
-
-        function showSuggestions(value) {
-            const suggestionsDiv = document.getElementById('teacherSuggestions');
-            suggestionsDiv.innerHTML = ''; // Clear previous suggestions
-            if (value) {
-                const filteredTeachers = teacherData
-                    .map(teacher => teacher.name)
-                    .filter(name => name.toLowerCase().includes(value.toLowerCase()));
-
-                filteredTeachers.forEach(name => {
-                    const suggestionDiv = document.createElement('div');
-                    suggestionDiv.className = 'suggestion';
-                    suggestionDiv.innerText = name;
-                    suggestionDiv.onclick = () => selectTeacher(name);
-                    suggestionsDiv.appendChild(suggestionDiv);
-                });
-            }
-        }
-
-        function filterByTeacher(teacherName) {
-            const filteredSchedules = allSchedules.filter(schedule => {
-                return Object.values(schedule).some(dayLessons =>
-                    Object.values(dayLessons).some(lesson => lesson.includes(teacherName))
-                );
-            });
-            displaySchedules(filteredSchedules);
-        }
-
-        // Update the selectTeacher function to trigger the teacher filter
-        function selectTeacher(name) {
-            document.getElementById('teacherInput').value = name;
-            document.getElementById('teacherSuggestions').innerHTML = ''; // Clear suggestions
-            filterByTeacher(name); // Filter schedules by selected teacher name
-        }
-    </script>
+    <!-- Эндээс хойш бүх script-үүд гадна файл -->
+    <script src="teacherData.js"></script>
+    <script src="schedule.js"></script>
+    <!-- Чиний өмнө байсан global script-үүд байж байгаа бол үлдээнэ -->
     <script src="index.js"></script>
     <script src="scripts.js"></script>
-
-</body>
-
-
+  </body>
 </html>
