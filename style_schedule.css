@@ -948,5 +948,6 @@ h69 {
 #schedule table tr:nth-child(5) td,
 #schedule table tr:nth-child(8) td,
 #schedule table tr:nth-child(11) td {
-  border-top: 1.7px solid rgba(148, 163, 184, 0.9);
+  border-top: 2px solid rgba(148, 163, 184, 0.9);
 }
+
