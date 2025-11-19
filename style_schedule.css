@@ -887,19 +887,23 @@ h69 {
 ------------------------------ */
 
 #scheduleCount {
-  margin-top: 12px;
-  padding: 6px 14px;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.96);
-  border: 1px solid rgba(148, 163, 184, 0.55);
-  font-size: 0.8rem;
-  color: var(--color-gray);
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+
+    margin: 0;
+    padding: 8px 16px;
+
+    background: rgba(15, 23, 42, 0.96);
+    color: var(--color-gray);
+    border: 1px solid rgba(148, 163, 184, 0.55);
+    border-radius: 999px;
+    font-size: 0.85rem;
+
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 #scheduleCount:not(.fade-out) {
@@ -908,8 +912,7 @@ h69 {
 }
 
 #scheduleCount.fade-out {
-  opacity: 0;
-  transform: translateY(6px);
+  opacity:100;
 }
 
 /* ------------------------------
@@ -940,3 +943,4 @@ h69 {
     font-size: 0.75rem;
   }
 }
+
