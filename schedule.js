@@ -170,7 +170,7 @@ function generateSchedules() {
   }
 
   backtrack(0, initialSchedule);
-  displaySchedules(allSchedules);
+  filterSchedules();
 }
 
 // ---------- ХАРУУЛАХ: ROWSPAN-ТАЙ ОЛОН TABLE ----------
@@ -475,3 +475,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
