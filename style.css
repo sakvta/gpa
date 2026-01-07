@@ -2287,3 +2287,42 @@ li {
   flex-wrap: wrap;
   gap: 10px;
 }
+/* =========================
+   Desktop Side Ads 160x600
+   AdSense-safe
+   ========================= */
+
+.ae-side-ads {
+  position: fixed;
+  top: 110px; /* header-ийн өндрийг дагана */
+  left: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none; /* content-д саад хийхгүй */
+}
+
+/* Common */
+.ae-side-ads__left,
+.ae-side-ads__right {
+  width: 160px;
+  pointer-events: auto;
+}
+
+/* Left ad */
+.ae-side-ads__left {
+  position: absolute;
+  left: 12px;
+}
+
+/* Right ad */
+.ae-side-ads__right {
+  position: absolute;
+  right: 12px;
+}
+
+/* Desktop only */
+@media (max-width: 1280px) {
+  .ae-side-ads {
+    display: none;
+  }
+}
