@@ -1779,38 +1779,56 @@ li {
   /* Slightly transparent */
 }
 /* =========================
-   After Effects Presets Page
-   Append this to the END of style.css
+   After Effects Presets (clean + AdSense-friendly)
+   Replace your current AE blocks with this
    ========================= */
 
-.ae-presets {
+.ae-presets,
+.ae-detail {
   width: 100%;
-  padding: 0 0 20px 0;
+  padding: 0 0 28px 0;
 }
 
+/* One consistent container for ALL presets pages */
 .ae-presets__container {
+  max-width: 1120px;
   width: 96%;
   margin: 0 auto;
-  padding-top: 110px; /* header fixed учраас зай авч өгнө */
+  padding-top: 110px; /* fixed header offset */
 }
 
 @media (max-width: 600px) {
   .ae-presets__container {
-    width: 96%;
     padding-top: 95px;
   }
 }
 
+/* Hero (more premium + readable) */
+.ae-presets__hero {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: var(--box-shadow);
+}
+
 .ae-presets__hero h1 {
   font-size: 2rem;
-  margin-bottom: 10px;
+  margin: 0 0 10px 0;
   color: var(--color-white);
+  line-height: 1.15;
 }
 
 .ae-presets__hero p {
   color: var(--color-white);
   margin-top: 10px;
-  line-height: 1.6;
+  line-height: 1.7;
+  opacity: 0.95;
+  max-width: 78ch;
 }
 
 .ae-presets__hero-meta {
@@ -1820,6 +1838,7 @@ li {
   gap: 10px;
 }
 
+/* Badges */
 .ae-badge {
   display: inline-flex;
   align-items: center;
@@ -1837,10 +1856,23 @@ li {
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-/* Toolbar */
+/* Intro / content blocks */
+.ae-presets__intro,
+.ae-presets__faq,
+.ae-card.ae-card--block {
+  background: var(--color-div);
+  border-radius: 16px;
+  box-shadow: var(--box-shadow);
+  padding: 18px;
+  margin-top: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Toolbar (optional sticky; does not block Auto Ads) */
 .ae-presets__toolbar {
   margin-top: 18px;
-  background: var(--color-div);
+  background: rgba(18, 18, 18, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   box-shadow: var(--box-shadow);
   padding: 14px;
@@ -1849,8 +1881,19 @@ li {
   gap: 12px;
   align-items: center;
   justify-content: space-between;
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 86px;
+  z-index: 4;
 }
 
+@media (max-width: 600px) {
+  .ae-presets__toolbar {
+    top: 76px;
+  }
+}
+
+/* Search */
 .ae-search {
   display: flex;
   align-items: center;
@@ -1861,12 +1904,18 @@ li {
   padding: 10px 14px;
   min-width: 320px;
   flex: 1 1 320px;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
 }
 
 @media (max-width: 600px) {
   .ae-search {
     min-width: 100%;
   }
+}
+
+.ae-search:focus-within {
+  border-color: rgba(41, 253, 83, 0.55);
+  box-shadow: 0 0 0 3px rgba(41, 253, 83, 0.12);
 }
 
 .ae-search__icon {
@@ -1899,7 +1948,7 @@ li {
 }
 
 .ae-chip {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.14);
   color: var(--color-white);
   padding: 8px 14px;
@@ -1917,28 +1966,10 @@ li {
 .ae-chip.is-active {
   background: rgba(44, 187, 99, 0.18);
   border-color: rgba(44, 187, 99, 0.55);
+  box-shadow: 0 0 0 3px rgba(44, 187, 99, 0.1);
 }
 
-/* Intro / FAQ blocks */
-.ae-presets__intro,
-.ae-presets__faq {
-  background: var(--color-div);
-  border-radius: 16px;
-  box-shadow: var(--box-shadow);
-  padding: 18px;
-  margin-top: 18px;
-}
-
-.ae-presets__intro h2,
-.ae-presets__faq h2 {
-  margin-bottom: 10px;
-}
-
-.ae-presets__faq h3 {
-  margin-top: 14px;
-}
-
-/* List */
+/* Lists */
 .ae-list {
   margin-top: 10px;
   margin-left: 18px;
@@ -1947,6 +1978,26 @@ li {
 .ae-list li {
   color: var(--color-white);
   margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.ae-ol {
+  margin-top: 10px;
+  margin-left: 18px;
+  color: var(--color-white);
+}
+
+.ae-ol li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+/* Paragraph helper */
+.ae-par {
+  color: var(--color-white);
+  opacity: 0.92;
+  line-height: 1.7;
+  margin-top: 10px;
 }
 
 /* Cards grid */
@@ -1964,43 +2015,37 @@ li {
 }
 
 .ae-card {
-  background-color: var(--color-div);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
   border-radius: 16px;
   padding: 18px;
   box-shadow: var(--box-shadow);
-  transition: all 0.3s ease;
+  transition: transform 220ms ease, box-shadow 220ms ease,
+    border-color 220ms ease;
   display: flex;
   gap: 14px;
   align-items: flex-start;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .ae-card:hover {
+  transform: translateY(-2px);
   box-shadow: none;
+  border-color: rgba(255, 255, 255, 0.14);
 }
 
+/* YouTube thumbnail */
 .ae-card__thumb {
-  width: 120px;
-  height: 78px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--color-success), var(--bg-color));
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-white);
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-align: center;
-  padding: 8px;
-}
-/* YouTube thumbnail inside preset card */
-.ae-card__thumb {
-  width: 160px;
-  height: 90px; /* 16:9 */
-  border-radius: 12px;
+  width: 170px;
+  height: 96px; /* ~16:9 */
+  border-radius: 14px;
   overflow: hidden;
   flex: 0 0 auto;
-  background: #000;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .ae-card__thumb img {
@@ -2008,13 +2053,32 @@ li {
   height: 100%;
   object-fit: cover;
   display: block;
+  filter: saturate(1.05) contrast(1.02);
+}
+
+@media (max-width: 520px) {
+  .ae-card {
+    flex-direction: column;
+  }
+  .ae-card__thumb {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    position: relative;
+  }
+  .ae-card__thumb img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 
 .ae-card__title {
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--color-white);
-  margin-bottom: 6px;
+  margin: 2px 0 6px 0;
+  line-height: 1.2;
 }
 
 .ae-card__desc {
@@ -2022,6 +2086,7 @@ li {
   opacity: 0.92;
   font-size: 0.95rem;
   margin-bottom: 10px;
+  line-height: 1.6;
 }
 
 .ae-card__tags {
@@ -2032,9 +2097,9 @@ li {
 }
 
 .ae-tag {
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: var(--color-white);
-  padding: 4px 10px;
+  padding: 3px 10px;
   border-radius: 999px;
   font-size: 0.8rem;
   opacity: 0.95;
@@ -2058,7 +2123,8 @@ li {
   padding: 8px 16px;
   text-align: center;
   text-decoration: none;
-  transition: all 250ms;
+  transition: transform 200ms ease, border-color 200ms ease,
+    background 200ms ease;
   border: 0;
   font-size: 14px;
   touch-action: manipulation;
@@ -2069,39 +2135,34 @@ li {
 }
 
 .ae-btn:hover {
-  transform: scale(1.03) rotate(-0.5deg);
+  transform: scale(1.02);
 }
 
 .ae-btn--ghost {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: none;
   opacity: 0.95;
 }
 
 .ae-btn--ghost:hover {
+  border-color: rgba(41, 253, 83, 0.55);
+  background: rgba(255, 255, 255, 0.06);
   transform: none;
-  border-color: rgba(41, 253, 83, 0.6);
 }
 
-/* Ad blocks */
-.ae-ad {
+/* Extra content blocks wrapper */
+.ae-presets__content {
   margin-top: 18px;
+  display: grid;
+  gap: 18px;
 }
 
-.ae-ad__placeholder {
-  border: 1px dashed rgba(255, 255, 255, 0.25);
-  border-radius: 14px;
-  padding: 14px;
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 0.9rem;
-}
 /* =========================
-   AE Detail Page (append)
+   AE Detail Page (kept)
    ========================= */
 
 .ae-detail {
-  width: 100%;
   padding-bottom: 24px;
 }
 
@@ -2126,7 +2187,7 @@ li {
 
 .ae-detail__lead {
   margin-top: 10px;
-  line-height: 1.65;
+  line-height: 1.7;
   color: var(--color-white);
   opacity: 0.95;
 }
@@ -2151,6 +2212,7 @@ li {
   border-radius: 16px;
   box-shadow: var(--box-shadow);
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .ae-video {
@@ -2190,15 +2252,11 @@ li {
   font-size: 0.95rem;
 }
 
-/* Content grid / blocks */
+/* Detail content blocks */
 .ae-detail__grid {
   margin-top: 18px;
   display: grid;
   gap: 18px;
-}
-
-.ae-card--block {
-  display: block;
 }
 
 .ae-h2 {
@@ -2213,17 +2271,6 @@ li {
   font-size: 1.1rem;
 }
 
-.ae-ol {
-  margin-top: 10px;
-  margin-left: 18px;
-  color: var(--color-white);
-}
-
-.ae-ol li {
-  margin-bottom: 8px;
-}
-
-/* Download box */
 .ae-detail__download {
   margin-top: 14px;
   padding-top: 14px;
@@ -2239,9 +2286,4 @@ li {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-}
-
-/* Ads: make them look intentional (not random) */
-.ae-ad__placeholder {
-  text-align: center;
 }
