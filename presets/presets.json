@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Neptun Remake",
+    "slug": "remake-neptun",
+    "youtube": "https://www.youtube.com/watch?v=_-xJO6ZjaHs",
+    "drive": "https://drive.google.com/file/d/1dwlWq6ziHV3jTlhejrQVx7OTgRF846QZ/view?usp=sharing",
+    "tags": ["project", "beginner", "workflow"],
+    "description": "A free After Effects project file designed to teach precomp structure, layer organization, timing, and effect stack workflow."
+  },
+
+  {
+    "name": "5K Free Pack",
+    "slug": "5k-free",
+    "youtube": "https://www.youtube.com/watch?v=FOzNps05Gx8",
+    "drive": "https://drive.google.com/file/d/16a6q1xGsL8E0OnzwgGDHLl6YAVaEBelC/view?usp=sharing",
+    "tags": ["project", "beginner"],
+    "description": "One sentence description."
+  }
+]
