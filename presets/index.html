@@ -27,6 +27,54 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+
+    <!-- Optional: very small ad helpers (safe defaults) -->
+    <style>
+      .ad-wrap {
+        width: 100%;
+        margin: 14px 0;
+        display: flex;
+        justify-content: center;
+      }
+      .ad-wrap--tight {
+        margin: 10px 0;
+      }
+      .ad-wrap--block {
+        margin: 18px 0;
+      }
+      .ad-divider {
+        height: 1px;
+        opacity: 0.08;
+        margin: 12px 0;
+      }
+
+      /* Mobile sticky ad (optional) */
+      .ad-sticky {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9999;
+        background: rgba(0, 0, 0, 0.02);
+        backdrop-filter: blur(6px);
+        padding: 6px 0;
+        display: none;
+      }
+      .ad-sticky__inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+      }
+      @media (max-width: 768px) {
+        .ad-sticky {
+          display: block;
+        }
+        body {
+          padding-bottom: 80px;
+        } /* avoid overlap with sticky ad */
+      }
+    </style>
   </head>
 
   <script
@@ -60,6 +108,18 @@
 
       <div><div class="bx bx-menu" id="menu-icon"></div></div>
     </header>
+
+    <!-- Header under leaderboard -->
+    <div class="ad-wrap ad-wrap--tight">
+      <ins
+        class="adsbygoogle"
+        style="display: block"
+        data-ad-client="ca-pub-7064388449221141"
+        data-ad-slot="2752841090"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+    </div>
 
     <section class="ae-presets">
       <div class="ae-presets__container">
@@ -103,6 +163,18 @@
           </div>
         </div>
 
+        <!-- After hero ad -->
+        <div class="ad-wrap ad-wrap--block">
+          <ins
+            class="adsbygoogle"
+            style="display: block"
+            data-ad-client="ca-pub-7064388449221141"
+            data-ad-slot="5929668778"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+        </div>
+
         <div class="ae-presets__intro">
           <h2>How to use this page</h2>
           <p>
@@ -111,6 +183,18 @@
             customization tips, and troubleshooting. Please read the detail page
             before downloading.
           </p>
+        </div>
+
+        <!-- After intro ad -->
+        <div class="ad-wrap">
+          <ins
+            class="adsbygoogle"
+            style="display: block"
+            data-ad-client="ca-pub-7064388449221141"
+            data-ad-slot="1986554337"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
         </div>
 
         <div class="ae-presets__toolbar">
@@ -139,6 +223,18 @@
               Workflow
             </button>
           </div>
+        </div>
+
+        <!-- After toolbar ad -->
+        <div class="ad-wrap ad-wrap--tight">
+          <ins
+            class="adsbygoogle"
+            style="display: block"
+            data-ad-client="ca-pub-7064388449221141"
+            data-ad-slot="1986554337"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
         </div>
 
         <div id="presetsGrid" class="ae-grid">
@@ -182,6 +278,22 @@
             </div>
           </article>
 
+          <!-- In-feed ad inside grid -->
+          <article class="ae-card" data-title="ad" data-tags="ad">
+            <div class="ae-card__body">
+              <div class="ad-wrap ad-wrap--tight" style="margin: 0">
+                <ins
+                  class="adsbygoogle"
+                  style="display: block"
+                  data-ad-client="ca-pub-7064388449221141"
+                  data-ad-slot="1711951156"
+                  data-ad-format="fluid"
+                  data-ad-layout-key="-fg+5n+6t-e7+r"
+                ></ins>
+              </div>
+            </div>
+          </article>
+
           <article
             class="ae-card"
             data-title="5k free pack"
@@ -219,6 +331,19 @@
         </div>
       </div>
     </section>
+
+    <!-- Between sections ad -->
+    <div class="ad-wrap ad-wrap--block">
+      <ins
+        class="adsbygoogle"
+        style="display: block"
+        data-ad-client="ca-pub-7064388449221141"
+        data-ad-slot="2752841090"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+    </div>
+
     <div class="ae-presets__content">
       <div class="ae-card ae-card--block">
         <h2 class="ae-h2">Recommended learning path</h2>
@@ -229,6 +354,17 @@
           page includes a short checklist so you can learn by rebuilding the
           effect step by step.
         </p>
+      </div>
+
+      <div class="ad-wrap">
+        <ins
+          class="adsbygoogle"
+          style="display: block"
+          data-ad-client="ca-pub-7064388449221141"
+          data-ad-slot="1986554337"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
       </div>
 
       <div class="ae-card ae-card--block">
@@ -250,6 +386,17 @@
         </ul>
       </div>
 
+      <div class="ad-wrap">
+        <ins
+          class="adsbygoogle"
+          style="display: block"
+          data-ad-client="ca-pub-7064388449221141"
+          data-ad-slot="5929668778"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+      </div>
+
       <div class="ae-card ae-card--block">
         <h2 class="ae-h2">Troubleshooting</h2>
         <ul class="ae-list">
@@ -268,6 +415,17 @@
         </ul>
       </div>
 
+      <div class="ad-wrap">
+        <ins
+          class="adsbygoogle"
+          style="display: block"
+          data-ad-client="ca-pub-7064388449221141"
+          data-ad-slot="1711951156"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+      </div>
+
       <div class="ae-card ae-card--block">
         <h2 class="ae-h2">License & attribution</h2>
         <p class="ae-par">
@@ -278,6 +436,19 @@
         </p>
       </div>
     </div>
+
+    <!-- After content group ad -->
+    <div class="ad-wrap ad-wrap--block">
+      <ins
+        class="adsbygoogle"
+        style="display: block"
+        data-ad-client="ca-pub-7064388449221141"
+        data-ad-slot="5929668778"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+    </div>
+
     <div class="ae-card ae-card--block">
       <h2 class="ae-h2">How to use these presets effectively</h2>
 
@@ -319,6 +490,19 @@
         recreate similar animations from scratch.
       </p>
     </div>
+
+    <!-- After “How to use” ad -->
+    <div class="ad-wrap ad-wrap--block">
+      <ins
+        class="adsbygoogle"
+        style="display: block"
+        data-ad-client="ca-pub-7064388449221141"
+        data-ad-slot="9865044351"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+    </div>
+
     <!-- Desktop side ads (160x600) -->
     <div class="ae-side-ads">
       <div class="ae-side-ads__left">
@@ -340,9 +524,40 @@
       </div>
     </div>
 
+    <!-- Bottom leaderboard -->
+    <div class="ad-wrap ad-wrap--block">
+      <ins
+        class="adsbygoogle"
+        style="display: block"
+        data-ad-client="ca-pub-7064388449221141"
+        data-ad-slot="5929668778"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+    </div>
+
+    <!-- Sticky mobile (optional) -->
+    <div class="ad-sticky" aria-label="Advertisement">
+      <div class="ad-sticky__inner">
+        <ins
+          class="adsbygoogle"
+          style="display: block; width: 320px; height: 50px"
+          data-ad-client="ca-pub-7064388449221141"
+          data-ad-slot="9865044351"
+        ></ins>
+      </div>
+    </div>
+
     <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-      (adsbygoogle = window.adsbygoogle || []).push({});
+      // Push ALL ads once. This avoids missing any ad slots.
+      window.addEventListener("load", function () {
+        const ads = document.querySelectorAll("ins.adsbygoogle");
+        ads.forEach((ad) => {
+          try {
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          } catch (e) {}
+        });
+      });
     </script>
 
     <script>
