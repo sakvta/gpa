@@ -1,83 +1,143 @@
-let menu = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar_1');
+﻿const menu = document.querySelector('#menu-icon');
+const navbar = document.querySelector('.navbar_1');
 
-menu.onclick = () => {
-    menu.classList.toggle('bx-x');
-    navbar.classList.toggle('open');
+if (menu && navbar) {
+    menu.addEventListener('click', () => {
+        menu.classList.toggle('bx-x');
+        navbar.classList.toggle('open');
+    });
 }
 
+function normalizePath(pathname) {
+    let path = (pathname || '/').toLowerCase();
 
+    path = path.replace(/\\/g, '/');
+    path = path.replace(/\.html$/i, '');
 
-const API_KEY = '4ec0b7ca941f24fee591f8cb378e02a9'; // Replace with your own API Key
-const city = 'Mongolia'; // Replace with your city
+    if (path.endsWith('/index')) {
+        path = path.slice(0, -6) || '/';
+    }
+
+    if (!path.startsWith('/')) {
+        path = `/${path}`;
+    }
+
+    if (path.length > 1 && path.endsWith('/')) {
+        path = path.slice(0, -1);
+    }
+
+    return path || '/';
+}
+
+function applyActiveNavLink() {
+    const links = document.querySelectorAll('.navbar_1 a');
+    if (!links.length) return;
+
+    const currentPath = normalizePath(window.location.pathname);
+
+    links.forEach((link) => {
+        link.classList.remove('active');
+
+        const href = link.getAttribute('href') || '';
+        const url = new URL(href, window.location.href);
+        const linkPath = normalizePath(url.pathname);
+
+        if (currentPath === linkPath || (currentPath === '/' && (linkPath === '/' || linkPath === ''))) {
+            link.classList.add('active');
+        }
+    });
+}
+
+applyActiveNavLink();
+
+const API_KEY = '4ec0b7ca941f24fee591f8cb378e02a9';
+const city = 'Mongolia';
 
 function updateWeather() {
+    const weatherIconEl = document.getElementById('weather-icon');
+    const tempEl = document.getElementById('temperature');
+    const timeEl = document.getElementById('time');
+    const dateEl = document.getElementById('date');
+
+    if (!weatherIconEl || !tempEl || !timeEl || !dateEl) {
+        return;
+    }
+
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`)
-        .then(response => {
+        .then((response) => {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
             return response.json();
         })
-        .then(data => {
-            console.log(data); // Log data to verify the response
-            const icon = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+        .then((data) => {
+            const icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
             const temperature = `${data.main.temp.toFixed(1)}°C`;
 
-            document.getElementById('weather-icon').src = icon;
-            document.getElementById('temperature').innerText = temperature;
-            document.getElementById('time').innerText = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-            document.getElementById('date').innerText = new Date().toLocaleDateString();
+            weatherIconEl.src = icon;
+            tempEl.innerText = temperature;
+            timeEl.innerText = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            dateEl.innerText = new Date().toLocaleDateString();
         })
-        .catch(error => {
-            console.error('Error fetching weather data:', error);
-            document.getElementById('weather-icon').src = 'error-icon.png'; // Optional: Display an error icon
-            document.getElementById('temperature').innerText = 'N/A';
+        .catch(() => {
+            weatherIconEl.removeAttribute('src');
+            tempEl.innerText = 'N/A';
         });
 }
 
-// Initial call
 updateWeather();
-// Update weather every 10 minutes
 setInterval(updateWeather, 600000);
-// scripts.js
-// gpa calculator 
 
+function calculateRaiseGPA() {
+    const currentGpaEl = document.getElementById('currentGpa');
+    const currentCreditsEl = document.getElementById('currentCredits');
+    const golchEl = document.getElementById('golch');
+    const kredetEl = document.getElementById('kredet');
+    const resultEl = document.getElementById('result');
 
+    if (!currentGpaEl || !currentCreditsEl || !golchEl || !kredetEl || !resultEl) {
+        return;
+    }
 
+    const currentGpa = parseFloat(currentGpaEl.value);
+    const currentCredits = parseFloat(currentCreditsEl.value);
+    const golch = parseFloat(golchEl.value);
+    const kredet = parseFloat(kredetEl.value);
 
-function calculateGPA() {
-    var currentGpa = parseFloat(document.getElementById('currentGpa').value);
-    var currentCredits = parseFloat(document.getElementById('currentCredits').value);
-    var golch = parseFloat(document.getElementById('golch').value);
-    var kredet = parseFloat(document.getElementById('kredet').value);
+    if ([currentGpa, currentCredits, golch, kredet].some((v) => Number.isNaN(v)) || kredet === 0) {
+        resultEl.innerHTML = '0.00';
+        return;
+    }
 
-    var onoo = currentGpa * currentCredits;
-    var huseh = currentGpa + golch - currentGpa;
-    var niitC = currentCredits + kredet;
-    var husehniitC = huseh * niitC;
-    var nzuud = husehniitC - onoo;
-    var urDun = nzuud / kredet;
+    const onoo = currentGpa * currentCredits;
+    const huseh = golch;
+    const niitC = currentCredits + kredet;
+    const husehniitC = huseh * niitC;
+    const nzuud = husehniitC - onoo;
+    const urDun = nzuud / kredet;
 
-    document.getElementById('result').innerHTML = urDun.toFixed(2);
+    resultEl.innerHTML = urDun.toFixed(2);
 }
 
-document.getElementById('currentGpa').addEventListener('input', calculateGPA);
-document.getElementById('currentCredits').addEventListener('input', calculateGPA);
-document.getElementById('golch').addEventListener('input', calculateGPA);
-document.getElementById('kredet').addEventListener('input', calculateGPA);
+['currentGpa', 'currentCredits', 'golch', 'kredet'].forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) {
+        el.addEventListener('input', calculateRaiseGPA);
+    }
+});
 
-//dark mode
+calculateRaiseGPA();
+
 let timer;
 
-document.addEventListener('input', e => {
-        const el = e.target;
+document.addEventListener('input', (e) => {
+    const el = e.target;
 
-        if (el.matches('[data-color]')) {
-            clearTimeout(timer);
-            timer = setTimeout(() => {
-                document.documentElement.style.setProperty(`--color-${el.dataset.color}`, el.value);
-            }, 100)
-        }
-    })
-    //contact us    \\
+    if (el.matches('[data-color]')) {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            document.documentElement.style.setProperty(`--color-${el.dataset.color}`, el.value);
+        }, 100);
+    }
+});
+

@@ -1,182 +1,213 @@
-// Function to add subject input fields dynamically
-function addInputFields() {
-    var container = document.getElementById("inputForm");
-    var buttonsContainer = container.querySelector('.buttons'); // Get the buttons container
-    var newInput = document.createElement("div");
-    newInput.classList.add("form-group");
-    newInput.innerHTML =
-        '<input type="text" name="subject_name" class="subject" placeholder="Subject name...">' +
-        '<input type="number" name="credit" class="credit" value="3">' + // Default value set to 3
-        '<input type="number" name="result" class="grade" placeholder="Grade...">' +
-        '<button type="button" class="remove-button" onclick="removeInputFields(this)"></button>';
-    container.insertBefore(newInput, hiddenInputGroup);
+﻿function convertScoreToGPA(score, selectedUniversity) {
+    const gradeValue = parseFloat(score);
 
-    attachInputListeners(); // Attach listeners to new inputs
-    calculateResults(); // Update results immediately after adding inputs
+    if (Number.isNaN(gradeValue)) {
+        return null;
+    }
+
+    if (selectedUniversity === '2' || selectedUniversity === '1') {
+        if (gradeValue >= 95) return 4.0;
+        if (gradeValue >= 90) return 3.7;
+        if (gradeValue >= 87) return 3.4;
+        if (gradeValue >= 83) return 3.0;
+        if (gradeValue >= 80) return 2.7;
+        if (gradeValue >= 77) return 2.3;
+        if (gradeValue >= 73) return 2.0;
+        if (gradeValue >= 70) return 1.7;
+        if (gradeValue >= 65) return 1.3;
+        if (gradeValue >= 60) return 1.0;
+        return 0.0;
+    }
+
+    if (selectedUniversity === '3') {
+        if (gradeValue >= 96) return 4.0;
+        if (gradeValue >= 90) return 3.7;
+        if (gradeValue >= 87) return 3.4;
+        if (gradeValue >= 83) return 3.0;
+        if (gradeValue >= 80) return 2.7;
+        if (gradeValue >= 77) return 2.4;
+        if (gradeValue >= 74) return 2.0;
+        if (gradeValue >= 70) return 1.7;
+        if (gradeValue >= 67) return 1.3;
+        if (gradeValue >= 64) return 1.0;
+        if (gradeValue >= 60) return 0.7;
+        return 0.0;
+    }
+
+    return null;
 }
 
+function ensureGradeIndicator(inputGroup) {
+    let indicator = inputGroup.querySelector('.grade-convert');
 
-function removeInputFields(button) {
-    var inputGroup = button.parentNode;
-    inputGroup.parentNode.removeChild(inputGroup);
-    calculateResults(); // Recalculate after removing inputs
-}
-
-function calculateWeightedAverage() {
-    var credits = document.getElementsByClassName('credit');
-    var grades = document.getElementsByClassName('grade');
-    var selectedUniversity = document.querySelector('.select select').value;
-
-    var totalCredit = 0;
-    var weightedSum = 0;
-
-    for (var i = 0; i < credits.length; i++) {
-        var creditValue = parseInt(credits[i].value);
-        var gradeValue = parseFloat(grades[i].value);
-
-        if (!isNaN(creditValue) && !isNaN(gradeValue)) {
-            // Convert grades to GPA scale based on selected university
-            if (selectedUniversity === "2" || selectedUniversity === "1") {
-                if (gradeValue >= 95) gradeValue = 4.0;
-                else if (gradeValue >= 90) gradeValue = 3.7;
-                else if (gradeValue >= 87) gradeValue = 3.4;
-                else if (gradeValue >= 83) gradeValue = 3.0;
-                else if (gradeValue >= 80) gradeValue = 2.7;
-                else if (gradeValue >= 77) gradeValue = 2.3;
-                else if (gradeValue >= 73) gradeValue = 2.0;
-                else if (gradeValue >= 70) gradeValue = 1.7;
-                else if (gradeValue >= 65) gradeValue = 1.3;
-                else if (gradeValue >= 60) gradeValue = 1.0;
-                else gradeValue = 0.0;
-            } else if (selectedUniversity === "3") {
-                if (gradeValue >= 96) gradeValue = 4.0;
-                else if (gradeValue >= 90) gradeValue = 3.7;
-                else if (gradeValue >= 87) gradeValue = 3.4;
-                else if (gradeValue >= 83) gradeValue = 3.0;
-                else if (gradeValue >= 80) gradeValue = 2.7;
-                else if (gradeValue >= 77) gradeValue = 2.4;
-                else if (gradeValue >= 74) gradeValue = 2.0;
-                else if (gradeValue >= 70) gradeValue = 1.7;
-                else if (gradeValue >= 67) gradeValue = 1.3;
-                else if (gradeValue >= 64) gradeValue = 1.0;
-                else if (gradeValue >= 60) gradeValue = 0.7;
-                else gradeValue = 0.0;
-            }
-
-            totalCredit += creditValue;
-            weightedSum += creditValue * gradeValue;
+    if (!indicator) {
+        indicator = document.createElement('span');
+        indicator.className = 'grade-convert';
+        const removeBtn = inputGroup.querySelector('.remove-button');
+        if (removeBtn) {
+            inputGroup.insertBefore(indicator, removeBtn);
+        } else {
+            inputGroup.appendChild(indicator);
         }
     }
 
-    var weightedAverage = (totalCredit === 0) ? 0 : weightedSum / totalCredit;
+    return indicator;
+}
 
-    var resultContainer = document.getElementById('resultContainer');
+function updateGradeIndicators() {
+    const inputForm = document.getElementById('inputForm');
+    const universitySelect = document.querySelector('.select select');
+
+    if (!inputForm || !universitySelect) return;
+
+    const selectedUniversity = universitySelect.value;
+    const groups = inputForm.querySelectorAll('.form-group');
+
+    groups.forEach((group) => {
+        const gradeInput = group.querySelector('.grade');
+        if (!gradeInput) return;
+
+        const indicator = ensureGradeIndicator(group);
+        const converted = convertScoreToGPA(gradeInput.value, selectedUniversity);
+
+        if (converted === null || gradeInput.value === '') {
+            indicator.textContent = '—';
+            return;
+        }
+
+        indicator.textContent = `= ${converted.toFixed(1)}`;
+    });
+}
+
+function addInputFields() {
+    const container = document.getElementById('inputForm');
+    const hiddenInputGroup = document.getElementById('hiddenInputGroup');
+
+    if (!container || !hiddenInputGroup) return;
+
+    const newInput = document.createElement('div');
+    newInput.classList.add('form-group');
+    newInput.innerHTML =
+        '<input type="text" name="subject_name" class="subject" placeholder="Subject name...">' +
+        '<input type="number" name="credit" class="credit" value="3">' +
+        '<input type="number" name="result" class="grade" placeholder="Grade...">' +
+        '<span class="grade-convert">—</span>' +
+        '<button type="button" class="remove-button" onclick="removeInputFields(this)"></button>';
+
+    container.insertBefore(newInput, hiddenInputGroup);
+
+    attachInputListeners();
+    calculateResults();
+}
+
+function removeInputFields(button) {
+    const inputGroup = button.parentNode;
+    inputGroup.parentNode.removeChild(inputGroup);
+    calculateResults();
+}
+
+function calculateWeightedAverage() {
+    const credits = document.getElementsByClassName('credit');
+    const grades = document.getElementsByClassName('grade');
+    const selectedUniversity = document.querySelector('.select select')?.value;
+    const resultContainer = document.getElementById('resultContainer');
+
+    if (!selectedUniversity || !resultContainer) return;
+
+    let totalCredit = 0;
+    let weightedSum = 0;
+
+    for (let i = 0; i < credits.length; i++) {
+        const creditValue = parseInt(credits[i].value, 10);
+        const gradePoint = convertScoreToGPA(grades[i].value, selectedUniversity);
+
+        if (!Number.isNaN(creditValue) && gradePoint !== null) {
+            totalCredit += creditValue;
+            weightedSum += creditValue * gradePoint;
+        }
+    }
+
+    const weightedAverage = totalCredit === 0 ? 0 : weightedSum / totalCredit;
     resultContainer.innerHTML = weightedAverage.toFixed(2);
 }
 
 function addCreditGPAFields() {
-    var container = document.getElementById("inputForm");
+    const container = document.getElementById('inputForm');
+    if (!container) return;
 
-    // Avoid duplicates
-    if (!document.getElementById("allcredit") && !document.getElementById("allgpa")) {
-        var inputFields = document.createElement("div");
-        inputFields.classList.add("form-group-gpa");
+    if (!document.getElementById('allcredit') && !document.getElementById('allgpa')) {
+        const inputFields = document.createElement('div');
+        inputFields.classList.add('form-group-gpa');
 
         inputFields.innerHTML =
-            '<input type="number" class= "allgpainput" id="allcredit" placeholder="All Credit">' +
-            '<input type="number" class= "allgpainput" id="allgpa" step="0.01" placeholder="All GPA">';
+            '<input type="number" class="allgpainput" id="allcredit" placeholder="All Credit">' +
+            '<input type="number" class="allgpainput" id="allgpa" step="0.01" placeholder="All GPA">';
 
-        // Insert the new inputs above the buttons container
-        var buttonsContainer = container.querySelector('.buttons');
-        container.insertBefore(inputFields, buttonsContainer); // Insert before buttons
+        const buttonsContainer = container.querySelector('.buttons');
+        container.insertBefore(inputFields, buttonsContainer);
 
-        attachInputListeners(); // Attach listeners to new inputs
-        calculateResults(); // Update results immediately after adding inputs
+        attachInputListeners();
+        calculateResults();
     }
 }
 
-
 function attachInputListeners() {
-    var inputs = document.querySelectorAll('.credit, .grade, #allcredit, #allgpa');
-    inputs.forEach(input => {
-        input.removeEventListener('input', calculateResults); // Avoid duplicates
-        input.addEventListener('input', calculateResults); // Attach listener
+    const inputs = document.querySelectorAll('.credit, .grade, #allcredit, #allgpa');
+    inputs.forEach((input) => {
+        input.removeEventListener('input', calculateResults);
+        input.addEventListener('input', calculateResults);
     });
+
+    const universitySelect = document.querySelector('.select select');
+    if (universitySelect) {
+        universitySelect.removeEventListener('change', calculateResults);
+        universitySelect.addEventListener('change', calculateResults);
+    }
 }
 
 function calculateResults() {
-    calculateWeightedAverage(); // Update resultContainer
-    calculateAllResultGPA(); // Update allresultGPA
+    updateGradeIndicators();
+    calculateWeightedAverage();
+    calculateAllResultGPA();
 }
-// Function to calculate the final GPA (allresultGPA) automatically
+
 function calculateAllResultGPA() {
-    // Elements for allcredit and allgpa
-    var allCreditInput = document.getElementById('allcredit');
-    var allGPAInput = document.getElementById('allgpa');
+    const allCreditInput = document.getElementById('allcredit');
+    const allGPAInput = document.getElementById('allgpa');
 
-    var allCredit = allCreditInput ? parseFloat(allCreditInput.value) || 0 : 0;
-    var allGPA = allGPAInput ? parseFloat(allGPAInput.value) || 0 : 0;
+    const allCredit = allCreditInput ? parseFloat(allCreditInput.value) || 0 : 0;
+    const allGPA = allGPAInput ? parseFloat(allGPAInput.value) || 0 : 0;
 
-    // Variables for existing inputs
-    var credits = document.getElementsByClassName('credit');
-    var grades = document.getElementsByClassName('grade');
-    var selectedUniversity = document.querySelector('.select select').value;
+    const credits = document.getElementsByClassName('credit');
+    const grades = document.getElementsByClassName('grade');
+    const selectedUniversity = document.querySelector('.select select')?.value;
+    const allResultEl = document.getElementById('allresultGPA');
 
-    var totalCredit = 0;
-    var weightedSum = 0;
+    if (!selectedUniversity || !allResultEl) return;
 
-    // Calculate weighted sum and total credits
-    for (var i = 0; i < credits.length; i++) {
-        var creditValue = parseInt(credits[i].value);
-        var gradeValue = parseFloat(grades[i].value);
+    let totalCredit = 0;
+    let weightedSum = 0;
 
-        if (!isNaN(creditValue) && !isNaN(gradeValue)) {
-            // Convert grades based on university scale
-            if (selectedUniversity === "2" || selectedUniversity === "1") {
-                if (gradeValue >= 95) gradeValue = 4.0;
-                else if (gradeValue >= 90) gradeValue = 3.7;
-                else if (gradeValue >= 87) gradeValue = 3.4;
-                else if (gradeValue >= 83) gradeValue = 3.0;
-                else if (gradeValue >= 80) gradeValue = 2.7;
-                else if (gradeValue >= 77) gradeValue = 2.3;
-                else if (gradeValue >= 73) gradeValue = 2.0;
-                else if (gradeValue >= 70) gradeValue = 1.7;
-                else if (gradeValue >= 65) gradeValue = 1.3;
-                else if (gradeValue >= 60) gradeValue = 1.0;
-                else gradeValue = 0.0;
-            } else if (selectedUniversity === "3") {
-                if (gradeValue >= 96) gradeValue = 4.0;
-                else if (gradeValue >= 90) gradeValue = 3.7;
-                else if (gradeValue >= 87) gradeValue = 3.4;
-                else if (gradeValue >= 83) gradeValue = 3.0;
-                else if (gradeValue >= 80) gradeValue = 2.7;
-                else if (gradeValue >= 77) gradeValue = 2.4;
-                else if (gradeValue >= 74) gradeValue = 2.0;
-                else if (gradeValue >= 70) gradeValue = 1.7;
-                else if (gradeValue >= 67) gradeValue = 1.3;
-                else if (gradeValue >= 64) gradeValue = 1.0;
-                else if (gradeValue >= 60) gradeValue = 0.7;
-                else gradeValue = 0.0;
-            }
+    for (let i = 0; i < credits.length; i++) {
+        const creditValue = parseInt(credits[i].value, 10);
+        const gradePoint = convertScoreToGPA(grades[i].value, selectedUniversity);
 
+        if (!Number.isNaN(creditValue) && gradePoint !== null) {
             totalCredit += creditValue;
-            weightedSum += creditValue * gradeValue;
+            weightedSum += creditValue * gradePoint;
         }
     }
 
-    // Calculate new result using allcredit and allgpa
-    var allSumedGPA = allCredit * allGPA;
-    var allSumGPA = weightedSum + allSumedGPA;
-    var allCreditGPA = totalCredit + allCredit;
+    const allSumedGPA = allCredit * allGPA;
+    const allSumGPA = weightedSum + allSumedGPA;
+    const allCreditGPA = totalCredit + allCredit;
+    const allResultGPA = allCreditGPA === 0 ? 0 : allSumGPA / allCreditGPA;
 
-    var allResultGPA = (allCreditGPA === 0) ? 0 : allSumGPA / allCreditGPA;
-
-    // Display the result in the new result container
-    document.getElementById('allresultGPA').innerText = allResultGPA.toFixed(2);
+    allResultEl.innerText = allResultGPA.toFixed(2);
 }
 
-// Attach listeners on initial page load and calculate initial results
-window.onload = function() {
+window.addEventListener('load', function() {
     attachInputListeners();
-    calculateResults(); // Calculate results immediately on page load
-};
+    calculateResults();
+});
+
