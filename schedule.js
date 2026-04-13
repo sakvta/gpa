@@ -287,7 +287,7 @@ function filterSchedules() {
 
   const filteredSchedules = allSchedules.filter((schedule) => {
     const activeDays = DAYS.filter((day) =>
-      (schedule[day] || []).some((cell) => cell && cell.trim() !== "")
+      (schedule[day] || []).some((cell) => cell && cell.trim() !== ""),
     );
     const daysCount = activeDays.length;
 
@@ -308,8 +308,8 @@ function filterSchedules() {
             const group = tokens[1] || "";
             return group === groupNumber;
           });
-        })
-      )
+        }),
+      ),
     );
   });
 
@@ -355,7 +355,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function removeGroupChip(value) {
     groupValues = groupValues.filter((v) => v !== value);
     const chip = groupChipsContainer.querySelector(
-      `.chip[data-value="${CSS.escape(value)}"]`
+      `.chip[data-value="${CSS.escape(value)}"]`,
     );
     if (chip) chip.remove();
     updateGroupHidden();
@@ -422,11 +422,89 @@ document.addEventListener("DOMContentLoaded", function () {
   function removeLessonChip(value) {
     lessonValues = lessonValues.filter((v) => v !== value);
     const chip = lessonChipsContainer.querySelector(
-      `.chip[data-value="${CSS.escape(value)}"]`
+      `.chip[data-value="${CSS.escape(value)}"]`,
     );
     if (chip) chip.remove();
     updateLessonHidden();
   }
+  function getAllLessonCodes() {
+    const codes = new Set();
+
+    teacherData.forEach((t) => {
+      t.lessons.forEach((l) => {
+        codes.add(l.code.toUpperCase());
+      });
+    });
+
+    return Array.from(codes);
+  }
+  function similarity(a, b) {
+    a = a.toLowerCase();
+    b = b.toLowerCase();
+
+    let matches = 0;
+    for (let i = 0; i < Math.min(a.length, b.length); i++) {
+      if (a[i] === b[i]) matches++;
+    }
+    return matches / Math.max(a.length, b.length);
+  }
+  function getSuggestions(input, allCodes) {
+    if (!input) return [];
+
+    input = input.toUpperCase();
+
+    // 1. exact / includes match
+    let matches = allCodes.filter((c) => c.includes(input));
+
+    // 2. хэрвээ match бага байвал fuzzy нэмнэ
+    if (matches.length < 5) {
+      const fuzzy = allCodes
+        .map((c) => ({ code: c, score: similarity(input, c) }))
+        .filter((x) => x.score > 0.3)
+        .sort((a, b) => b.score - a.score)
+        .map((x) => x.code);
+
+      matches = [...new Set([...matches, ...fuzzy])];
+    }
+
+    return matches.slice(0, 5);
+  }
+  const suggestionBox = document.getElementById("lessonSuggestions");
+  const allCodes = getAllLessonCodes();
+
+  lessonInputTemp.addEventListener("input", function () {
+    const val = this.value.trim();
+
+    const suggestions = getSuggestions(val, allCodes);
+
+    if (!suggestions.length) {
+      suggestionBox.style.display = "none";
+      return;
+    }
+
+    suggestionBox.innerHTML = suggestions
+      .map((s) => `<div class="suggestion-item">${s}</div>`)
+      .join("");
+
+    suggestionBox.style.display = "block";
+  });
+
+  // click → chip болгоно
+  suggestionBox.addEventListener("click", function (e) {
+    const item = e.target.closest(".suggestion-item");
+    if (!item) return;
+
+    addLessonChip(item.innerText);
+    lessonInputTemp.value = "";
+    suggestionBox.style.display = "none";
+  });
+
+  // click outside → hide
+  document.addEventListener("click", function (e) {
+    if (!suggestionBox.contains(e.target) && e.target !== lessonInputTemp) {
+      suggestionBox.style.display = "none";
+    }
+  });
 
   if (lessonInputTemp && lessonChipsContainer && lessonHiddenInput) {
     lessonInputTemp.addEventListener("keydown", function (e) {
@@ -440,6 +518,11 @@ document.addEventListener("DOMContentLoaded", function () {
         lessonValues.length
       ) {
         removeLessonChip(lessonValues[lessonValues.length - 1]);
+      }
+    });
+    lessonInputTemp.addEventListener("focus", () => {
+      if (lessonInputTemp.value.trim()) {
+        suggestionBox.style.display = "block";
       }
     });
 
@@ -475,4 +558,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-

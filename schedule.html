@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -109,13 +109,18 @@
           <div class="filter-group">
             <label>Lesson codes</label>
 
-            <div class="chip-input" id="lessonChipInput">
-              <div class="chip-list" id="lessonChips"></div>
-              <input
-                type="text"
-                id="lessonCodesTemp"
-                placeholder="Type code and press Enter"
-              />
+            <div class="chip-input-wrapper">
+              <div class="chip-input" id="lessonChipInput">
+                <div class="chip-list" id="lessonChips"></div>
+                <input
+                  type="text"
+                  id="lessonCodesTemp"
+                  placeholder="Type code and press Enter"
+                />
+              </div>
+
+              <!-- suggestion overlay -->
+              <div id="lessonSuggestions" class="suggestions-box"></div>
             </div>
 
             <!-- Үнэн value энд хадгалагдана, generateSchedules() үүнийг уншина -->
@@ -196,4 +201,3 @@
     <script src="scripts.js"></script>
   </body>
 </html>
-

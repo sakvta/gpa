@@ -6,8 +6,13 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
-  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
+  font-family:
+    "Poppins",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 }
 
 :root {
@@ -614,7 +619,9 @@ h69 {
   background: linear-gradient(135deg, #22c55e, #4ade80);
   color: #022c22;
   box-shadow: 0 14px 34px rgba(34, 197, 94, 0.45);
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
 }
 
 .Header1 button:hover {
@@ -772,7 +779,9 @@ h69 {
   padding: 4px 10px;
   font-size: 0.78rem;
   cursor: pointer;
-  transition: background 0.15s ease, border-color 0.15s ease,
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
     transform 0.1s ease;
 }
 
@@ -887,23 +896,25 @@ h69 {
 ------------------------------ */
 
 #scheduleCount {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9999;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
 
-    margin: 0;
-    padding: 8px 16px;
+  margin: 0;
+  padding: 8px 16px;
 
-    background: rgba(15, 23, 42, 0.96);
-    color: var(--color-gray);
-    border: 1px solid rgba(148, 163, 184, 0.55);
-    border-radius: 999px;
-    font-size: 0.85rem;
+  background: rgba(15, 23, 42, 0.96);
+  color: var(--color-gray);
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  border-radius: 999px;
+  font-size: 0.85rem;
 
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.25s ease, transform 0.25s ease;
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
 #scheduleCount:not(.fade-out) {
@@ -912,7 +923,7 @@ h69 {
 }
 
 #scheduleCount.fade-out {
-  opacity:100;
+  opacity: 100;
 }
 
 /* ------------------------------
@@ -943,11 +954,50 @@ h69 {
     font-size: 0.75rem;
   }
 }
+/* 3 мөрөөр нь бүлэглэж ялгаруулах */
 
+/* 3 мөрөөр нь бүлэглэж ялгаруулах */
+
+/* Блок хооронд нь илүү бүдүүн шугам */
 #schedule table tr:nth-child(2) td,
 #schedule table tr:nth-child(5) td,
 #schedule table tr:nth-child(8) td,
 #schedule table tr:nth-child(11) td {
-  border-top: 2px solid rgba(148, 163, 184, 0.9);
+  border-top: 1.7px solid rgba(148, 163, 184, 0.9);
+}
+/* wrapper reference */
+.chip-input-wrapper {
+  position: relative;
 }
 
+/* overlay dropdown */
+.suggestions-box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+
+  margin-top: 6px;
+  background: rgba(15, 23, 42, 0.98);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 10px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+  max-height: 200px;
+  overflow-y: auto;
+
+  display: none;
+  z-index: 999; /* 👈 хамгийн чухал */
+}
+
+.suggestion-item {
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.suggestion-item:hover {
+  background: rgba(34, 197, 94, 0.15);
+}
