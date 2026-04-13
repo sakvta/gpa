@@ -11,8 +11,16 @@
 :root {
   --bg-color: #222327;
   --page-bg:
-    radial-gradient(circle at 12% -8%, rgba(41, 253, 83, 0.14), transparent 34%),
-    radial-gradient(circle at 88% 3%, rgba(108, 155, 207, 0.17), transparent 38%),
+    radial-gradient(
+      circle at 12% -8%,
+      rgba(41, 253, 83, 0.14),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 88% 3%,
+      rgba(108, 155, 207, 0.17),
+      transparent 38%
+    ),
     linear-gradient(180deg, #15171d 0%, #1c2028 52%, #161a22 100%);
   --text-color: #fff;
   --main-color: #29fd53;
@@ -46,7 +54,11 @@
   --bg-color: #f6f6f9;
   --page-bg:
     radial-gradient(circle at 12% -8%, rgba(44, 187, 99, 0.1), transparent 34%),
-    radial-gradient(circle at 88% 3%, rgba(108, 155, 207, 0.12), transparent 38%),
+    radial-gradient(
+      circle at 88% 3%,
+      rgba(108, 155, 207, 0.12),
+      transparent 38%
+    ),
     linear-gradient(180deg, #eef2f8 0%, #e6edf6 52%, #dde6f2 100%);
   --color-div: #fff;
 }
@@ -94,6 +106,7 @@ body {
   background: var(--page-bg);
   color: var(--text-color);
   font-family: "outfit", sans-serif;
+  overflow-x: hidden;
 }
 
 header {
@@ -271,7 +284,7 @@ header {
   width: 96%;
   margin: 0 auto;
   gap: 1.8rem;
-  grid-template-columns: 1fr 0.4fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.4fr);
   /* Default two-column layout */
   min-height: 100vh;
 }
@@ -410,9 +423,7 @@ h6 {
 }
 
 .section {
-  padding: 0 100%;
-  width: 80%;
-  margin: 80px auto;
+  padding: 0 20px; /* эсвэл 0 5% */
 }
 
 .title {
@@ -2549,8 +2560,16 @@ li {
    ========================= */
 .home-v2 {
   background:
-    radial-gradient(circle at 12% -8%, rgba(41, 253, 83, 0.18), transparent 34%),
-    radial-gradient(circle at 88% 3%, rgba(108, 155, 207, 0.2), transparent 38%),
+    radial-gradient(
+      circle at 12% -8%,
+      rgba(41, 253, 83, 0.18),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 88% 3%,
+      rgba(108, 155, 207, 0.2),
+      transparent 38%
+    ),
     linear-gradient(180deg, #15171d 0%, #1c2028 52%, #161a22 100%);
   color: #f2f5fb;
 }
@@ -2566,8 +2585,11 @@ li {
   margin: 130px auto 14px;
   padding: 28px;
   border-radius: 20px;
-  background:
-    linear-gradient(155deg, rgba(44, 187, 99, 0.16), rgba(108, 155, 207, 0.15));
+  background: linear-gradient(
+    155deg,
+    rgba(44, 187, 99, 0.16),
+    rgba(108, 155, 207, 0.15)
+  );
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
 }
@@ -2603,8 +2625,11 @@ li {
 }
 
 .home-v2 .time-weather {
-  background:
-    linear-gradient(145deg, rgba(26, 40, 33, 0.86), rgba(29, 36, 50, 0.9));
+  background: linear-gradient(
+    145deg,
+    rgba(26, 40, 33, 0.86),
+    rgba(29, 36, 50, 0.9)
+  );
 }
 
 .home-v2 .time-weather .weather {
@@ -2622,7 +2647,9 @@ li {
   border: 1px solid rgba(19, 23, 33, 0.2);
   border-radius: 12px;
   margin-left: 0;
-  transition: box-shadow 160ms ease, border-color 160ms ease;
+  transition:
+    box-shadow 160ms ease,
+    border-color 160ms ease;
 }
 
 .home-v2 .form-group input:focus {
