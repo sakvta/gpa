@@ -28,6 +28,7 @@ const DISPLAY_SLOTS = [
 ];
 
 let allSchedules = [];
+const MAX_SCHEDULES = 50;
 
 // ---------- ТУСЛАХ ФУНКЦУУД ----------
 function timeToMinutes(t) {
@@ -121,6 +122,8 @@ function generateSchedules() {
   const assignedTeachers = new Set();
 
   function backtrack(lessonIndex, currentSchedule) {
+    if (allSchedules.length >= MAX_SCHEDULES) return; // 🔥 STOP
+
     if (lessonIndex >= lessonCodes.length) {
       allSchedules.push(cloneSchedule(currentSchedule));
       return;
@@ -129,11 +132,10 @@ function generateSchedules() {
     const code = lessonCodes[lessonIndex];
     const candidates = lessonsByCode.get(code) || [];
 
-    if (!candidates.length) {
-      return;
-    }
+    if (!candidates.length) return;
 
     for (const cand of candidates) {
+      if (allSchedules.length >= MAX_SCHEDULES) return; // 🔥 давхар хамгаалалт
       if (assignedTeachers.has(cand.teacher)) continue;
 
       const rowRange = getRowRangeForLesson(cand.time);
@@ -265,13 +267,29 @@ function displaySchedules(schedules) {
   scheduleDiv.innerHTML = allSchedulesHTML;
 
   if (scheduleCountDiv) {
-    const scheduleCount = schedules.length;
-    scheduleCountDiv.innerText = `Number of Schedules: ${scheduleCount}`;
-    scheduleCountDiv.classList.remove("fade-out");
-    setTimeout(() => {
-      scheduleCountDiv.classList.add("fade-out");
-    }, 5000);
+    scheduleCountDiv.innerText = `Showing first ${schedules.length} schedules (limit: ${MAX_SCHEDULES})`;
   }
+}
+
+function updateActiveItem() {
+  const items = suggestionBox.querySelectorAll(".suggestion-item");
+  items.forEach((el) => el.classList.remove("active"));
+
+  if (activeIndex >= 0 && items[activeIndex]) {
+    items[activeIndex].classList.add("active");
+  }
+}
+function highlight(text, input) {
+  const i = text.indexOf(input.toUpperCase());
+  if (i === -1) return text;
+
+  return (
+    text.slice(0, i) +
+    "<strong>" +
+    text.slice(i, i + input.length) +
+    "</strong>" +
+    text.slice(i + input.length)
+  );
 }
 
 // ---------- ФИЛЬТРҮҮД ----------
@@ -483,7 +501,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     suggestionBox.innerHTML = suggestions
-      .map((s) => `<div class="suggestion-item">${s}</div>`)
+      .map(
+        (s, i) => `<div class="suggestion-item" data-index="${i}">
+    ${highlight(s, val)}
+  </div>`,
+      )
       .join("");
 
     suggestionBox.style.display = "block";
@@ -507,17 +529,54 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   if (lessonInputTemp && lessonChipsContainer && lessonHiddenInput) {
+    let activeIndex = -1;
+
     lessonInputTemp.addEventListener("keydown", function (e) {
-      if (e.key === "Enter" || e.key === ",") {
+      const items = suggestionBox.querySelectorAll(".suggestion-item");
+
+      // ↓ доош
+      if (e.key === "ArrowDown") {
         e.preventDefault();
-        addLessonChip(lessonInputTemp.value.replace(",", ""));
+        activeIndex = (activeIndex + 1) % items.length;
+      }
+
+      // ↑ дээш
+      else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        activeIndex = (activeIndex - 1 + items.length) % items.length;
+      }
+
+      // ENTER
+      else if (e.key === "Enter" || e.key === ",") {
+        e.preventDefault();
+
+        if (activeIndex >= 0 && items[activeIndex]) {
+          // 🔥 suggestion-с сонгоно
+          addLessonChip(items[activeIndex].innerText);
+        } else {
+          // 🔥 гараар бичсэн утга
+          addLessonChip(lessonInputTemp.value.replace(",", ""));
+        }
+
         lessonInputTemp.value = "";
-      } else if (
+        suggestionBox.style.display = "none";
+        activeIndex = -1;
+        return;
+      }
+
+      // BACKSPACE
+      else if (
         e.key === "Backspace" &&
         !lessonInputTemp.value &&
         lessonValues.length
       ) {
         removeLessonChip(lessonValues[lessonValues.length - 1]);
+      }
+
+      // 🔥 highlight active item
+      items.forEach((el) => el.classList.remove("active"));
+      if (items[activeIndex]) {
+        items[activeIndex].classList.add("active");
       }
     });
     lessonInputTemp.addEventListener("focus", () => {

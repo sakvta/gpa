@@ -34,7 +34,7 @@
   --color-light: rgba(132, 139, 200, 0.18);
   --color-dark-variant: #677483;
   --color-background: #222327;
-  --color-div: #3f3b46;
+  --color-div: linear-gradient(145deg, #1e222b, #262b36);
   --color-gray: #bcbcbc;
   --card-border-radius: 2rem;
   --border-radius-1: 0.4rem;
@@ -106,7 +106,6 @@ body {
   background: var(--page-bg);
   color: var(--text-color);
   font-family: "outfit", sans-serif;
-  overflow-x: hidden;
 }
 
 header {
@@ -284,7 +283,7 @@ header {
   width: 96%;
   margin: 0 auto;
   gap: 1.8rem;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.4fr);
+  grid-template-columns: 1fr 0.4fr;
   /* Default two-column layout */
   min-height: 100vh;
 }
@@ -300,13 +299,18 @@ header {
 }
 
 .container_plus {
-  background-color: var(--color-div);
+  background: linear-gradient(145deg, #1e222b, #262b36);
   padding: 50px;
   border-radius: 20px;
   margin-bottom: 20px;
   margin-top: 30px;
   margin: 25px auto;
   align-self: flex-start;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 @media (max-width: 600px) {
@@ -489,7 +493,7 @@ h6 {
 
 .notification {
   position: sticky;
-  background-color: var(--color-div);
+  background: linear-gradient(145deg, #1e222b, #262b36);
   display: flex;
   z-index: 10;
   margin-top: 10px;
@@ -1138,13 +1142,17 @@ hr.new5 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: "outfit", sans-serif;
+  margin-bottom: 25px;
+}
+
+.header_plus h6 {
+  font-size: 1.6rem;
+  font-weight: 700;
 }
 
 .school {
-  margin-left: 50%;
-  /* Default for larger screens */
-  color: var(--color-white);
+  margin-left: auto;
+  margin-right: 10px;
 }
 
 .school_scale {
@@ -2651,7 +2659,16 @@ li {
     box-shadow 160ms ease,
     border-color 160ms ease;
 }
+.form-group input:focus {
+  outline: none;
+  border-color: #29fd53;
 
+  box-shadow: 0 0 0 3px rgba(41, 253, 83, 0.15);
+}
+.form-group:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+}
 .home-v2 .form-group input:focus {
   outline: none;
   border-color: rgba(44, 187, 99, 0.8);
